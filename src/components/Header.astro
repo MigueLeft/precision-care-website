@@ -1,0 +1,36 @@
+---
+import FacebookIcon from "./assets/FacebookIcon.astro";
+import InstagramIcon from "./assets/InstagramIcon.astro";
+---
+
+<header class="w-full fixed flex h-[70px] ease-out transition-colors duration-200 text-white z-40">
+    <div
+        class="flex justify-between items-center max-w-[1200px] px-14 mx-auto w-full"
+    >
+        <div class="text-xl w-1/4">Precision Care</div>
+        <nav class="flex justify-center w-1/2">
+            <ul class="flex gap-5">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </nav>
+        <div class="flex justify-end gap-3 w-1/4">
+            <InstagramIcon classname="w-8 h-8" />
+            <FacebookIcon classname="w-8 h-8" />
+        </div>
+    </div>
+</header>
+
+<script>
+    const handleScroll = () => {
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", () => {
+            header.classList.toggle("bg-main", window.scrollY > 10);
+        });
+    };
+
+    handleScroll();
+</script>
