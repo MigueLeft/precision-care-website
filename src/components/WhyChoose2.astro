@@ -1,6 +1,6 @@
-<section class="max-w-[1200px] mx-auto px-14 pb-8">
-  <article class="flex justify-center items-center mt-16">
-    <div class="grid grid-cols-3 gap-5">
+<section class="max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14 pb-8">
+  <article class="flex justify-center items-center mt-10 md:mt-12 lg:mt-16">
+    <div class="flex flex-col lg:grid lg:grid-cols-3 gap-5">
       <div class="flex flex-col">
         <h2 class="text-3xl w-5/6 font-semibold text-[#009aff]">
           About us
@@ -12,19 +12,19 @@
             harum temporibus asperiores?
         </p>
       </div>
-      <div class="row-span-2 relative rounded-lg overflow-hidden">
+      <div class="hidden lg:block row-span-2 relative rounded-lg overflow-hidden">
         <img src="./img/doctor.jpg" class="h-full object-cover" />
         <div class="absolute inset-0 bg-main/35"></div>
       </div>
-      <div class="relative rounded-lg overflow-hidden">
+      <div class="hidden lg:block relative rounded-lg overflow-hidden">
         <img src="./img/background.jpeg" />
         <div class="absolute inset-0 bg-main/35"></div>
       </div>
-      <div class="relative rounded-lg overflow-hidden">
+      <div class="hidden lg:block relative rounded-lg overflow-hidden">
         <img src="./img/background.jpeg" />
         <div class="absolute inset-0 bg-main/35"></div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex-col hidden lg:flex">
         <h2 class="text-3xl w-5/6 font-semibold text-[#009aff]">
           Lorem ipsum dolor sit
         </h2>
@@ -34,6 +34,24 @@
           voluptatum molestias non, quibusdam dicta. Molestias dicta consectetur
           harum temporibus asperiores?
         </p>
+      </div>
+
+      <!-- Mobile and tablet -->
+      <div class="flex justify-center gap-5 lg:hidden max-h-[250px] md:max-h-[350px] h-[350px]">
+        <div class="flex flex-col justify-between w-1/2 gap-5 h-full">
+          <div class="relative rounded-lg overflow-hidden">
+            <img src="./img/background.jpeg" />
+            <div class="absolute inset-0 bg-main/35"></div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden">
+            <img src="./img/background.jpeg" />
+            <div class="absolute inset-0 bg-main/35"></div>
+          </div>
+        </div>
+        <div class="relative rounded-lg overflow-hidden ">
+          <img src="./img/doctor.jpg" class="w-[200px] h-[250px] md:w-full md:h-full object-cover" />
+          <div class="absolute inset-0 bg-main/35"></div>
+        </div>
       </div>
     </div>
   </article>
