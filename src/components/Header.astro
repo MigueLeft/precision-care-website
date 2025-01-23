@@ -3,34 +3,117 @@ import FacebookIcon from "./assets/FacebookIcon.astro";
 import InstagramIcon from "./assets/InstagramIcon.astro";
 ---
 
-<header class="w-full fixed flex h-[70px] ease-out transition-colors duration-200 text-white z-40">
-    <div
-        class="flex justify-between items-center max-w-[1200px] px-5 md:px-10 lg:px-14 mx-auto w-full"
-    >
-        <div class="text-xl w-full md:w-1/4">Precision Care</div>
-        <nav class="hidden md:flex justify-center w-1/2">
-            <ul class="flex gap-5">
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
-            </ul>
-        </nav>
-        <div class="flex justify-end gap-3 w-full md:w-1/4">
-            <InstagramIcon classname="w-8 h-8" />
-            <FacebookIcon classname="w-8 h-8" />
-        </div>
+<!-- <header
+  class="w-full fixed flex h-[70px] ease-out transition-colors duration-200 text-white z-40"
+> -->
+<header
+  class="w-full fixed flex md:flex-col h-[70px] md:h-[115px] text-white z-40 bg-main"
+>
+  <div
+    class="flex justify-between items-center max-w-[1200px] px-5 md:px-7 lg:px-14 mx-auto w-full"
+  >
+    <!-- <div class="text-xl w-full md:w-1/4">Precision Care</div> -->
+    <div class="flex items-center gap-3">
+      <svg
+        class="h-[45px] w-auto"
+        viewBox="0 0 229 261"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M157.35 98.2C187.77 74.9 231.9 99.06 227.78 137.15C227.72 137.67 227.66 138.18 227.59 138.7C227.53 139.15 227.46 139.6 227.39 140.05C221.2 177.94 172.22 189.58 149.02 158.99L130.7 134.83C126.4 129.16 127.49 121.08 133.14 116.75L157.35 98.2Z"
+          fill="#FFFFFF"
+          class="iso"></path>
+        <path
+          d="M224.72 220.95C200.93 241.02 169.94 260.65 132.96 260.33C80.65 259.89 38.2 235.38 15.35 192.14L15.09 191.31C14.38 189.38 15.15 186.21 17.38 184.62L68.57 151.27C73.12 148.25 75.94 146.48 81.02 146.89C89.39 147.56 92.9 152.56 96.01 160.37C99.97 170.32 111.65 196.82 140.77 210.97C145.83 213.43 152.64 216.54 158.18 217.52C170.26 219.67 185 222.17 218.84 210.53C218.98 210.48 219.13 210.43 219.28 210.39L219.45 210.34C221.96 209.66 224.73 210.49 226.23 212.62C226.34 212.77 226.43 212.92 226.53 213.08C226.69 213.36 226.8 213.67 226.86 213.98C227.13 215.27 227.48 218.62 224.72 220.95Z"
+          fill="#00CCCC"></path>
+        <path
+          d="M225.04 40.6C228.35 44 229.2 49.12 225.09 51.5C223.89 52.19 222.46 52.51 220.9 52.26C220.33 52.17 219.77 52.01 219.24 51.77C188.46 37.62 151.68 38.69 122.21 59.88L7.60997 142.39C4.73997 144.46 0.529969 142.74 0.219969 139.21C0.209969 139.05 0.199969 138.89 0.199969 138.73C0.209969 138.87 0.199969 138.59 0.199969 138.73C-2.88003 63.52 56.89 0.169986 132.15 0.169986C132.15 0.169986 183.94 -1.56002 225.04 40.6Z"
+          fill="#00CCCC"></path>
+      </svg>
+
+      <h1 class="font-semibold text-xl leading-5">
+        Precision <span class="block">Care</span>
+      </h1>
     </div>
+
+    <!-- <nav class="hidden md:flex justify-center w-1/2">
+      <ul class="flex gap-5">
+        <li><a href="#why">Why choose</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav> -->
+    <div class="hidden md:flex items-center gap-6">
+      <div class="flex gap-3">
+        <InstagramIcon classname="w-8 h-8 cursor-pointer hover:opacity-75" />
+        <FacebookIcon classname="w-8 h-8 cursor-pointer hover:opacity-75" />
+      </div>
+      <a href="#contact">
+        <button
+          class="flex items-center gap-3 font-bold h-[70px] bg-[#00CCCC] text-white px-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="M12 12h5v5h-5zm7-9h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 2v2H5V5zM5 19V9h14v10z"
+            ></path></svg
+          >
+          <p>Agenta tu cita</p>
+        </button>
+      </a>
+    </div>
+
+    <div class="md:hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8 cursor-pointer"
+        viewBox="0 0 24 24"
+        ><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
+        ></path></svg
+      >
+    </div>
+  </div>
+  <div
+    class="hidden md:flex items-center bg-main h-[45px] w-full border-t border-white"
+  >
+    <div
+      class="flex justify-between items-center max-w-[1200px] px-5 md:px-10 lg:px-14 mx-auto w-full"
+    >
+      <nav class="w-full px-5">
+        <ul class="flex justify-between gap-5">
+          <li><a href="#why">Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#program">Lineas de servicio</a></li>
+          <!-- <li><a href="#team">Team</a></li> -->
+          <!-- <li><a href="#stories">Stories</a></li> -->
+          <li><a href="#faq">Preguntas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- <script>
+  const handleScroll = () => {
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("bg-main", window.scrollY > 10);
+      //   if (window.scrollY > 10) {
+      //     document.querySelector(".iso").setAttribute("fill", "#FFFFFF");
+      //   } else {
+      //     document.querySelector(".iso").setAttribute("fill", "#001D4A");
+      //   }
+    });
+  };
+
+  handleScroll();
+</script> -->
 </header>
-
-<script>
-    const handleScroll = () => {
-        const header = document.querySelector("header");
-
-        window.addEventListener("scroll", () => {
-            header.classList.toggle("bg-main", window.scrollY > 10);
-        });
-    };
-
-    handleScroll();
-</script>

@@ -9,9 +9,9 @@ import WhyChoose3 from "../components/WhyChoose3.astro";
 import Achievement from "../components/Achievement.astro";
 import Certifications from "../components/Certifications.astro";
 import SuccessStories from "../components/SuccessStories.astro";
-import ProgramPrecision from "../components/ProgramPrecision.astro";
 import FAQ from "../components/FAQ.astro";
 import Form from "../components/Form.astro";
+import ProgramPrecision from "../components/ProgramPrecision";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,13 +21,11 @@ import Form from "../components/Form.astro";
   <WhyChoose2 /> -->
   <WhyChoose3 />
   <Achievement />
-  <WhyChoose2 />
+  <!-- <WhyChoose2 /> -->
   <Services />
-  <Team />
-  <div class="hidden md:block">
-    <ProgramPrecision />
-  </div>
-  <SuccessStories />
+  <ProgramPrecision client:load />
+  <!-- <Team /> -->
+  <!-- <SuccessStories /> -->
   <Form />
   <FAQ />
 </Layout>
