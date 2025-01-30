@@ -12,19 +12,21 @@ import FAQ from "../components/FAQ.astro";
 import Form from "../components/Form.astro";
 import ProgramPrecision from "../components/ProgramPrecision";
 import Services from "../components/Services";
+import MigrantsProgram from "../components/MigrantsProgram.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Hero />
   <!-- <Certifications /> -->
-  <!-- <WhyChoose />
-  <WhyChoose2 /> -->
   <WhyChoose3 />
+  <!-- <WhyChoose2 /> -->
+  <WhyChoose />
   <Achievement />
   <!-- <WhyChoose2 /> -->
   <Services client:load/>
   <ProgramPrecision client:load />
-  <!-- <Team /> -->
+  <Team />
+  <MigrantsProgram />
   <!-- <SuccessStories /> -->
   <Form />
   <FAQ />

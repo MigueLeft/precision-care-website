@@ -99,7 +99,7 @@ const Services = () => {
         ),
       },
       {
-        title: "Cirugía Bariátrica",
+        title: "Cuidados Pre y Postoperatorios",
         content:
           "Evaluación, acompañamiento y seguimiento especializado para procedimientos quirúrgicos de pérdida de peso.",
         icon: (
@@ -122,6 +122,23 @@ const Services = () => {
         title: "Segunda Opinión",
         content:
           "Análisis detallado y objetivo de tu diagnóstico actual, ofreciendo claridad y alternativas de tratamiento.",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-12 h-12"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M9.75 4.5a.25.25 0 0 0-.25.25v4a.75.75 0 0 1-.75.75h-4a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h4a.75.75 0 0 1 .75.75v4c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-4a.75.75 0 0 1 .75-.75h4a.25.25 0 0 0 .25-.25v-4.5a.25.25 0 0 0-.25-.25h-4a.75.75 0 0 1-.75-.75v-4a.25.25 0 0 0-.25-.25zM8 4.75C8 3.784 8.784 3 9.75 3h4.5c.966 0 1.75.784 1.75 1.75V8h3.25c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 19.25 16H16v3.25A1.75 1.75 0 0 1 14.25 21h-4.5A1.75 1.75 0 0 1 8 19.25V16H4.75A1.75 1.75 0 0 1 3 14.25v-4.5C3 8.784 3.784 8 4.75 8H8z"
+            ></path>
+          </svg>
+        ),
+      },
+      {
+        title: "Soporte Nutricional",
+        content:
+          "Atención y seguimiento para personas con enfermedades crónicas y necesidades específicas.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +189,7 @@ const Services = () => {
         ),
       },
       {
-        title: "Soporte Nutricional",
+        title: "Nutrición Personalizada",
         content:
           "Planes alimenticios personalizados que impulsan tu salud y rendimiento.",
         icon: (
@@ -210,7 +227,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="scroll-mt-[90px] lg:scroll-mt-[135px] pt-5 md:pt-10 pb-14 md:pb-28"
+      className="scroll-mt-[90px] lg:scroll-mt-[100px] pt-5 md:pt-10 pb-14 md:pb-28"
     >
       <div className="flex flex-col items-center font-semibold mb-8 lg:mb-12">
         <h3 className="text-xl md:text-2xl text-[#009aff]">

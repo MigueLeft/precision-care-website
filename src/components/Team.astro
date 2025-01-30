@@ -3,67 +3,53 @@ import FacebookIcon from "./assets/FacebookIcon.astro";
 import InstagramIcon from "./assets/InstagramIcon.astro";
 ---
 
-<section id="team">
-  <div class="max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14 py-12 lg:py-16">
-    <div class="flex flex-col items-center gap-3 font-semibold">
+<section id="team" class="scroll-mt-[70px]">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14 py-12 lg:py-14">
+    <div class="flex flex-col items-center font-semibold">
       <h3 class="text-2xl text-[#009aff]">Nuestro Equipo</h3>
-      <p class="text-2xl md:text-3xl lg:text-4xl text-center">
-        Lorem ipsum dolor sit amet, consectetur
+      <p class="text-2xl md:text-3xl lg:text-4xl text-center text-main/90">
+        Profesionales comprometidos con tu bienestar
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-4 mt-10 h-full">
-      <div class="flex flex-col items-center gap-4 bg-main/90 rounded-lg h-[350px] overflow-hidden">
-        <div class="flex items-center justify-center h-2/3 w-full bg-slate-300">
-          Imagen
-        </div>
-        <div class="flex flex-col items-center justify-center font-semibold text-center">
-          <p class="text-[#009aff]">Internista</p>
-          <p class="text-lg text-white">Dr Ramfis Nieto</p>
-          <div class="flex justify-center gap-2">
-            <InstagramIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-            <FacebookIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
+      {
+        [
+          {
+            specialty: "Internista",
+            name: "Ramfis Nieto",
+            marginTop: "mt-0"
+          },
+          {
+            specialty: "Psicologo", 
+            name: "Lucia Druetta",
+            marginTop: "mt-0 md:mt-12"
+          },
+          {
+            specialty: "Fisiologo",
+            name: "Joel Peña", 
+            marginTop: "mt-0"
+          },
+          {
+            specialty: "Internista",
+            name: "María Inés",
+            marginTop: "mt-0 md:mt-12"
+          }
+        ].map((member) => (
+          <div class={`flex flex-col items-center gap-4 bg-main/90 rounded-lg h-[350px] overflow-hidden ${member.marginTop}`}>
+            <div class="flex items-center justify-center h-2/3 w-full bg-slate-300">
+              Imagen
+            </div>
+            <div class="flex flex-col items-center justify-center font-semibold text-center">
+              <p class="text-[#009aff]">{member.specialty}</p>
+              <p class="text-lg text-white">{member.name}</p>
+              <div class="flex justify-center gap-2">
+                <InstagramIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
+                <FacebookIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-4 bg-main/90 rounded-lg h-[350px] overflow-hidden mt-0 md:mt-12">
-        <div class="flex items-center justify-center h-2/3 w-full bg-slate-300">
-          Imagen
-        </div>
-        <div class="flex flex-col items-center justify-center font-semibold text-center">
-          <p class="text-[#009aff]">Internista</p>
-          <p class="text-lg text-white">Dr Ramfis Nieto</p>
-          <div class="flex justify-center gap-2">
-            <InstagramIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-            <FacebookIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-4 bg-main/90 rounded-lg h-[350px] overflow-hidden">
-        <div class="flex items-center justify-center h-2/3 w-full bg-slate-300">
-          Imagen
-        </div>
-        <div class="flex flex-col items-center justify-center font-semibold text-center">
-          <p class="text-[#009aff]">Internista</p>
-          <p class="text-lg text-white">Dr Ramfis Nieto</p>
-          <div class="flex justify-center gap-2">
-            <InstagramIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-            <FacebookIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-4 bg-main/90 rounded-lg h-[350px] overflow-hidden mt-0 md:mt-12">
-        <div class="flex items-center justify-center h-2/3 w-full bg-slate-300">
-          Imagen
-        </div>
-        <div class="flex flex-col items-center justify-center font-semibold text-center">
-          <p class="text-[#009aff]">Internista</p>
-          <p class="text-lg text-white">Dr Ramfis Nieto</p>
-          <div class="flex justify-center gap-2">
-            <InstagramIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-            <FacebookIcon classname="w-8 h-8 text-white cursor-pointer hover:opacity-75" />
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
