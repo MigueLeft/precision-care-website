@@ -1,46 +1,91 @@
 <section id="contact" class="scroll-mt-[90px] lg:scroll-mt-[100px]">
-    <div
-      class="max-w-[1200px] mx-auto flex flex-col justify-center items-center text-2xl py-12 lg:py-16 px-5 md:px-10 lg:px-14"
+  <div
+    class="max-w-[1200px] mx-auto flex flex-col justify-center items-center text-2xl py-12 lg:py-16 px-5 md:px-10 lg:px-14"
+  >
+    <h4 class="text-2xl font-bold text-[#009aff]">Contactanos</h4>
+    <p class="text-xl md:text-2xl lg:text-3xl text-center text-main/90">
+      Estamos listos para acompañarte. Agenda tu consulta y comienza la
+      transformación hacia una vida más saludable.
+    </p>
+    <form
+      id="contact-form"
+      class="grid grid-cols-2 gap-4 w-full mt-6 max-w-3xl text-black"
     >
-    <h4 class="text-2xl font-bold text-[#009aff]">
-        Contactanos
-      </h4>
-      <p class="text-xl md:text-2xl lg:text-3xl text-center text-main/90">
-        Estamos listos para acompañarte. Agenda tu consulta y comienza la transformación hacia una vida más saludable.
-      </p>
-      <form id="contact-form" class="grid grid-cols-2 gap-4 w-full mt-6 max-w-3xl text-black">
-        <input type="text" placeholder="Nombre" class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1" required />
-        <input type="text" placeholder="Apellido" class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1" required />
-        <input type="text" placeholder="Email" class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1" required />
-        <input type="text" placeholder="Teléfono" class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1" required />
-        
-        <select class="bg-main/10 select border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1" required>
-          <option value="" disabled selected>Seleccione una solución</option>
+      <input
+        type="text"
+        placeholder="Nombre"
+        class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1"
+        required
+      />
+      <input
+        type="text"
+        placeholder="Apellido"
+        class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1"
+        required
+      />
+      <input
+        type="text"
+        placeholder="Email"
+        class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1"
+        required
+      />
+      <input
+        type="text"
+        placeholder="Teléfono"
+        class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1"
+        required
+      />
+
+      <div class="flex flex-col gap-2">
+        <label for="migrante" class="text-base">Selecciona una solución</label>
+        <select
+          class="bg-main/10 select border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1"
+          required
+        >
           <option value="medicina">Medicina</option>
           <option value="nutricion">Nutrición</option>
           <option value="ejercicio">Ejercicio</option>
           <option value="psicologia">Psicología</option>
         </select>
+      </div>
 
-        <input type="date" class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1" placeholder="Fecha deseada" required />
+      <div class="flex flex-col gap-2">
+        <label for="migrante" class="text-base">Fecha deseada</label>
+        <input
+          type="date"
+          class="bg-main/10 input border border-main/20 w-full focus:outline-main/60 col-span-2 md:col-span-1"
+          placeholder="Fecha deseada"
+          required
+        />
+      </div>
 
-        <textarea class="textarea col-span-2 bg-main/10 border border-main/20 focus:outline-main/60" placeholder="Mensaje"></textarea>
-        
-        <div class="col-span-2 flex items-center gap-2">
-          <input type="checkbox" id="migrante" class="checkbox bg-main/10 border border-main/20" />
-          <label for="migrante" class="text-base">Me interesa aplicar al programa de migrantes</label>
-        </div>
+      <textarea
+        class="textarea col-span-2 bg-main/10 border border-main/20 focus:outline-main/60"
+        placeholder="Mensaje"></textarea>
 
-        <button type="submit" class="btn bg-main text-white col-span-2">Enviar</button>
-      </form>
-    </div>
-  </section>
-  
-  <script>
-    const form = document.getElementById('contact-form');
-    
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      console.log('Formulario enviado');
-    });
-  </script>
+      <div class="col-span-2 flex items-center gap-2">
+        <input
+          type="checkbox"
+          id="migrante"
+          class="checkbox bg-main/10 border border-main/20"
+        />
+        <label for="migrante" class="text-base"
+          >Me interesa aplicar al programa de migrantes</label
+        >
+      </div>
+
+      <button type="submit" class="btn bg-main text-white col-span-2"
+        >Enviar</button
+      >
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Formulario enviado");
+  });
+</script>
