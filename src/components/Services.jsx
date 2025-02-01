@@ -231,123 +231,65 @@ const Services = () => {
     >
       <div className="flex flex-col items-center font-semibold mb-8 lg:mb-12">
         <h3 className="text-xl md:text-2xl text-[#009aff]">
-          Linea de servicios
+          Lineas de servicios
         </h3>
         <p className="text-2xl md:text-3xl lg:text-4xl text-center text-main/90">
-          A quienes atendemos?
+          ¿A quienes atendemos?
         </p>
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-4 max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14">
-        <button
-          onClick={() => setActiveTab("especialidades")}
-          className={`flex items-center h-14 gap-4 lg:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
-            ${
-              activeTab === "especialidades"
-                ? "bg-main text-white transform scale-[1.02] lg:scale-105"
-                : "bg-white text-black hover:bg-gray-100 hover:scale-[1.01] lg:hover:scale-102"
-            }`}
-        >
-          <div
-            className={`${
-              activeTab === "especialidades"
-                ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
-                : "text-[#009aff]"
-            }`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                activeTab === "especialidades" ? "mx-3 sm:mx-5" : "ml-4 sm:ml-6 lg:ml-9"
+        {[
+          {
+            id: "especialidades",
+            text: "Especialidades medicas"
+          },
+          {
+            id: "servicios", 
+            text: "Servicios especializados"
+          },
+          {
+            id: "bienestar",
+            text: "Bienestar y rendimiento"
+          }
+        ].map((button) => (
+          <button
+            key={button.id}
+            onClick={() => setActiveTab(button.id)}
+            className={`group flex items-center h-14 gap-4 lg:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
+              ${
+                activeTab === button.id
+                  ? "bg-main text-white transform scale-[1.02] lg:scale-105"
+                  : "bg-white text-black hover:bg-main hover:text-white hover:scale-[1.01] lg:hover:scale-102"
               }`}
-              viewBox="0 0 2048 2048"
-            >
-              <path
-                fill="currentColor"
-                d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
-              />
-            </svg>
-          </div>
-          <p className="text-left font-bold text-sm sm:text-base">
-            Especialidades medicas
-          </p>
-          {activeTab === "especialidades" && (
-            <div className="hidden lg:block absolute -bottom-2 left-1/2 w-7 h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
-          )}
-        </button>
-
-        <button
-          onClick={() => setActiveTab("servicios")}
-          className={`flex items-center h-14 gap-4 lg:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
-            ${
-              activeTab === "servicios"
-                ? "bg-main text-white transform scale-[1.02] lg:scale-105"
-                : "bg-white text-black hover:bg-gray-100 hover:scale-[1.01] lg:hover:scale-102"
-            }`}
-        >
-          <div
-            className={`${
-              activeTab === "servicios"
-                ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
-                : "text-[#009aff]"
-            }`}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                activeTab === "servicios" ? "mx-3 sm:mx-5" : "ml-4 sm:ml-6 lg:ml-9"
+            <div
+              className={`${
+                activeTab === button.id
+                  ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
+                  : "text-[#009aff] group-hover:flex group-hover:items-center group-hover:rounded-l-lg group-hover:bg-[#009aff] group-hover:h-full group-hover:text-white"
               }`}
-              viewBox="0 0 2048 2048"
             >
-              <path
-                fill="currentColor"
-                d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
-              />
-            </svg>
-          </div>
-          <p className="text-left font-bold text-sm sm:text-base">
-            Servicios especializados
-          </p>
-          {activeTab === "servicios" && (
-            <div className="hidden lg:block absolute -bottom-2 left-1/2 w-7 h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
-          )}
-        </button>
-
-        <button
-          onClick={() => setActiveTab("bienestar")}
-          className={`flex items-center h-14 gap-4 lg:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
-            ${
-              activeTab === "bienestar"
-                ? "bg-main text-white transform scale-[1.02] lg:scale-105"
-                : "bg-white text-black hover:bg-gray-100 hover:scale-[1.01] lg:hover:scale-102"
-            }`}
-        >
-          <div
-            className={`${
-              activeTab === "bienestar"
-                ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
-                : "text-[#009aff]"
-            }`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                activeTab === "bienestar" ? "mx-3 sm:mx-5" : "ml-4 sm:ml-6 lg:ml-9"
-              }`}
-              viewBox="0 0 2048 2048"
-            >
-              <path
-                fill="currentColor"
-                d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
-              />
-            </svg>
-          </div>
-          <p className="text-left font-bold text-sm sm:text-base">
-            Bienestar y rendimiento
-          </p>
-          {activeTab === "bienestar" && (
-            <div className="hidden lg:block absolute -bottom-2 left-1/2 w-7 h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
-          )}
-        </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`w-6 h-6 sm:w-8 sm:h-8 ${
+                  activeTab === button.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-6 lg:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
+                }`}
+                viewBox="0 0 2048 2048"
+              >
+                <path
+                  fill="currentColor"
+                  d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
+                />
+              </svg>
+            </div>
+            <p className="text-left font-bold text-sm sm:text-base">
+              {button.text}
+            </p>
+            {activeTab === button.id && (
+              <div className="hidden lg:block absolute -bottom-2 left-1/2 w-7 h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
+            )}
+          </button>
+        ))}
       </div>
       <div className="relative">
         <article className="flex justify-center items-center mt-6 lg:mt-12 max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14">

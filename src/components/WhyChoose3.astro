@@ -39,20 +39,21 @@
           [
             {
               title: "Experiencia comprobada",
-              classes: "border-b border-b-slate-300 border-r border-r-slate-300"
+              classes:
+                "border-b border-b-slate-300 border-r border-r-slate-300",
             },
             {
               title: "Programas innovadores",
-              classes: "px-2 border-b border-b-slate-300"
+              classes: "px-2 border-b border-b-slate-300",
             },
             {
               title: "Enfoque Integral",
-              classes: "border-r border-r-slate-300"
+              classes: "border-r border-r-slate-300",
             },
             {
               title: "Acceso desde cualquier lugar",
-              classes: "px-2"
-            }
+              classes: "px-2",
+            },
           ].map((item) => (
             <div class={`py-4 flex items-center gap-3 ${item.classes}`}>
               <svg
@@ -77,9 +78,20 @@
       </div>
       <div>
         <a href="#contact">
-          <button class="h-14 lg:h-16 bg-main text-white w-full rounded-lg"
-            >Agenta tu cita</button
+          <button
+            class="flex items-center justify-center gap-4 h-14 lg:h-16 bg-main text-white w-full rounded-lg font-bold"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7 2xl:w-8 2xl:h-8"
+              viewBox="0 0 24 24"
+              ><path
+                fill="currentColor"
+                d="M12 12h5v5h-5zm7-9h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 2v2H5V5zM5 19V9h14v10z"
+              ></path></svg
+            >
+            <p>Agenta tu cita</p>
+          </button>
         </a>
       </div>
     </article>

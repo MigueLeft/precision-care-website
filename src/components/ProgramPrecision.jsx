@@ -44,7 +44,7 @@ const programSteps = [
   },
   {
     id: 4,
-    title: "Psicologo",
+    title: "Psicología",
     content:
       "Ofrecemos intervenciones precisas para mejorar tu salud mental, indispensable para el control de diversas enfermedades crónicas, brindado el tiempo necesario para resolver tus problemas",
     features: [
@@ -84,24 +84,24 @@ export default function ProgramPrecision() {
             <button
               key={step.id}
               onClick={() => setActiveTab(step.id)}
-              className={`flex items-center h-14 gap-4 sm:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
+              className={`group flex items-center z-10 h-14 gap-4 sm:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
                 ${
                   activeTab === step.id
                     ? "bg-main text-white transform scale-[1.02] sm:scale-105"
-                    : "bg-white text-black hover:bg-gray-100 hover:scale-[1.01] sm:hover:scale-102"
+                    : "bg-white text-black hover:bg-main hover:text-white hover:scale-[1.01] sm:hover:scale-102"
                 }`}
             >
               <div
                 className={`${
                   activeTab === step.id
                     ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
-                    : "text-[#009aff]"
+                    : "text-[#009aff] group-hover:flex group-hover:items-center group-hover:rounded-l-lg group-hover:bg-[#009aff] group-hover:h-full group-hover:text-white"
                 }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                    activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9"
+                    activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
                   }`}
                   viewBox="0 0 2048 2048"
                 >
