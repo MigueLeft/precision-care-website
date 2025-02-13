@@ -66,7 +66,7 @@ export default function ProgramPrecision() {
     <section className="bg-main/90">
       <div
         id="program"
-        className="hidden lg:block scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
+        className="hidden lg:block scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
@@ -149,10 +149,12 @@ export default function ProgramPrecision() {
             </div>
           </div>
         </div>
+
+        <p className="text-white mt-5">Estas soluciones pueden ser tanto individuales como en programas diseñados estrategicamente para lograr sus metas. <a href="#" className="font-bold underline">Entra Aqui</a> para ver conocer más sobre nuestras estrategias</p>
       </div>
       <div
         id="program"
-        className="block lg:hidden scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
+        className="block lg:hidden scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
@@ -272,6 +274,8 @@ export default function ProgramPrecision() {
             </div>
           </div>
         </div>
+
+        <p className="text-white mt-5">Estas soluciones pueden ser tanto individuales como en programas diseñados estrategicamente para lograr sus metas. <a href="#" className="font-bold underline">Entra Aqui</a> para ver conocer más sobre nuestras estrategias</p>
       </div>
     </section>
   );

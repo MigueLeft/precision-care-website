@@ -237,7 +237,7 @@ const Services = () => {
           ¿A quienes atendemos?
         </p>
       </div>
-      <div className="flex flex-col md:flex-row justify-center gap-4 max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14">
+      <div className="flex flex-col md:flex-row justify-center gap-4 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14">
         {[
           {
             id: "especialidades",
@@ -292,7 +292,7 @@ const Services = () => {
         ))}
       </div>
       <div className="relative">
-        <article className="flex justify-center items-center mt-6 lg:mt-12 max-w-[1200px] mx-auto px-5 md:px-10 lg:px-14">
+        <article className="flex justify-center items-center mt-6 lg:mt-12 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14">
           <Swiper
             navigation={{
               nextEl: `.arrow-model-right`,
