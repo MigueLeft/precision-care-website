@@ -135,13 +135,13 @@ const programSteps = [
   },
 ];
 
-export default function ProgramPrecision() {
+export default function Solutions() {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
     <section className="bg-main/90">
       <div
-        id="program"
+        id="solutions"
         className="hidden lg:block scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}

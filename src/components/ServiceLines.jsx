@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
 
-const Services = () => {
+const ServiceLines = () => {
   const [activeTab, setActiveTab] = useState("especialidades");
   const services = {
     especialidades: [
@@ -463,4 +463,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServiceLines;

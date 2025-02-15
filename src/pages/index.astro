@@ -2,16 +2,16 @@
 import Hero from "../components/Hero.astro";
 import Team from "../components/Team.astro";
 import Layout from "../layouts/Layout.astro";
-import WhyChoose from "../components/WhyChoose.astro";
+import AboutPrecision from "../components/AboutPrecision.astro";
 import WhyChoose2 from "../components/WhyChoose2.astro";
 import WhyChoose3 from "../components/WhyChoose3.astro";
 import Achievement from "../components/Achievement.astro";
 import Certifications from "../components/Certifications.astro";
 import SuccessStories from "../components/SuccessStories.astro";
 import FAQ from "../components/FAQ.astro";
-import Form from "../components/Form.astro";
-import ProgramPrecision from "../components/ProgramPrecision";
-import Services from "../components/Services";
+import ContactForm from "../components/ContactForm.astro";
+import Solutions from "../components/Solutions";
+import ServiceLines from "../components/ServiceLines";
 import MigrantsProgram from "../components/MigrantsProgram.astro";
 ---
 
@@ -20,14 +20,14 @@ import MigrantsProgram from "../components/MigrantsProgram.astro";
   <!-- <Certifications /> -->
   <WhyChoose3 />
   <!-- <WhyChoose2 /> -->
-  <WhyChoose />
+  <AboutPrecision />
   <Achievement />
   <!-- <WhyChoose2 /> -->
-  <Services client:load/>
-  <ProgramPrecision client:load />
+  <ServiceLines client:load/>
+  <Solutions client:load />
   <Team />
   <MigrantsProgram />
   <!-- <SuccessStories /> -->
-  <Form />
+  <ContactForm />
   <FAQ />
 </Layout>
