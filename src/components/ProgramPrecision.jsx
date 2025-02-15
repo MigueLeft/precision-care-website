@@ -14,6 +14,26 @@ const programSteps = [
     ],
     image:
       "https://www.simbiotia.com/wp-content/uploads/relación-médico-paciente.png",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 sm:w-8 sm:h-8"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        class="lucide lucide-briefcase-medical"
+      >
+        <path d="M12 11v4" />
+        <path d="M14 13h-4" />
+        <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+        <path d="M18 6v14" />
+        <path d="M6 6v14" />
+        <rect width="20" height="14" x="2" y="6" rx="2" />
+      </svg>
+    ),
   },
   {
     id: 2,
@@ -26,6 +46,22 @@ const programSteps = [
       "Consultas individuales de una hora para atención detallada y personalizada",
     ],
     image: "https://cardiavant.com/wp-content/uploads/nutricionista.jpg",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 sm:w-8 sm:h-8"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2.27 21.7s9.87-3.5 12.73-6.36a4.5 4.5 0 0 0-6.36-6.37C5.77 11.84 2.27 21.7 2.27 21.7zM8.64 14l-2.05-2.04M15.34 15l-2.46-2.46" />
+        <path d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z" />
+        <path d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z" />
+      </svg>
+    ),
   },
   {
     id: 3,
@@ -41,6 +77,24 @@ const programSteps = [
     ],
     image:
       "https://colombia-blog.bodytech.co/uploads/post/060031581b4044808e8720ad6e8593df/MEDICO-DEL-DEPORTE-VALORACION_1920x854.jpg",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 sm:w-8 sm:h-8"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14.4 14.4 9.6 9.6" />
+        <path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z" />
+        <path d="m21.5 21.5-1.4-1.4" />
+        <path d="M3.9 3.9 2.5 2.5" />
+        <path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z" />
+      </svg>
+    ),
   },
   {
     id: 4,
@@ -56,6 +110,28 @@ const programSteps = [
     ],
     image:
       "https://cdn0.psicologia-online.com/es/posts/0/5/8/por_que_siento_que_no_avanzo_en_terapia_y_que_hacer_6850_600.webp",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 sm:w-8 sm:h-8"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+        <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+        <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+        <path d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+        <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+        <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+        <path d="M19.938 10.5a4 4 0 0 1 .585.396" />
+        <path d="M6 18a4 4 0 0 1-1.967-.516" />
+        <path d="M19.967 17.484A4 4 0 0 1 18 18" />
+      </svg>
+    ),
   },
 ];
 
@@ -98,10 +174,12 @@ export default function ProgramPrecision() {
                     : "text-[#009aff] group-hover:flex group-hover:items-center group-hover:rounded-l-lg group-hover:bg-[#009aff] group-hover:h-full group-hover:text-white"
                 }`}
               >
-                <svg
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                    activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
+                    activeTab === step.id
+                      ? "mx-3 sm:mx-5"
+                      : "ml-4 sm:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
                   }`}
                   viewBox="0 0 2048 2048"
                 >
@@ -109,7 +187,16 @@ export default function ProgramPrecision() {
                     fill="currentColor"
                     d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
                   />
-                </svg>
+                </svg> */}
+                <div
+                  className={`${
+                    activeTab === step.id
+                      ? "mx-3 sm:mx-5"
+                      : "ml-4 sm:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
+                  }`}
+                >
+                  {step.icon}
+                </div>
               </div>
               <p className="font-bold text-sm sm:text-base">{step.title}</p>
               {activeTab === step.id && (
@@ -150,7 +237,14 @@ export default function ProgramPrecision() {
           </div>
         </div>
 
-        <p className="text-white mt-5">Estas soluciones pueden ser tanto individuales como en programas diseñados estrategicamente para lograr sus metas. <a href="#" className="font-bold underline">Entra Aqui</a> para ver conocer más sobre nuestras estrategias</p>
+        <p className="text-white mt-5">
+          Estas soluciones pueden ser tanto individuales como en programas
+          diseñados estrategicamente para lograr sus metas.{" "}
+          <a href="/program" className="font-bold underline">
+            Entra aquí
+          </a>{" "}
+          para ver conocer más sobre nuestras estrategias
+        </p>
       </div>
       <div
         id="program"
@@ -189,7 +283,7 @@ export default function ProgramPrecision() {
                         : "text-[#009aff]"
                     }`}
                   >
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`w-6 h-6 sm:w-8 sm:h-8 ${
                         activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9"
@@ -200,7 +294,14 @@ export default function ProgramPrecision() {
                         fill="currentColor"
                         d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
                       />
-                    </svg>
+                    </svg> */}
+                    <div
+                      className={`${
+                        activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9"
+                      }`}
+                    >
+                      {step.icon}
+                    </div>
                   </div>
                   <p className="font-bold text-sm sm:text-base">{step.title}</p>
                   {/* Indicator for desktop */}
@@ -275,7 +376,14 @@ export default function ProgramPrecision() {
           </div>
         </div>
 
-        <p className="text-white mt-5">Estas soluciones pueden ser tanto individuales como en programas diseñados estrategicamente para lograr sus metas. <a href="#" className="font-bold underline">Entra Aqui</a> para ver conocer más sobre nuestras estrategias</p>
+        <p className="text-white mt-5">
+          Estas soluciones pueden ser tanto individuales como en programas
+          diseñados estrategicamente para lograr sus metas.{" "}
+          <a href="/program" className="font-bold underline">
+            Entra aquí
+          </a>{" "}
+          para ver conocer más sobre nuestras estrategias
+        </p>
       </div>
     </section>
   );

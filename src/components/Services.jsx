@@ -127,11 +127,16 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              fill="currentColor"
-              d="M9.75 4.5a.25.25 0 0 0-.25.25v4a.75.75 0 0 1-.75.75h-4a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h4a.75.75 0 0 1 .75.75v4c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-4a.75.75 0 0 1 .75-.75h4a.25.25 0 0 0 .25-.25v-4.5a.25.25 0 0 0-.25-.25h-4a.75.75 0 0 1-.75-.75v-4a.25.25 0 0 0-.25-.25zM8 4.75C8 3.784 8.784 3 9.75 3h4.5c.966 0 1.75.784 1.75 1.75V8h3.25c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 19.25 16H16v3.25A1.75 1.75 0 0 1 14.25 21h-4.5A1.75 1.75 0 0 1 8 19.25V16H4.75A1.75 1.75 0 0 1 3 14.25v-4.5C3 8.784 3.784 8 4.75 8H8z"
-            ></path>
+            <circle cx="12" cy="12" r="10" />
+            <path d="M17 12h.01" />
+            <path d="M12 12h.01" />
+            <path d="M7 12h.01" />
           </svg>
         ),
       },
@@ -144,11 +149,17 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              fill="currentColor"
-              d="M9.75 4.5a.25.25 0 0 0-.25.25v4a.75.75 0 0 1-.75.75h-4a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h4a.75.75 0 0 1 .75.75v4c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-4a.75.75 0 0 1 .75-.75h4a.25.25 0 0 0 .25-.25v-4.5a.25.25 0 0 0-.25-.25h-4a.75.75 0 0 1-.75-.75v-4a.25.25 0 0 0-.25-.25zM8 4.75C8 3.784 8.784 3 9.75 3h4.5c.966 0 1.75.784 1.75 1.75V8h3.25c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 19.25 16H16v3.25A1.75 1.75 0 0 1 14.25 21h-4.5A1.75 1.75 0 0 1 8 19.25V16H4.75A1.75 1.75 0 0 1 3 14.25v-4.5C3 8.784 3.784 8 4.75 8H8z"
-            ></path>
+            <path d="M7 21h10" />
+            <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
+            <path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1" />
+            <path d="m13 12 4-4" />
+            <path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2" />
           </svg>
         ),
       },
@@ -161,11 +172,16 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              fill="currentColor"
-              d="M9.75 4.5a.25.25 0 0 0-.25.25v4a.75.75 0 0 1-.75.75h-4a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h4a.75.75 0 0 1 .75.75v4c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-4a.75.75 0 0 1 .75-.75h4a.25.25 0 0 0 .25-.25v-4.5a.25.25 0 0 0-.25-.25h-4a.75.75 0 0 1-.75-.75v-4a.25.25 0 0 0-.25-.25zM8 4.75C8 3.784 8.784 3 9.75 3h4.5c.966 0 1.75.784 1.75 1.75V8h3.25c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 19.25 16H16v3.25A1.75 1.75 0 0 1 14.25 21h-4.5A1.75 1.75 0 0 1 8 19.25V16H4.75A1.75 1.75 0 0 1 3 14.25v-4.5C3 8.784 3.784 8 4.75 8H8z"
-            ></path>
+            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+            <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+            <path d="M16 17h4" />
+            <path d="M4 13h4" />
           </svg>
         ),
       },
@@ -180,11 +196,17 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              fill="currentColor"
-              d="M9.75 4.5a.25.25 0 0 0-.25.25v4a.75.75 0 0 1-.75.75h-4a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h4a.75.75 0 0 1 .75.75v4c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-4a.75.75 0 0 1 .75-.75h4a.25.25 0 0 0 .25-.25v-4.5a.25.25 0 0 0-.25-.25h-4a.75.75 0 0 1-.75-.75v-4a.25.25 0 0 0-.25-.25zM8 4.75C8 3.784 8.784 3 9.75 3h4.5c.966 0 1.75.784 1.75 1.75V8h3.25c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 19.25 16H16v3.25A1.75 1.75 0 0 1 14.25 21h-4.5A1.75 1.75 0 0 1 8 19.25V16H4.75A1.75 1.75 0 0 1 3 14.25v-4.5C3 8.784 3.784 8 4.75 8H8z"
-            ></path>
+            <path d="M11.246 16.657a1 1 0 0 0 1.508 0l3.57-4.101A2.75 2.75 0 1 0 12 9.168a2.75 2.75 0 1 0-4.324 3.388z" />
+            <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+            <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+            <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+            <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
           </svg>
         ),
       },
@@ -214,11 +236,16 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              fill="currentColor"
-              d="M9.75 4.5a.25.25 0 0 0-.25.25v4a.75.75 0 0 1-.75.75h-4a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h4a.75.75 0 0 1 .75.75v4c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-4a.75.75 0 0 1 .75-.75h4a.25.25 0 0 0 .25-.25v-4.5a.25.25 0 0 0-.25-.25h-4a.75.75 0 0 1-.75-.75v-4a.25.25 0 0 0-.25-.25zM8 4.75C8 3.784 8.784 3 9.75 3h4.5c.966 0 1.75.784 1.75 1.75V8h3.25c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 19.25 16H16v3.25A1.75 1.75 0 0 1 14.25 21h-4.5A1.75 1.75 0 0 1 8 19.25V16H4.75A1.75 1.75 0 0 1 3 14.25v-4.5C3 8.784 3.784 8 4.75 8H8z"
-            ></path>
+            <circle cx="18.5" cy="17.5" r="3.5" />
+            <circle cx="5.5" cy="17.5" r="3.5" />
+            <circle cx="15" cy="5" r="1" />
+            <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
           </svg>
         ),
       },
@@ -241,16 +268,58 @@ const Services = () => {
         {[
           {
             id: "especialidades",
-            text: "Especialidades medicas"
+            text: "Especialidades medicas",
+            icon: (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`w-6 h-6 sm:w-8 sm:h-8`}
+                viewBox="0 0 2048 2048"
+              >
+                <path
+                  fill="currentColor"
+                  d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
+                />
+              </svg>
+            ),
           },
           {
-            id: "servicios", 
-            text: "Servicios especializados"
+            id: "servicios",
+            text: "Servicios especializados",
+            icon: (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 sm:w-8 sm:h-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                <path d="M9 12h6" />
+                <path d="M12 9v6" />
+              </svg>
+            ),
           },
           {
             id: "bienestar",
-            text: "Bienestar y rendimiento"
-          }
+            text: "Bienestar y rendimiento",
+            icon: (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 sm:w-8 sm:h-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z" />
+              </svg>
+            ),
+          },
         ].map((button) => (
           <button
             key={button.id}
@@ -269,10 +338,21 @@ const Services = () => {
                   : "text-[#009aff] group-hover:flex group-hover:items-center group-hover:rounded-l-lg group-hover:bg-[#009aff] group-hover:h-full group-hover:text-white"
               }`}
             >
-              <svg
+              <div
+                className={`${
+                  activeTab === button.id
+                    ? "mx-3 sm:mx-5"
+                    : "ml-4 sm:ml-6 lg:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
+                }`}
+              >
+                {button.icon}
+              </div>
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                  activeTab === button.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-6 lg:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
+                  activeTab === button.id
+                    ? "mx-3 sm:mx-5"
+                    : "ml-4 sm:ml-6 lg:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
                 }`}
                 viewBox="0 0 2048 2048"
               >
@@ -280,7 +360,7 @@ const Services = () => {
                   fill="currentColor"
                   d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
                 />
-              </svg>
+              </svg> */}
             </div>
             <p className="text-left font-bold text-sm sm:text-base">
               {button.text}
@@ -300,32 +380,29 @@ const Services = () => {
             }}
             modules={[Navigation]}
             breakpoints={{
-                0: {
-                    slidesPerView: 1,
-                    slidesPerGroup: 1,
-                    spaceBetween: 10
-                },
-                768: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 10
-                },
-                1024: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 3,
-                    spaceBetween: 10
-                }
+              0: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 10,
+              },
             }}
-            
             className="h-full w-full"
           >
             {services[activeTab].map((item) => (
               <SwiperSlide key={item.title} className="h-[300px]">
                 <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-8 relative h-[300px]">
                   <div className="flex flex-col items-center">
-                    <div className="text-main/90">
-                      {item.icon}
-                    </div>
+                    <div className="text-main/90">{item.icon}</div>
                     <p className="text-lg text-main/90 font-medium pt-1 pb-3">
                       {item.title}
                     </p>
