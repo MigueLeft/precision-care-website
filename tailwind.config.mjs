@@ -6,7 +6,12 @@ export default {
 		extend: {
 			colors:{
 				'main': '#001d4a'
-			}
+			},
+			breakpoints: {
+				screens: {
+					'2md': '859px',
+				},
+			},
 		},
 	},
 	darkMode: "class",

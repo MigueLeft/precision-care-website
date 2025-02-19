@@ -1,65 +1,238 @@
-<section class="max-w-[700px] mx-auto pb-12 pt-[70px] md:pt-[100px] text-main/90">
-  <div class="text-4xl font-bold pt-12 pb-6">
-    Precision Care: atención de salud personalizada desde cualquier lugar
+<section
+  class="max-w-[700px] lg:max-w-[730px] mx-auto px-8 pb-12 pt-[70px] md:pt-[100px] text-main/90"
+>
+  <div
+    class="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-8 text-3xl font-bold pt-12 pb-6"
+  >
+    <img src="/img/ramfis_logo.png" alt="ramfis_logo" class="h-[60px]" />
+    <p>Comprometido con tu bienestar:</p>
   </div>
-  <!-- <div class="flex items-center gap-4">
-    <img
-      src="https://thumbs.dreamstime.com/b/avatar-perfil-de-médico-masculino-icono-doctor-imagen-vector-179499461.jpg"
-      alt="Dr Ramfis Nieto"
-      class="w-11 h-11 rounded-full"
-    />
-    <div class="flex flex-col">
-      <div class="flex gap-2 items-center text-base">
-        <span>Dr Ramfis Nieto</span>
-        <span class="inline-block align-middle">.</span>
+  <div class="flex flex-col mt-6 gap-8">
+    <div class="text-justify">
+      <h2 class="text-xl font-semibold mb-4">MI TRAYECTORIA</h2>
+      <p class="text-xl">
+        Soy <strong>Ramfis Nieto</strong>, médico <strong
+          >especialista enfocado en medicina cardiometabólica, nutrición, y
+          estilo de vida.</strong
+        > Con más de 34 años de experiencia en medicina, he desarrollado e implementado
+        más de <strong
+          >100 programas de atención multidisciplinarios online</strong
+        >, facilitando el acceso a la salud sin importar la ubicación.
+      </p>
+      <p class="text-xl mt-4">
+        he compartido conocimientos en más de <strong>350 conferencias</strong> en
+        congresos internacionales y contribuido al avance científico con más de <strong
+          >180 publicaciones</strong
+        > en revistas especializadas, incluyendo 10 capítulos de libros, con un impacto
+        reflejado en más de <strong>29.000 citas por otros autores.</strong>
+      </p>
+      <p class="text-xl mt-4">
+        Mi compromiso con los pacientes ha llevado a atender a más de <strong
+          >15.000 personas en distintos países</strong
+        >, incluyendo más de <strong>400 a través de telemedicina</strong>,
+        promoviendo un enfoque accesible y de calidad en la atención médica.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-semibold mb-4">PREMIOS Y RECONOCIMIENTOS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-8 mt-6">
+        {
+          [
+            {
+              year: 1990,
+              title: "MENCION “CUM LAUDE” EN MEDICINA",
+              color: "#086367",
+            },
+            {
+              year: 1997,
+              title: "GRADUADO CON HONORES EN NUTRICION",
+              color: "#027f83",
+            },
+            {
+              year: 2014,
+              title: "PROFESOR TITULAR DE FISIOLOGIA UCLA",
+              color: "#00a0a4",
+            },
+            {
+              year: 2015,
+              title: "PREMIO A LA EXCELENCIA MÉDICA VENEZOLANA",
+              color: "#00c6c6",
+            },
+            { year: 2017, title: "LOWN SCHOLAR HARVARD", color: "#19e8e5" },
+            { year: 2019, title: "JOHN J. BOGLE AWARD", color: "#4dfbf3" },
+            {
+              year: 2021,
+              title: "EB-1 PERSON OF EXTRAORDINARY ABILITY IN THE SCIENCES",
+              color: "#7edff5",
+            },
+            {
+              year: 2021,
+              title:
+                "HOMENAJE AL DR. BERNARD LOWN (PREMIO NOBEL DE LA PAZ 1985)",
+              color: "#a3e9e5",
+            },
+          ].map((item, index) => (
+            <div class={`flex flex-col items-center lg:col-span-2 ${index === 6 && "lg:col-start-2 lg:col-end-4"} ${index === 7 && "lg:col-start-4 lg:col-end-6"}`}>
+              <div class={`flex flex-col items-center justify-center w-full text-center`}>
+                <div
+                  class={`w-5 h-5 rounded-full `}
+                  style={{ backgroundColor: item.color }}
+                />
+                <span
+                  class="text-lg font-semibold"
+                  style={{ color: "#086367" }}
+                >
+                  {item.year}
+                </span>
+                <p class="font-medium max-w-[315px]">{item.title}</p>
+              </div>
+              {index !== 7 && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class={`lucide lucide-arrow-down md:hidden mt-4`}
+                >
+                  <>
+                    <path d="M12 5v14" />
+                    <path d="m19 12-7 7-7-7" />
+                  </>
+                </svg>
+              )}
+            </div>
+          ))
+        }
       </div>
     </div>
-  </div> -->
-
+  </div>
+  <div
+    class="flex md:hidden flex-col md:flex-row items-start md:items-center justify-center gap-4 text-2xl font-bold pt-12 pb-6"
+  >
+    <img src="/img/logo.png" alt="precision_logo" class="h-[60px]" />
+    <p>Atención de salud personalizada desde cualquier lugar</p>
+  </div>
+  <div class="hidden md:flex items-center gap-6 mt-12">
+    <svg
+      class="h-[100px] w-auto"
+      viewBox="0 0 229 261"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M157.35 98.2C187.77 74.9 231.9 99.06 227.78 137.15C227.72 137.67 227.66 138.18 227.59 138.7C227.53 139.15 227.46 139.6 227.39 140.05C221.2 177.94 172.22 189.58 149.02 158.99L130.7 134.83C126.4 129.16 127.49 121.08 133.14 116.75L157.35 98.2Z"
+        fill="#001D4A"
+        class="iso"></path>
+      <path
+        d="M224.72 220.95C200.93 241.02 169.94 260.65 132.96 260.33C80.65 259.89 38.2 235.38 15.35 192.14L15.09 191.31C14.38 189.38 15.15 186.21 17.38 184.62L68.57 151.27C73.12 148.25 75.94 146.48 81.02 146.89C89.39 147.56 92.9 152.56 96.01 160.37C99.97 170.32 111.65 196.82 140.77 210.97C145.83 213.43 152.64 216.54 158.18 217.52C170.26 219.67 185 222.17 218.84 210.53C218.98 210.48 219.13 210.43 219.28 210.39L219.45 210.34C221.96 209.66 224.73 210.49 226.23 212.62C226.34 212.77 226.43 212.92 226.53 213.08C226.69 213.36 226.8 213.67 226.86 213.98C227.13 215.27 227.48 218.62 224.72 220.95Z"
+        fill="#00CCCC"></path>
+      <path
+        d="M225.04 40.6C228.35 44 229.2 49.12 225.09 51.5C223.89 52.19 222.46 52.51 220.9 52.26C220.33 52.17 219.77 52.01 219.24 51.77C188.46 37.62 151.68 38.69 122.21 59.88L7.60997 142.39C4.73997 144.46 0.529969 142.74 0.219969 139.21C0.209969 139.05 0.199969 138.89 0.199969 138.73C0.209969 138.87 0.199969 138.59 0.199969 138.73C-2.88003 63.52 56.89 0.169986 132.15 0.169986C132.15 0.169986 183.94 -1.56002 225.04 40.6Z"
+        fill="#00CCCC"></path>
+    </svg>
+    <p class="text-2xl font-bold">
+      Precision Care:<span class="block"
+        >Atención de salud personalizada desde cualquier lugar</span
+      >
+    </p>
+  </div>
   <div class="flex flex-col mt-6 gap-8">
     <div>
       <h2 class="text-xl font-semibold mb-4">NUESTRA HISTORIA</h2>
       <p class="text-xl">
-        En 2014, mi familia y yo emigramos de Venezuela, una experiencia que transformó mi forma de ejercer la medicina. La migración me llevó a explorar la telemedicina como una herramienta innovadora para atender a pacientes, especialmente a migrantes con acceso limitado a la salud. En 2017, tuve el privilegio de convertirme en Lown Scholar de la Escuela de Salud Pública de la Universidad de Harvard, donde compartí con el científico Jaime Miranda la idea de mejorar la atención médica para los migrantes venezolanos, lo que marcó el inicio de un camino para diseñar soluciones efectivas.
+        En 2014, mi familia y yo emigramos de Venezuela, una experiencia que
+        transformó mi forma de ejercer la medicina. La migración me llevó a
+        explorar la telemedicina como una herramienta innovadora para atender a
+        pacientes, especialmente a migrantes con acceso limitado a la salud. En
+        2017, tuve el privilegio de convertirme en Lown Scholar de la Escuela de
+        Salud Pública de la Universidad de Harvard, donde compartí con el
+        científico Jaime Miranda la idea de mejorar la atención médica para los
+        migrantes venezolanos, lo que marcó el inicio de un camino para diseñar
+        soluciones efectivas.
       </p>
       <p class="text-xl mt-4">
-        En 2019, recibí el premio John C. Bogle por mi propuesta de conectar a migrantes con proveedores de salud mediante telemedicina, lo cual fue el primer paso para recibir respaldo institucional en este proyecto. Desde 2020, desarrollé un modelo integral que combina atención médica y estrategias de estilo de vida, dando origen a <strong>Precision Care</strong>, una empresa que une tecnología avanzada con un enfoque humano.
+        En 2019, recibí el premio John C. Bogle por mi propuesta de conectar a
+        migrantes con proveedores de salud mediante telemedicina, lo cual fue el
+        primer paso para recibir respaldo institucional en este proyecto. Desde
+        2020, desarrollé un modelo integral que combina atención médica y
+        estrategias de estilo de vida, dando origen a <strong
+          >Precision Care</strong
+        >, una empresa que une tecnología avanzada con un enfoque humano.
       </p>
     </div>
 
     <div>
       <h2 class="text-xl font-semibold mb-4">¿QUIÉNES SOMOS?</h2>
       <p class="text-xl">
-        Precision Care Corp (PCC) es una empresa de telemedicina registrada en Estados Unidos (St. Cloud, Florida) que inició operaciones en mayo de 2023 y ofrece un programa integral de atención médica diseñado para la prevención y tratamiento de enfermedades crónicas. Nos enfocamos en la enfermedad crónica por adiposidad (obesidad) y las condiciones cardiometabólicas asociadas, como resistencia a la insulina, prediabetes, diabetes tipo 2, hipertensión arterial y dislipidemias.
+        Precision Care Corp (PCC) es una empresa de telemedicina registrada en
+        Estados Unidos (St. Cloud, Florida) que inició operaciones en mayo de
+        2023 y ofrece un programa integral de atención médica diseñado para la
+        prevención y tratamiento de enfermedades crónicas. Nos enfocamos en la
+        enfermedad crónica por adiposidad (obesidad) y las condiciones
+        cardiometabólicas asociadas, como resistencia a la insulina,
+        prediabetes, diabetes tipo 2, hipertensión arterial y dislipidemias.
       </p>
       <p class="text-xl mt-4">
-        Contamos con más de 20 años de experiencia clínica, respaldados por un equipo multidisciplinario altamente capacitado. Nuestro objetivo es empoderar al paciente con conocimientos de su salud y estilo de vida que permitan lograr sus metas, mejores resultados y que las visitas médicas sean cada vez menos necesarias.
+        Contamos con más de 20 años de experiencia clínica, respaldados por un
+        equipo multidisciplinario altamente capacitado. Nuestro objetivo es
+        empoderar al paciente con conocimientos de su salud y estilo de vida que
+        permitan lograr sus metas, mejores resultados y que las visitas médicas
+        sean cada vez menos necesarias.
       </p>
     </div>
 
     <div>
       <h2 class="text-xl font-semibold mb-4">NUESTRO IMPACTO</h2>
       <ul class="list-disc pl-5 text-xl space-y-2">
-        <li>+14,000 pacientes atendidos presencialmente en Venezuela (2004 - actualidad).</li>
-        <li>+1,500 pacientes atendidos presencialmente en Estados Unidos (2020-2022).</li>
-        <li>+380 pacientes atendidos en diversos países a través de telemedicina desde 2022.</li>
+        <li>
+          +14,000 pacientes atendidos presencialmente en Venezuela (2004 -
+          actualidad).
+        </li>
+        <li>
+          +1,500 pacientes atendidos presencialmente en Estados Unidos
+          (2020-2022).
+        </li>
+        <li>
+          +380 pacientes atendidos en diversos países a través de telemedicina
+          desde 2022.
+        </li>
       </ul>
       <p class="text-xl mt-4">
-        En Precision Care, combinamos tecnología de última generación con un trato cercano y personalizado para garantizar una atención médica de alta calidad, accesible desde cualquier lugar. Estamos aquí para acompañarte en tu camino hacia una mejor salud.
+        En Precision Care, combinamos tecnología de última generación con un
+        trato cercano y personalizado para garantizar una atención médica de
+        alta calidad, accesible desde cualquier lugar. Estamos aquí para
+        acompañarte en tu camino hacia una mejor salud.
       </p>
     </div>
 
     <div>
       <h2 class="text-xl font-semibold mb-4">NUESTRA MISIÓN</h2>
       <p class="text-xl">
-        Establecer un programa provisto vía telemedicina por diversos especialistas incluyendo médicos, psicólogos, nutricionistas, y fisiólogos del ejercicio para proporcionar estrategias y tácticas para la prevención y tratamiento de enfermedades crónicas como la obesidad y condiciones asociadas. Este programa se adapta a cada cultura, etnia y considera los determinantes sociales de salud de cada paciente; así como, el ambiente, normativas, y los requerimientos de los sistemas de salud de cada país.
+        Establecer un programa provisto vía telemedicina por diversos
+        especialistas incluyendo médicos, psicólogos, nutricionistas, y
+        fisiólogos del ejercicio para proporcionar estrategias y tácticas para
+        la prevención y tratamiento de enfermedades crónicas como la obesidad y
+        condiciones asociadas. Este programa se adapta a cada cultura, etnia y
+        considera los determinantes sociales de salud de cada paciente; así
+        como, el ambiente, normativas, y los requerimientos de los sistemas de
+        salud de cada país.
       </p>
     </div>
 
     <div>
       <h2 class="text-xl font-semibold mb-4">NUESTRA VISIÓN</h2>
       <p class="text-xl">
-        Establecer a Precision Care como un modelo internacional y transcultural de atención vía telemedicina que provea soluciones efectivas y aumente el acceso a la salud a diversas poblaciones, especialmente migrantes, para reducir el impacto de las condiciones crónicas principalmente cardiometabólicas.
+        Establecer a Precision Care como un modelo internacional y transcultural
+        de atención vía telemedicina que provea soluciones efectivas y aumente
+        el acceso a la salud a diversas poblaciones, especialmente migrantes,
+        para reducir el impacto de las condiciones crónicas principalmente
+        cardiometabólicas.
       </p>
     </div>
 
@@ -67,12 +240,21 @@
       <h2 class="text-xl font-semibold mb-4">NUESTROS PRINCIPIOS</h2>
       <ul class="list-disc pl-5 text-xl space-y-2">
         <li>Ayudar al paciente a alcanzar sus metas.</li>
-        <li>Medicina centrada en el paciente, con recomendaciones personalizadas y adaptadas a su cultura y entorno.</li>
+        <li>
+          Medicina centrada en el paciente, con recomendaciones personalizadas y
+          adaptadas a su cultura y entorno.
+        </li>
         <li>Disponibilidad para nuestros pacientes.</li>
         <li>Basarnos en evidencia científica y guías clínicas actualizadas.</li>
-        <li>Fomentar comunidad y aceptación entre quienes comparten intereses comunes.</li>
+        <li>
+          Fomentar comunidad y aceptación entre quienes comparten intereses
+          comunes.
+        </li>
         <li>Innovación tecnológica continua.</li>
-        <li>Ofrecer siempre alta calidad de servicio, independientemente del reembolso.</li>
+        <li>
+          Ofrecer siempre alta calidad de servicio, independientemente del
+          reembolso.
+        </li>
         <li>Actuar con honestidad para generar confianza.</li>
         <li>Promover la inclusión y atender a poblaciones vulnerables.</li>
       </ul>
@@ -81,15 +263,25 @@
     <div>
       <h2 class="text-xl font-semibold mb-4">NUESTROS VALORES</h2>
       <ul class="list-disc pl-5 text-xl space-y-2">
-        <li>Compasión: Nos centramos en el paciente, compartiendo decisiones.</li>
+        <li>
+          Compasión: Nos centramos en el paciente, compartiendo decisiones.
+        </li>
         <li>Precisión: Promovemos la medicina personalizada o de precisión.</li>
         <li>Accesibilidad: Equipo de salud de fácil acceso.</li>
         <li>Ciencia: Basados en evidencia científica.</li>
         <li>Compromiso: Construir una comunidad cercana y solidaria.</li>
-        <li>Innovación: Incorporar herramientas para facilitar la adherencia a una vida saludable.</li>
+        <li>
+          Innovación: Incorporar herramientas para facilitar la adherencia a una
+          vida saludable.
+        </li>
         <li>Equidad: Servicios justos e inclusivos.</li>
-        <li>Confianza: Ganar la confianza de pacientes, comunidades y sistemas de salud.</li>
-        <li>Universalidad: Promover estrategias que aumenten el acceso a la salud.</li>
+        <li>
+          Confianza: Ganar la confianza de pacientes, comunidades y sistemas de
+          salud.
+        </li>
+        <li>
+          Universalidad: Promover estrategias que aumenten el acceso a la salud.
+        </li>
       </ul>
     </div>
   </div>

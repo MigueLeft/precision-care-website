@@ -1,17 +1,4 @@
 import React, { useState } from "react";
-export const services = [
-  "Obesidad",
-  "Prediabetes y Diabetes",
-  "Cardiometabólico",
-  "Enfermedades Crónicas",
-  "Cuidados Pre y Postoperatorios",
-  "Segunda Opinión",
-  "Soporte Nutricional",
-  "Salud de Migrantes",
-  "Personas Sanas",
-  "Nutrición Personalizada",
-  "Deportistas y Atletas"
-]
 export const ServicesAccordion = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -20,6 +7,20 @@ export const ServicesAccordion = () => {
   //   id: `item-${index + 1}`,
   //   title: `Services Details ${index + 1}`,
   // }));
+
+  const services = [
+    "Obesidad",
+    "Prediabetes y Diabetes",
+    "Cardiometabólico",
+    "Enfermedades Crónicas",
+    "Cuidados Pre y Postoperatorios",
+    "Segunda Opinión",
+    "Soporte Nutricional",
+    "Salud de Migrantes",
+    "Personas Sanas",
+    "Nutrición Personalizada",
+    "Deportistas y Atletas"
+  ]
 
   const items = services.map(service => ({
     id: service,

@@ -9,7 +9,7 @@ import Achievement from "../components/Achievement.astro";
 import Certifications from "../components/Certifications.astro";
 import SuccessStories from "../components/SuccessStories.astro";
 import FAQ from "../components/FAQ.astro";
-import ContactForm from "../components/ContactForm.astro";
+import ContactForm from "../components/ContactForm";
 import Solutions from "../components/Solutions";
 import ServiceLines from "../components/ServiceLines";
 import MigrantsProgram from "../components/MigrantsProgram.astro";
@@ -28,6 +28,6 @@ import MigrantsProgram from "../components/MigrantsProgram.astro";
   <Team />
   <MigrantsProgram />
   <!-- <SuccessStories /> -->
-  <ContactForm />
+  <ContactForm client:load/>
   <FAQ />
 </Layout>
