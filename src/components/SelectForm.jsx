@@ -48,7 +48,7 @@ export const solutions = [
   { key: "nutricion", label: "Nutrición" },
   { key: "ejercicio", label: "Ejercicio" },
   { key: "psicologia", label: "Psicología" },
-  { key: "programa", label: "Programas Precision" },
+  // { key: "programa", label: "Programas Precision" },
 ];
 
 export function SelectForm({ values, setValues, handleSelect }) {

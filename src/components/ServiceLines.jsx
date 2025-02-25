@@ -12,6 +12,7 @@ const ServiceLines = () => {
     especialidades: [
       {
         title: "Obesidad",
+        id: "obesity",
         content:
           "Manejo y reducción del peso, abordando las causas fundamentales y diseñando estrategias personalizadas.",
         icon: (
@@ -49,6 +50,7 @@ const ServiceLines = () => {
       },
       {
         title: "Prediabetes y Diabetes",
+        id: "diabetes",
         content:
           "Prevención, control y tratamiento especializado para optimizar tu calidad de vida y prevenir complicaciones.",
         icon: (
@@ -66,6 +68,7 @@ const ServiceLines = () => {
       },
       {
         title: "Cardiometabólico",
+        id: "cardiometabolic",
         content:
           "Atención integral para padecimientos relacionados con el metabolismo cardiovascular y sus riesgos asociados.",
         icon: (
@@ -83,6 +86,7 @@ const ServiceLines = () => {
       },
       {
         title: "Enfermedades Crónicas",
+        id: "chronic",
         content:
           "Manejo comprehensivo y personalizado para mejorar tu bienestar y controlar padecimientos a largo plazo.",
         icon: (
@@ -100,6 +104,7 @@ const ServiceLines = () => {
       },
       {
         title: "Cuidados Pre y Postoperatorios",
+        id: "care",
         content:
           "Evaluación, acompañamiento y seguimiento especializado para procedimientos quirúrgicos de pérdida de peso.",
         icon: (
@@ -120,6 +125,7 @@ const ServiceLines = () => {
     servicios: [
       {
         title: "Segunda Opinión",
+        id: "second",
         content:
           "Análisis detallado y objetivo de tu diagnóstico actual, ofreciendo claridad y alternativas de tratamiento.",
         icon: (
@@ -142,6 +148,7 @@ const ServiceLines = () => {
       },
       {
         title: "Soporte Nutricional",
+        id: "support",
         content:
           "Atención y seguimiento para personas con enfermedades crónicas y necesidades específicas.",
         icon: (
@@ -165,6 +172,7 @@ const ServiceLines = () => {
       },
       {
         title: "Salud de Migrantes",
+        id: "migrants",
         content:
           "Atención médica integral considerando las necesidades específicas de poblaciones en movimiento.",
         icon: (
@@ -189,6 +197,7 @@ const ServiceLines = () => {
     bienestar: [
       {
         title: "Personas Sanas",
+        id: "healthy",
         content:
           "Programas de prevención y mantenimiento de la salud para optimizar tu bienestar general.",
         icon: (
@@ -212,6 +221,7 @@ const ServiceLines = () => {
       },
       {
         title: "Nutrición Personalizada",
+        id: "nutrition",
         content:
           "Planes alimenticios personalizados que impulsan tu salud y rendimiento.",
         icon: (
@@ -229,6 +239,7 @@ const ServiceLines = () => {
       },
       {
         title: "Deportistas y Atletas",
+        id: "athletes",
         content:
           "Estrategias médicas especializadas para maximizar tu potencial físico y prevenir lesiones.",
         icon: (
@@ -408,9 +419,12 @@ const ServiceLines = () => {
                     </p>
                     <p className="text-justify">{item.content}</p>
                   </div>
-                  <button className="bg-main -bottom-5 text-white w-2/5 py-2 rounded-lg drop-shadow-lg">
-                    Ver más
-                  </button>
+                  <a
+                    href={`/services#${item.id}`}
+                    className="text-center bg-main -bottom-5 text-white w-2/5 py-2 rounded-lg drop-shadow-lg"
+                  >
+                    <button>Ver más</button>
+                  </a>
                 </div>
               </SwiperSlide>
             ))}
