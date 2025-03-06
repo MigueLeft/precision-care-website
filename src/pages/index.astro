@@ -13,6 +13,8 @@ import ContactForm from "../components/ContactForm";
 import Solutions from "../components/Solutions";
 import ServiceLines from "../components/ServiceLines";
 import MigrantsProgram from "../components/MigrantsProgram.astro";
+import PricingSection from "../components/PricingSection.astro";
+import TeamMembers from "../components/TeamMembers.astro";
 ---
 
 <Layout title="Precision Care">
@@ -25,7 +27,10 @@ import MigrantsProgram from "../components/MigrantsProgram.astro";
   <!-- <WhyChoose2 /> -->
   <ServiceLines client:load/>
   <Solutions client:load />
-  <Team />
+  <PricingSection/>
+  <div class="mx-auto border-b-2 border-main/70 w-1/2"></div>
+  <!-- <Team /> -->
+  <TeamMembers/>
   <MigrantsProgram />
   <!-- <SuccessStories /> -->
   <ContactForm client:load/>
