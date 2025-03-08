@@ -13,6 +13,8 @@ import ContactForm from "../components/ContactForm";
 import Solutions from "../components/Solutions";
 import ServiceLines from "../components/ServiceLines";
 import MigrantsProgram from "../components/MigrantsProgram.astro";
+import PricingSection from "../components/PricingSection.astro";
+import TeamMembers from "../components/TeamMembers.astro";
 ---
 
 <Layout title="Precision Care">
@@ -23,11 +25,13 @@ import MigrantsProgram from "../components/MigrantsProgram.astro";
   <AboutPrecision />
   <Achievement />
   <!-- <WhyChoose2 /> -->
-  <ServiceLines client:load/>
+  <ServiceLines client:load />
   <Solutions client:load />
-  <Team />
+  <PricingSection />
+  <!-- <Team /> -->
+  <TeamMembers />
   <MigrantsProgram />
   <!-- <SuccessStories /> -->
-  <ContactForm client:load/>
+  <ContactForm client:load />
   <FAQ />
 </Layout>

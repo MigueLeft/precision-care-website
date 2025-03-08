@@ -1,0 +1,154 @@
+<div class="bg-[#e8f9ff] py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-2xl font-bold text-[#0099ff]">Nuestros Programas</h2>
+        <p class="font-bold text-2xl md:text-3xl lg:text-4xl text-center text-main/90">
+          Soluciones para mejorar tu bienestar físico y mental
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+            {
+              id: 1,
+              title: "PROGRAMA 1",
+              sesiones: 12,
+              promedioPorHora: 48,
+              consultas: [
+                { tipo: "Consultas médicas (M)", cantidad: 3 },
+                { tipo: "Consultas de nutrición (N)", cantidad: 2 },
+                { tipo: "Consultas de ejercicio (E)", cantidad: 3 },
+                { tipo: "Consultas psicológicas (P)", cantidad: 4 },
+              ],
+              precioTotal: 600,
+              precioPorSeparado: 705,
+              precioUnaCuota: 580,
+              ahorro: 125,
+              descuento: 18,
+              nota: "",
+            },
+            {
+              id: 2,
+              title: "PROGRAMA 2",
+              sesiones: 10,
+              promedioPorHora: 50,
+              consultas: [
+                { tipo: "Consultas médicas (M)", cantidad: 2 },
+                { tipo: "Consultas híbridas médico-nutrición (N)", cantidad: 1 },
+                { tipo: "Consultas de ejercicio (E)", cantidad: 3 },
+                { tipo: "Consultas psicológicas (P)", cantidad: 4 },
+              ],
+              precioTotal: 520,
+              precioPorSeparado: 635,
+              precioUnaCuota: 500,
+              ahorro: 135,
+              descuento: 21,
+              nota: "ADQUIRIDO ANTES DE LA PRIMERA CONSULTA",
+            },
+            {
+              id: 3,
+              title: "PROGRAMA 3",
+              sesiones: 9,
+              promedioPorHora: 48,
+              consultas: [
+                { tipo: "Consultas médicas (M)", cantidad: 1 },
+                { tipo: "Consultas híbridas médico-nutrición (N)", cantidad: 1 },
+                { tipo: "Consultas de ejercicio (E)", cantidad: 3 },
+                { tipo: "Consultas psicológicas (P)", cantidad: 4 },
+              ],
+              precioTotal: 440,
+              precioPorSeparado: 535,
+              precioUnaCuota: 420,
+              ahorro: 115,
+              descuento: 22,
+              nota: "ADQUIRIDO DESPUÉS DE LA PRIMERA CONSULTA",
+            }
+          ].map((programa) => (
+          <div 
+            class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+          >
+            {/* Cabecera con altura fija para simetría */}
+            <div class="min-h-[168px] p-6 bg-gradient-to-r from-main to-blue-900 text-white">
+              <div class="flex justify-between items-start">
+                <h3 class="text-2xl font-bold">{programa.title}</h3>
+                {programa.descuento >= 18 && (
+                  <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {programa.descuento}% OFF
+                  </span>
+                )}
+              </div>
+              <div>
+                <div class="mt-4">
+                  <span class="text-4xl font-bold">
+                    ${programa.precioUnaCuota}
+                  </span>
+                  <span class="text-sm opacity-80 ml-2 line-through">
+                    ${programa.precioPorSeparado}
+                  </span>
+                </div>
+                {programa.nota && (
+                  <div class="mt-2 text-xs bg-white bg-opacity-20 rounded-md px-2 py-1 inline-block">
+                    {programa.nota}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Contenido con flex-grow para que ocupe el espacio necesario */}
+            <div class="flex flex-col p-6 flex-grow">
+              <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">
+                    Total de sesiones:
+                  </span>
+                  <span class="text-gray-900 font-bold">
+                    {programa.sesiones}
+                  </span>
+                </div>
+                <div class="h-1 w-full bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    class="bg-[#0099ff] h-full rounded-full"
+                    style={{ width: `${(programa.sesiones / 12) * 100}%` }}
+                  />
+                </div>
+              </div>
+
+              {/* Lista con altura mínima fija para mantener simetría */}
+              <div class="flex-grow">
+                <ul class="space-y-3 mb-8">
+                  {programa.consultas.map((consulta) => (
+                    <li class="flex items-center">
+                      <div class="mr-3 text-green-500">✓</div>
+                      <span class="text-gray-700">
+                        {consulta.cantidad} {consulta.tipo}
+                      </span>
+                    </li>
+                  ))}
+                  <li class="flex items-center">
+                    <div class="mr-3 text-green-500">✓</div>
+                    <span class="text-gray-700">
+                      Promedio por hora: ${programa.promedioPorHora}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Sección inferior que siempre queda al final */}
+              <div class="mt-auto">
+                <div class="mb-6 bg-blue-50 rounded-lg p-4 text-center">
+                  <p class="text-[#0099ff] font-semibold">
+                    Ahorras ${programa.ahorro} ({programa.descuento}% de
+                    descuento)
+                  </p>
+                </div>
+
+                <a href="#contact" class="text-center block w-full py-3 px-4 bg-main hover:bg-main/70 text-white font-medium rounded-lg transition-colors duration-200">
+                  Seleccionar Plan
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
