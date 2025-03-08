@@ -13,7 +13,7 @@ const programSteps = [
       "Optimización de la salud",
     ],
     image:
-      "https://www.simbiotia.com/wp-content/uploads/relación-médico-paciente.png",
+      "/img/medicina.png",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ const programSteps = [
       "Disponibilidad de atención 16 horas al día, 7 días a la semana",
       "Consultas individuales de una hora para atención detallada y personalizada",
     ],
-    image: "https://cardiavant.com/wp-content/uploads/nutricionista.jpg",
+    image: "/img/nutricion.jpg",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ const programSteps = [
       "Ofrecemos consultas individuales de una hora, asegurando atención detallada y personalizada",
     ],
     image:
-      "https://colombia-blog.bodytech.co/uploads/post/060031581b4044808e8720ad6e8593df/MEDICO-DEL-DEPORTE-VALORACION_1920x854.jpg",
+      "/img/ejercicio.jpg",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ const programSteps = [
       "Terapia cognitivo-conductual",
     ],
     image:
-      "https://cdn0.psicologia-online.com/es/posts/0/5/8/por_que_siento_que_no_avanzo_en_terapia_y_que_hacer_6850_600.webp",
+      "/img/psicologo.webp",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +227,7 @@ export default function Solutions() {
             </div>
 
             {/* Image */}
-            <div className="w-full lg:w-1/2 h-[200px] sm:h-[300px] lg:h-auto order-1 lg:order-2">
+            <div className="w-full lg:w-1/2 h-[200px] sm:h-[300px] lg:h-auto order-1 lg:order-2 lg:justify-items-end">
               <img
                 src={programSteps[activeTab - 1].image}
                 alt={`Imagen ${programSteps[activeTab - 1].title}`}

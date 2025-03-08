@@ -3,7 +3,6 @@ import { SelectForm } from "./SelectForm";
 
 export default function ContactForm() {
   const [values, setValues] = useState(new Set());
-
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -14,6 +13,7 @@ export default function ContactForm() {
     migrante: false,
     soluciones: [],
   });
+  const [formSubmitted, setFormSubmitted] = useState(false); // Estado para indicar si el formulario ha sido enviado
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -25,15 +25,15 @@ export default function ContactForm() {
 
   const handleSelect = (selectedKeys) => {
     const selectedKeysArray = Array.from(selectedKeys);
-    let filteredKeys;
-    if (!selectedKeysArray.includes('medicina') || !selectedKeysArray.includes('nutricion') || !selectedKeysArray.includes('ejercicio') || !selectedKeysArray.includes('psicologia') || !selectedKeysArray.includes('programa')) {
-      filteredKeys = selectedKeysArray.slice(1);
-    } else {
-      filteredKeys = selectedKeysArray;
-    }
+    // let filteredKeys;
+    // if (!selectedKeysArray.includes('medicina') || !selectedKeysArray.includes('nutricion') || !selectedKeysArray.includes('ejercicio') || !selectedKeysArray.includes('psicologia') || !selectedKeysArray.includes('programa')) {
+    //   filteredKeys = selectedKeysArray.slice(1);
+    // } else {
+    //   filteredKeys = selectedKeysArray;
+    // }
     setFormData({
       ...formData,
-      soluciones: filteredKeys,
+      soluciones: selectedKeysArray,
     });
   };
 
@@ -61,6 +61,8 @@ export default function ContactForm() {
         soluciones: [],
       });
       setValues(new Set());
+      setFormSubmitted(true);
+      setTimeout(() => setFormSubmitted(false), 3000);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -75,6 +77,11 @@ export default function ContactForm() {
           Estamos listos para acompañarte. Agenda tu consulta y comienza la
           transformación hacia una vida más saludable.
         </p>
+        {formSubmitted && (
+          <div className="w-1/2 rounded bg-green-500 opacity-25 text-center text-green-700 mt-4">
+            <p>Formulario enviado con éxito!</p>
+          </div>
+        )}
         <form
           id="contact-form"
           className="grid grid-cols-2 gap-3 w-full mt-4 max-w-3xl text-black"
