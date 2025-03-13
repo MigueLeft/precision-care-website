@@ -40,23 +40,31 @@
 //   );
 // }
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Select, SelectItem } from "@heroui/select";
+import useFormStore from "../store/useFormStore";
 
 export const solutions = [
   { key: "medicina", label: "Medicina" },
   { key: "nutricion", label: "Nutrición" },
   { key: "ejercicio", label: "Ejercicio" },
   { key: "psicologia", label: "Psicología" },
-  // { key: "programa", label: "Programas Precision" },
+  { key: "programa1", label: "Programa 1" },
+  { key: "programa2", label: "Programa 2" },
+  { key: "programa3", label: "Programa 3" },
 ];
 
-export function SelectForm({ values, setValues, handleSelect }) {
-  // const [values, setValues] = React.useState(new Set([]));
+export function SelectForm() {
+  const {
+    values,
+    setValues,
+    handleSelect,
+  } = useFormStore();
 
   const handleSelectionChange = (e) => {
+    console.log(e.target.value)
     setValues(new Set(e.target.value.split(",")));
-    handleSelect(new Set(e.target.value.split(",")))
+    handleSelect(new Set(e.target.value.split(",")));
   };
 
   return (

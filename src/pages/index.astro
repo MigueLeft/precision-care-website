@@ -13,7 +13,7 @@ import ContactForm from "../components/ContactForm";
 import Solutions from "../components/Solutions";
 import ServiceLines from "../components/ServiceLines";
 import MigrantsProgram from "../components/MigrantsProgram.astro";
-import PricingSection from "../components/PricingSection.astro";
+import PricingSection from "../components/PricingSection";
 import TeamMembers from "../components/TeamMembers.astro";
 ---
 
@@ -27,11 +27,11 @@ import TeamMembers from "../components/TeamMembers.astro";
   <!-- <WhyChoose2 /> -->
   <ServiceLines client:load />
   <Solutions client:load />
-  <PricingSection />
+  <PricingSection client:load/>
   <!-- <Team /> -->
   <TeamMembers />
   <MigrantsProgram />
   <!-- <SuccessStories /> -->
-  <ContactForm client:load />
+  <ContactForm client:only />
   <FAQ />
 </Layout>

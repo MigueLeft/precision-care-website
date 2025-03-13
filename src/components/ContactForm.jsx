@@ -1,73 +1,17 @@
 import React, { useState } from "react";
 import { SelectForm } from "./SelectForm";
+import useFormStore from "../store/useFormStore";
 
 export default function ContactForm() {
-  const [values, setValues] = useState(new Set());
-  const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
-    email: "",
-    telefono: "",
-    fecha: "",
-    mensaje: "",
-    migrante: false,
-    soluciones: [],
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false); // Estado para indicar si el formulario ha sido enviado
-
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const handleSelect = (selectedKeys) => {
-    const selectedKeysArray = Array.from(selectedKeys);
-    // let filteredKeys;
-    // if (!selectedKeysArray.includes('medicina') || !selectedKeysArray.includes('nutricion') || !selectedKeysArray.includes('ejercicio') || !selectedKeysArray.includes('psicologia') || !selectedKeysArray.includes('programa')) {
-    //   filteredKeys = selectedKeysArray.slice(1);
-    // } else {
-    //   filteredKeys = selectedKeysArray;
-    // }
-    setFormData({
-      ...formData,
-      soluciones: selectedKeysArray,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("DATA DESDE EL FORMULARIO", formData)
-    fetch('/api/sendForm', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-      setFormData({
-        nombre: "",
-        apellido: "",
-        email: "",
-        telefono: "",
-        fecha: "",
-        mensaje: "",
-        migrante: false,
-        soluciones: [],
-      });
-      setValues(new Set());
-      setFormSubmitted(true);
-      setTimeout(() => setFormSubmitted(false), 3000);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  };
+  const {
+    values,
+    formData,
+    formSubmitted,
+    setValues,
+    handleInputChange,
+    handleSelect,
+    handleSubmit,
+  } = useFormStore();
 
   return (
     <section id="contact" className="scroll-mt-[90px] lg:scroll-mt-[70px]">
@@ -78,7 +22,7 @@ export default function ContactForm() {
           transformación hacia una vida más saludable.
         </p>
         {formSubmitted && (
-          <div className="w-1/2 rounded bg-green-500 opacity-25 text-center text-green-700 mt-4">
+          <div className="p-2 w-full rounded bg-green-300 text-center text-green-900 mt-4 max-w-3xl min-w-3xl">
             <p>Formulario enviado con éxito!</p>
           </div>
         )}
@@ -86,6 +30,7 @@ export default function ContactForm() {
           id="contact-form"
           className="grid grid-cols-2 gap-3 w-full mt-4 max-w-3xl text-black"
           onSubmit={handleSubmit}
+          method="POST"
         >
           <label className="form-control col-span-2 md:col-span-1">
             <div className="label">
