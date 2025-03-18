@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useFormStore from "../store/useFormStore";
 
 const programSteps = [
   {
@@ -12,8 +13,7 @@ const programSteps = [
       "Intervenciones precisas",
       "Optimización de la salud",
     ],
-    image:
-      "/img/medicina.png",
+    image: "/img/medicina.png",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,6 @@ const programSteps = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        class="lucide lucide-briefcase-medical"
       >
         <path d="M12 11v4" />
         <path d="M14 13h-4" />
@@ -75,8 +74,7 @@ const programSteps = [
       "Estamos disponibles para ti 16 horas al día, 7 días a la semana",
       "Ofrecemos consultas individuales de una hora, asegurando atención detallada y personalizada",
     ],
-    image:
-      "/img/ejercicio.jpg",
+    image: "/img/ejercicio.jpg",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -108,8 +106,7 @@ const programSteps = [
       "Detección y tratamiento de trastornos de conducta alimentaria",
       "Terapia cognitivo-conductual",
     ],
-    image:
-      "/img/psicologo.webp",
+    image: "/img/psicologo.webp",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +134,26 @@ const programSteps = [
 
 export default function Solutions() {
   const [activeTab, setActiveTab] = useState(1);
+  const { setValues, handleSelect } = useFormStore();
+
+  const addProgram = (active) => {
+    if (active === 1) {
+      setValues(new Set(["medicina"]));
+      handleSelect(new Set(["medicina"]));
+    }
+    if (active === 2) {
+      setValues(new Set(["nutricion"]));
+      handleSelect(new Set(["nutricion"]));
+    }
+    if (active === 3) {
+      setValues(new Set(["ejercicio"]));
+      handleSelect(new Set(["ejercicio"]));
+    }
+    if (active === 4) {
+      setValues(new Set(["psicologia"]));
+      handleSelect(new Set(["psicologia"]));
+    }
+  };
 
   return (
     <section className="bg-main/90">
@@ -150,7 +167,7 @@ export default function Solutions() {
             Nuestras soluciones
           </h3>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-center px-4 text-white">
-            Una solución para múltiples dimensiones
+            Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
 
@@ -206,34 +223,100 @@ export default function Solutions() {
           ))}
         </div>
 
-        {/* Content */}
-        <div className="bg-white border border-slate-400 rounded-lg w-full min-h-[300px] sm:min-h-[400px] lg:max-h-[406px] p-4 sm:p-6 lg:p-8">
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-            {/* Text Content */}
-            <div className="flex-1 space-y-4 order-2 lg:order-1">
-              <h4 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-black">
-                {programSteps[activeTab - 1].title}
-              </h4>
-              <p className="text-gray-700 text-sm sm:text-base text-justify">
-                {programSteps[activeTab - 1].content}
-              </p>
-              <ul className="text-gray-700 text-base list-disc px-4">
-                {programSteps[activeTab - 1]?.features?.map(
-                  (feature, index) => (
-                    <li key={index}>{feature}</li>
-                  )
-                )}
-              </ul>
+        <div className="flex justify-between gap-2">
+          {/* Content */}
+          <div className="bg-white border border-slate-400 rounded-lg w-[80%] min-h-[300px] sm:min-h-[400px] lg:max-h-[406px] p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              {/* Text Content */}
+              <div className="flex-1 space-y-4 order-2 lg:order-1">
+                <h4 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-black">
+                  {programSteps[activeTab - 1].title}
+                </h4>
+                <p className="text-gray-700 text-sm sm:text-base text-justify">
+                  {programSteps[activeTab - 1].content}
+                </p>
+                <ul className="text-gray-700 text-base list-disc px-4">
+                  {programSteps[activeTab - 1]?.features?.map(
+                    (feature, index) => (
+                      <li key={index}>{feature}</li>
+                    )
+                  )}
+                </ul>
+              </div>
+
+              {/* Image */}
+              <div className="w-full lg:w-1/2 h-[200px] sm:h-[300px] lg:h-auto order-1 lg:order-2 lg:justify-items-end">
+                <img
+                  src={programSteps[activeTab - 1].image}
+                  alt={`Imagen ${programSteps[activeTab - 1].title}`}
+                  className="w-full lg:w-auto h-full lg:h-[340px] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="bg-white border border-slate-400 rounded-lg w-[20%] lg:w-1/3 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
+            <div>
+              <div className="bg-[#009aff]/10 p-3 rounded-lg mb-4">
+                <h4 className="text-xl font-bold text-center text-[#009aff]">
+                  Solicita tu consulta
+                </h4>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 text-[#009aff]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <span className="text-gray-700">
+                    Evaluación personalizada
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 text-[#009aff]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <span className="text-gray-700">
+                    60 minutos de atención especializada
+                  </span>
+                </div>
+              </div>
+
+              <div className="text-center mb-6">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-3xl font-bold text-black">$100</span>
+                  <span className="text-gray-500"></span>
+                </div>
+                <p className="text-gray-500 text-sm">por consulta</p>
+              </div>
             </div>
 
-            {/* Image */}
-            <div className="w-full lg:w-1/2 h-[200px] sm:h-[300px] lg:h-auto order-1 lg:order-2 lg:justify-items-end">
-              <img
-                src={programSteps[activeTab - 1].image}
-                alt={`Imagen ${programSteps[activeTab - 1].title}`}
-                className="w-full lg:w-auto h-full lg:h-[340px] object-cover rounded-lg"
-              />
-            </div>
+            <a
+              href="#contact"
+              onClick={() => addProgram(activeTab)}
+              className="text-center w-full bg-main hover:bg-main/80 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300"
+            >
+              Agendar ahora
+            </a>
           </div>
         </div>
 
@@ -256,7 +339,7 @@ export default function Solutions() {
             Nuestras soluciones
           </h3>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-center px-4 text-white">
-            Una solución para múltiples dimensiones
+            Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
 
@@ -319,31 +402,100 @@ export default function Solutions() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="bg-white border border-slate-400 rounded-lg w-full p-4">
-                    <div className="flex flex-col gap-4">
-                      {/* Text Content */}
-                      <div className="flex flex-col gap-2">
-                        <h4 className="text-xl font-semibold text-black mb-2">
-                          {step.title}
-                        </h4>
-                        <p className="text-gray-700 text-base text-justify">
-                          {step.content}
-                        </p>
-                        <ul className="text-gray-700 text-base list-disc px-6">
-                          {step?.features?.map((feature, index) => (
-                            <li key={index}>{feature}</li>
-                          ))}
-                        </ul>
+                  <div className="flex flex-col gap-2">
+                    <div className="bg-white border border-slate-400 rounded-lg w-full p-4">
+                      <div className="flex flex-col gap-4">
+                        {/* Text Content */}
+                        <div className="flex flex-col gap-2">
+                          <h4 className="text-xl font-semibold text-black mb-2">
+                            {step.title}
+                          </h4>
+                          <p className="text-gray-700 text-base text-justify">
+                            {step.content}
+                          </p>
+                          <ul className="text-gray-700 text-base list-disc px-6">
+                            {step?.features?.map((feature, index) => (
+                              <li key={index}>{feature}</li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Image */}
+                        <div className="w-full h-[300px] lg:h-[500px]">
+                          <img
+                            src={step.image}
+                            alt={`Imagen ${step.title}`}
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-slate-400 rounded-lg w-full lg:w-1/3 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
+                      <div>
+                        <div className="bg-[#009aff]/10 p-3 rounded-lg mb-4">
+                          <h4 className="text-xl font-bold text-center text-[#009aff]">
+                            Solicita tu consulta
+                          </h4>
+                        </div>
+
+                        <div className="space-y-4 mb-6">
+                          <div className="flex items-center gap-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-5 h-5 text-[#009aff]"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span className="text-gray-700">
+                              Evaluación personalizada
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-5 h-5 text-[#009aff]"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span className="text-gray-700">
+                              60 minutos de atención especializada
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="text-center mb-6">
+                          <div className="flex items-center justify-center gap-2">
+                            <span className="text-3xl font-bold text-black">
+                              $100
+                            </span>
+                            <span className="text-gray-500"></span>
+                          </div>
+                          <p className="text-gray-500 text-sm">por consulta</p>
+                        </div>
                       </div>
 
-                      {/* Image */}
-                      <div className="w-full h-[300px] lg:h-[500px]">
-                        <img
-                          src={step.image}
-                          alt={`Imagen ${step.title}`}
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                      </div>
+                      <a
+                        href="#contact"
+                        onClick={() => addProgram(activeTab)}
+                        className="text-center w-full bg-main hover:bg-main/80 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300"
+                      >
+                        Agendar ahora
+                      </a>
                     </div>
                   </div>
                 </div>
