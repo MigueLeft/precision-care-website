@@ -16,7 +16,7 @@ export default function ContactForm() {
   return (
     <section id="contact" className="scroll-mt-[90px] lg:scroll-mt-[70px]">
       <div className="max-w-[1300px] mx-auto flex flex-col justify-center items-center text-2xl py-12 lg:py-16 px-5 md:px-10 lg:px-14">
-        <h4 className="text-2xl font-bold text-[#009aff]">Contáctanos</h4>
+        <h4 className="text-2xl font-bold text-[#0194c2]">Contáctanos</h4>
         <p className="text-xl md:text-2xl lg:text-3xl text-center text-main/90">
           Estamos listos para acompañarte. Agenda tu consulta y comienza la
           transformación hacia una vida más saludable.

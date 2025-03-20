@@ -268,7 +268,7 @@ const ServiceLines = () => {
       className="scroll-mt-[90px] lg:scroll-mt-[100px] pt-5 md:pt-10 pb-14 md:pb-28"
     >
       <div className="flex flex-col items-center font-semibold mb-8 lg:mb-12">
-        <h3 className="text-xl md:text-2xl text-[#009aff]">
+        <h3 className="text-xl md:text-2xl text-[#0194c2]">
           Lineas de servicios
         </h3>
         <p className="text-2xl md:text-3xl lg:text-4xl text-center text-main/90">

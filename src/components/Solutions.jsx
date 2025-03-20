@@ -163,7 +163,7 @@ export default function Solutions() {
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
-          <h3 className="text-xl sm:text-2xl text-[#009aff]">
+          <h3 className="text-xl sm:text-2xl text-[#0194c2]">
             Nuestras soluciones
           </h3>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-center px-4 text-white">
@@ -335,7 +335,7 @@ export default function Solutions() {
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
-          <h3 className="text-xl sm:text-2xl text-[#009aff]">
+          <h3 className="text-xl sm:text-2xl text-[#0194c2]">
             Nuestras soluciones
           </h3>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-center px-4 text-white">

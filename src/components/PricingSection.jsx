@@ -83,7 +83,7 @@ const PricingSection = () => {
     <section className="bg-[#e8f9ff] py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-bold text-[#0099ff]">
+          <h2 className="text-2xl font-bold text-[#0194c2]">
             Nuestros Programas
           </h2>
           <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-center text-main/90">
