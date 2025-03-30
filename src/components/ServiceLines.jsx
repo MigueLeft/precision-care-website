@@ -11,10 +11,10 @@ const ServiceLines = () => {
   const services = {
     especialidades: [
       {
-        title: "Obesidad",
+        title: "Obesidad y control de peso",
         id: "obesity",
         content:
-          "Manejo y reducción del peso, abordando las causas fundamentales y diseñando estrategias personalizadas.",
+          "Manejo, reducción y mantenimiento del peso, abordando las causas fundamentales y diseñando estrategias personalizadas.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const ServiceLines = () => {
         title: "Prediabetes y Diabetes",
         id: "diabetes",
         content:
-          "Prevención, control y tratamiento especializado para optimizar tu calidad de vida y prevenir complicaciones.",
+          "Prevención y tratamiento especializado para optimizar el control y lograr la remisión, mejorando tu calidad de vida y previniendo complicaciones",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +67,10 @@ const ServiceLines = () => {
         ),
       },
       {
-        title: "Cardiometabólico",
+        title: "Cardiometabólica",
         id: "cardiometabolic",
         content:
-          "Atención integral para padecimientos relacionados con el metabolismo cardiovascular y sus riesgos asociados.",
+          "Atención integral multidisciplinaria para detener la progresión de la arteriosclerosis, prevenir y tratar la enfermedad cardiovascular y sus riesgos asociados",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ const ServiceLines = () => {
         ),
       },
       {
-        title: "Cuidados Pre y Postoperatorios",
+        title: "Cuidados Pre y Postoperatorios de cirugía bariátrica",
         id: "care",
         content:
           "Evaluación, acompañamiento y seguimiento especializado para procedimientos quirúrgicos de pérdida de peso.",
@@ -124,7 +124,7 @@ const ServiceLines = () => {
     ],
     servicios: [
       {
-        title: "Segunda Opinión",
+        title: "Segunda opinión medica",
         id: "second",
         content:
           "Análisis detallado y objetivo de tu diagnóstico actual, ofreciendo claridad y alternativas de tratamiento.",
@@ -147,7 +147,7 @@ const ServiceLines = () => {
         ),
       },
       {
-        title: "Soporte Nutricional",
+        title: "Soporte nutricional y dietas especiales",
         id: "support",
         content:
           "Atención y seguimiento para personas con enfermedades crónicas y necesidades específicas.",
@@ -269,7 +269,7 @@ const ServiceLines = () => {
     >
       <div className="flex flex-col items-center font-semibold mb-8 lg:mb-12">
         <h3 className="text-xl md:text-2xl text-[#0194c2]">
-          Lineas de servicios
+          Líneas de servicio
         </h3>
         <p className="text-2xl md:text-3xl lg:text-4xl text-center text-main/90">
           ¿A quienes atendemos?
@@ -410,11 +410,11 @@ const ServiceLines = () => {
             className="h-full w-full"
           >
             {services[activeTab].map((item) => (
-              <SwiperSlide key={item.title} className="h-[300px]">
-                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-8 relative h-[300px]">
+              <SwiperSlide key={item.title} className="h-[330px]">
+                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-8 relative h-[330px]">
                   <div className="flex flex-col items-center">
                     <div className="text-main/90">{item.icon}</div>
-                    <p className="text-lg text-main/90 font-medium pt-1 pb-3">
+                    <p className="text-center text-lg text-main/90 font-medium pt-1 pb-3">
                       {item.title}
                     </p>
                     <p className="text-justify">{item.content}</p>
