@@ -14,7 +14,7 @@ const ServiceLines = () => {
         title: "Obesidad y control de peso",
         id: "obesity",
         content:
-          "Manejo, reducción y mantenimiento del peso, abordando las causas fundamentales y diseñando estrategias personalizadas.",
+          "Tratamiento integral del exceso de peso, centrado en las causas, con un enfoque personalizado y estrategias a largo plazo",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -102,25 +102,6 @@ const ServiceLines = () => {
           </svg>
         ),
       },
-      {
-        title: "Cuidados Pre y Postoperatorios de cirugía bariátrica",
-        id: "care",
-        content:
-          "Evaluación, acompañamiento y seguimiento especializado para procedimientos quirúrgicos de pérdida de peso.",
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 48 48"
-          >
-            <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
-              <path d="M40 8H8v32h32zM8 6a2 2 0 0 0-2 2v32a2 2 0 0 0 2 2h32a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path>
-              <path d="M10 34h10v2H10zm18 0h4v2h-4zm-6 0h4v2h-4zm12 0h4v2h-4zm-17.172-6h4.724a4 4 0 0 0 2.798-1.142L28 23.284v-.456A4 4 0 0 1 29.172 20l1.689-1.69l-2.606-1.736zM12 30l16-16l6 4l-3.414 3.414A2 2 0 0 0 30 22.828v.456a2 2 0 0 1-.6 1.43l-3.65 3.573A6 6 0 0 1 21.551 30z"></path>
-              <path d="M26.707 21.293a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414l3-3a1 1 0 0 1 1.414 0m10-13.185l-7.6 7.6l-1.414-1.415l7.6-7.6zm1.5 4.285a1 1 0 0 1 0 1.414l-5.5 5.5l-1.414-1.415l5.5-5.5a1 1 0 0 1 1.414 0"></path>
-            </g>
-          </svg>
-        ),
-      },
     ],
     servicios: [
       {
@@ -171,10 +152,9 @@ const ServiceLines = () => {
         ),
       },
       {
-        title: "Salud de Migrantes",
-        id: "migrants",
-        content:
-          "Atención médica integral considerando las necesidades específicas de poblaciones en movimiento.",
+        title: "Niños y Adolescentes: Obesidad y Riesgo Cardiometabólico",
+        id: "childs",
+        content: "Por definir",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -186,17 +166,37 @@ const ServiceLines = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
-            <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
-            <path d="M16 17h4" />
-            <path d="M4 13h4" />
+            <path d="M7 21h10" />
+            <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
+            <path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1" />
+            <path d="m13 12 4-4" />
+            <path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2" />
+          </svg>
+        ),
+      },
+      {
+        title: "Cuidados Pre y Postoperatorios de cirugía bariátrica",
+        id: "care",
+        content:
+          "Evaluación, acompañamiento y seguimiento especializado para procedimientos quirúrgicos de pérdida de peso.",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-12 h-12"
+            viewBox="0 0 48 48"
+          >
+            <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
+              <path d="M40 8H8v32h32zM8 6a2 2 0 0 0-2 2v32a2 2 0 0 0 2 2h32a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path>
+              <path d="M10 34h10v2H10zm18 0h4v2h-4zm-6 0h4v2h-4zm12 0h4v2h-4zm-17.172-6h4.724a4 4 0 0 0 2.798-1.142L28 23.284v-.456A4 4 0 0 1 29.172 20l1.689-1.69l-2.606-1.736zM12 30l16-16l6 4l-3.414 3.414A2 2 0 0 0 30 22.828v.456a2 2 0 0 1-.6 1.43l-3.65 3.573A6 6 0 0 1 21.551 30z"></path>
+              <path d="M26.707 21.293a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414l3-3a1 1 0 0 1 1.414 0m10-13.185l-7.6 7.6l-1.414-1.415l7.6-7.6zm1.5 4.285a1 1 0 0 1 0 1.414l-5.5 5.5l-1.414-1.415l5.5-5.5a1 1 0 0 1 1.414 0"></path>
+            </g>
           </svg>
         ),
       },
     ],
     bienestar: [
       {
-        title: "Personas Sanas",
+        title: "Deportistas, Atletas, Personas Sanas",
         id: "healthy",
         content:
           "Programas de prevención y mantenimiento de la salud para optimizar tu bienestar general.",
@@ -238,10 +238,10 @@ const ServiceLines = () => {
         ),
       },
       {
-        title: "Deportistas y Atletas",
-        id: "athletes",
+        title: "Salud Mental y Bienestar Emocional",
+        id: "mentalhealth",
         content:
-          "Estrategias médicas especializadas para maximizar tu potencial físico y prevenir lesiones.",
+          "Por definir",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -253,10 +253,58 @@ const ServiceLines = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <circle cx="18.5" cy="17.5" r="3.5" />
-            <circle cx="5.5" cy="17.5" r="3.5" />
-            <circle cx="15" cy="5" r="1" />
-            <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+            <line x1="9" x2="9.01" y1="9" y2="9" />
+            <line x1="15" x2="15.01" y1="9" y2="9" />
+          </svg>
+        ),
+      },
+      // {
+      //   title: "Deportistas y Atletas",
+      //   id: "athletes",
+      //   content:
+      //     "Estrategias médicas especializadas para maximizar tu potencial físico y prevenir lesiones.",
+      //   icon: (
+      //     <svg
+      //       xmlns="http://www.w3.org/2000/svg"
+      //       className="w-12 h-12"
+      //       viewBox="0 0 24 24"
+      //       fill="none"
+      //       stroke="currentColor"
+      //       strokeWidth="2"
+      //       strokeLinecap="round"
+      //       strokeLinejoin="round"
+      //     >
+      //       <circle cx="18.5" cy="17.5" r="3.5" />
+      //       <circle cx="5.5" cy="17.5" r="3.5" />
+      //       <circle cx="15" cy="5" r="1" />
+      //       <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
+      //     </svg>
+      //   ),
+      // },
+    ],
+    saludParaMigrantes: [
+      {
+        title: "Salud de Migrantes",
+        id: "migrants",
+        content:
+          "Atención médica integral considerando las necesidades específicas de poblaciones en movimiento.",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-12 h-12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+            <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+            <path d="M16 17h4" />
+            <path d="M4 13h4" />
           </svg>
         ),
       },
@@ -316,6 +364,24 @@ const ServiceLines = () => {
           {
             id: "bienestar",
             text: "Bienestar y rendimiento",
+            icon: (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 sm:w-8 sm:h-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z" />
+              </svg>
+            ),
+          },
+          {
+            id: "saludParaMigrantes",
+            text: "Salud para migrantes",
             icon: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
