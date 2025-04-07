@@ -14,7 +14,7 @@ const ServiceLines = () => {
         title: "Obesidad y control de peso",
         id: "obesity",
         content:
-          "Tratamiento integral del exceso de peso, centrado en las causas, con un enfoque personalizado y estrategias a largo plazo",
+          "Atención integral de pacientes con exceso de peso, centrado en las causas, con un enfoque personalizado y estrategias a largo plazo",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const ServiceLines = () => {
         title: "Prediabetes y Diabetes",
         id: "diabetes",
         content:
-          "Prevención y tratamiento especializado para optimizar el control y lograr la remisión, mejorando tu calidad de vida y previniendo complicaciones",
+          "Atención integral desde la resistencia a la insulina hasta las complicaciones de la diabetes, con enfoque personalizado, cambios en el estilo de vida y tratamientos sostenibles para mejorar tu calidad de vida.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const ServiceLines = () => {
         title: "Cardiometabólica",
         id: "cardiometabolic",
         content:
-          "Atención integral multidisciplinaria para detener la progresión de la arteriosclerosis, prevenir y tratar la enfermedad cardiovascular y sus riesgos asociados",
+          "Planes enfocados en tratar pacientes con enfermedad cardiovascular y en controlar los factores de riesgo como la hipertensión y el colesterol alto.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ const ServiceLines = () => {
         title: "Enfermedades Crónicas",
         id: "chronic",
         content:
-          "Manejo comprehensivo y personalizado para mejorar tu bienestar y controlar padecimientos a largo plazo.",
+          "Tratamiento integral y personalizado de enfermedades crónicas (renales, pulmonares, cardíacas, cáncer, entre otras) con estrategias de medicina del estilo de vida para frenar su avance, favorecer la remisión y mejorar tu calidad de vida",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@ const ServiceLines = () => {
         title: "Segunda opinión medica",
         id: "second",
         content:
-          "Análisis detallado y objetivo de tu diagnóstico actual, ofreciendo claridad y alternativas de tratamiento.",
+          "Evaluación y análisis de tu caso por un médico especialista para aclarar diagnósticos, explicar el origen de tus síntomas y ofrecer alternativas de tratamiento eficaces, todo entregado en un informe médico detallado.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@ const ServiceLines = () => {
         title: "Soporte nutricional y dietas especiales",
         id: "support",
         content:
-          "Atención y seguimiento para personas con enfermedades crónicas y necesidades específicas.",
+          "Terapia medica nutricional. Soporte nutricional especial: nutrición enteral y parenteral. Dietas especiales personalizadas como tratamiento de condiciones o enfermedades específicas.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -154,31 +154,16 @@ const ServiceLines = () => {
       {
         title: "Niños y Adolescentes: Obesidad y Riesgo Cardiometabólico",
         id: "childs",
-        content: "Por definir",
+        content: "Atención integral de la obesidad en niños y adolescentes, enfocada en la prevención temprana del riesgo cardiometabólico con intervenciones nutricionales, actividad física y tratamientos aprobados",
         icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M7 21h10" />
-            <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
-            <path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1" />
-            <path d="m13 12 4-4" />
-            <path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
         ),
       },
       {
         title: "Cuidados Pre y Postoperatorios de cirugía bariátrica",
         id: "care",
         content:
-          "Evaluación, acompañamiento y seguimiento especializado para procedimientos quirúrgicos de pérdida de peso.",
+          "Tratamiento enfocado en la preparación integral para la cirugía bariátrica, que incluye modificaciones nutricionales, actividad física personalizada y apoyo psicológico.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +184,7 @@ const ServiceLines = () => {
         title: "Deportistas, Atletas, Personas Sanas",
         id: "healthy",
         content:
-          "Programas de prevención y mantenimiento de la salud para optimizar tu bienestar general.",
+          "Evaluación para detectar condiciones de riesgo que puedan pasar desapercibidas, rediseñar tus rutinas, optimizar tu rendimiento físico y mental mediante estrategias preventivas para mejorar tu bienestar.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -219,29 +204,12 @@ const ServiceLines = () => {
           </svg>
         ),
       },
-      {
-        title: "Nutrición Personalizada",
-        id: "nutrition",
-        content:
-          "Planes alimenticios personalizados que impulsan tu salud y rendimiento.",
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 64 64"
-          >
-            <path
-              fill="currentColor"
-              d="M7.684 41.188c.146-4.908-2.524-6.756-5.78-7.977c-1.082 4.199 1.904 7.693 5.78 7.977m.737-21.915c2.076-4.445.356-7.211-2.16-9.618c-2.641 3.432-1.283 7.82 2.16 9.618m1.171 12.374c-.143-4.905 2.524-6.761 5.782-7.977c1.078 4.197-1.906 7.69-5.782 7.977m0 7.565c-.143-4.905 2.524-6.756 5.782-7.975c1.078 4.196-1.906 7.69-5.782 7.975m0-15.127c-.143-4.907 2.524-6.763 5.782-7.982c1.078 4.201-1.906 7.693-5.782 7.982m-1.908 9.539c.146-4.905-2.524-6.761-5.78-7.977c-1.082 4.197 1.904 7.691 5.78 7.977m0-7.562c.146-4.908-2.524-6.763-5.78-7.984c-1.082 4.203 1.904 7.692 5.78 7.984m36.769 37.007H18.142l13.157-22.796zM23.369 60.05h15.858l-7.929-13.735zM3.843 47.54l55.741-15.164l-.828-3.063L3.011 44.479zM43.176.634s.408 8.041 7.456 7.359c0 0 .795-6.718-7.456-7.359m7.379 26.153a4.08 4.08 0 0 1-3.339 1.716c-1.123 0-2.223-.528-2.965-1.268c-1.518-1.656-3.486-5.358-3.486-5.358c-1.103-2.239-1.694-3.971-1.694-5.722c0-3.73 3.019-6.965 6.759-6.965a6.74 6.74 0 0 1 4.726 1.93a6.73 6.73 0 0 1 4.724-1.93c3.739 0 6.758 3.235 6.758 6.965c0 1.751-.592 3.483-1.694 5.722c0 0-1.968 3.701-3.486 5.358c-.742.74-1.842 1.268-2.966 1.268a4.08 4.08 0 0 1-3.338-1.716z"
-            ></path>
-          </svg>
-        ),
-      },
+      
       {
         title: "Salud Mental y Bienestar Emocional",
         id: "mentalhealth",
         content:
-          "Por definir",
+          "Evaluación especializada de tu salud psicoemocional para ayudarte a manejar el estrés, la ansiedad y la depresión. Aplicamos terapia cognitivo-conductual y brindamos apoyo especializado en adicciones y trastornos de la conducta alimentaria.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -289,7 +257,7 @@ const ServiceLines = () => {
         title: "Salud de Migrantes",
         id: "migrants",
         content:
-          "Atención médica integral considerando las necesidades específicas de poblaciones en movimiento.",
+          "Evaluación integral para pacientes migrantes, centrada en el manejo de condiciones crónicas con medicina del estilo de vida  y farmacoterapia basada en evidencia. Ofrecemos un plan accesible, culturalmente respetuoso y adaptado a tu realidad.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -323,7 +291,7 @@ const ServiceLines = () => {
           ¿A quienes atendemos?
         </p>
       </div>
-      <div className="flex flex-col md:flex-row justify-center gap-4 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14">
         {[
           {
             id: "especialidades",
@@ -476,8 +444,8 @@ const ServiceLines = () => {
             className="h-full w-full"
           >
             {services[activeTab].map((item) => (
-              <SwiperSlide key={item.title} className="h-[330px]">
-                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-8 relative h-[330px]">
+              <SwiperSlide key={item.title} className="h-[370px]">
+                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-6 relative h-[370px]">
                   <div className="flex flex-col items-center">
                     <div className="text-main/90">{item.icon}</div>
                     <p className="text-center text-lg text-main/90 font-medium pt-1 pb-3">

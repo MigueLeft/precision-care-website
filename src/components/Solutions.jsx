@@ -6,12 +6,12 @@ const programSteps = [
     id: 1,
     title: "Medicina",
     content:
-      "Manejo especializado y personalizado. Tratamientos basados en evidencia científica, enfocados en optimizar tu salud con intervenciones precisas, dedicamos a brindarte el tiempo necesario para resolver tus problemas de salud de manera integral.",
+      "Médicos especialistas con amplia experiencia te ofrecen una evaluación completa y un manejo basado en evidencia científica. Dedicamos el tiempo necesario para:",
     features: [
-      "Manejo especializado y personalizado",
-      "Tratamientos basados en evidencia científica",
-      "Intervenciones precisas",
-      "Optimización de la salud",
+      "Análisis a fondo de tus necesidades",
+      "Identificación de riesgos y áreas de mejora",
+      "Diagnósticos precisos",
+      "Diseñar un plan de tratamiento personalizado.",
     ],
     image: "/img/medicina.png",
     icon: (
@@ -38,12 +38,12 @@ const programSteps = [
     id: 2,
     title: "Nutrición",
     content:
-      "Planes nutricionales adaptados a tus necesidades específicas. Evaluación y prescripción personalizada para transformar tu alimentación.",
-    features: [
-      "Planes de nutrición personalizados, adaptados a tus necesidades específicas",
-      "Disponibilidad de atención 16 horas al día, 7 días a la semana",
-      "Consultas individuales de una hora para atención detallada y personalizada",
-    ],
+      "Especialistas en terapia medica nutricional y nutricionistas te ofrecen una evaluación y prescripción especializada para transformar tu alimentación de forma sostenible y efectiva. Realizamos un diagnóstico completo de tus necesidades nutricionales para diseñar un plan de alimentación personalizado que te ayude a alcanzar tus metas, se ajuste a tu estilo de vida, tus rutinas y te motive a mantener hábitos saludables a largo plazo. ",
+    // features: [
+    //   "Planes de nutrición personalizados, adaptados a tus necesidades específicas",
+    //   "Disponibilidad de atención 16 horas al día, 7 días a la semana",
+    //   "Consultas individuales de una hora para atención detallada y personalizada",
+    // ],
     image: "/img/nutricion.jpg",
     icon: (
       <svg
@@ -66,14 +66,14 @@ const programSteps = [
     id: 3,
     title: "Ejercicio",
     content:
-      "Programas de actividad física diseñados según tu condición física. Diagnósticos precisos y seguimiento objetivo para mejorar tu rendimiento.",
-    features: [
-      "Evaluamos tu nivel de aptitud física con diagnósticos precisos",
-      "Diseñamos programas de actividad física personalizados",
-      "Supervisamos tu progreso",
-      "Estamos disponibles para ti 16 horas al día, 7 días a la semana",
-      "Ofrecemos consultas individuales de una hora, asegurando atención detallada y personalizada",
-    ],
+      "Especialistas en ejercicio y actividad física evaluamos tu aptitud física con herramientas diagnósticas precisas, para diseñar un plan de actividad física adaptado a tus metas, necesidades, preferencias, entorno y momento de vida. Ofrecemos asesoría especializada y supervisamos tu progreso para optimizar tu rendimiento, fomentar la constancia y ayudarte a alcanzar resultados de forma segura, efectiva y sostenible.",
+    // features: [
+    //   "Evaluamos tu nivel de aptitud física con diagnósticos precisos",
+    //   "Diseñamos programas de actividad física personalizados",
+    //   "Supervisamos tu progreso",
+    //   "Estamos disponibles para ti 16 horas al día, 7 días a la semana",
+    //   "Ofrecemos consultas individuales de una hora, asegurando atención detallada y personalizada",
+    // ],
     image: "/img/ejercicio.jpg",
     icon: (
       <svg
@@ -98,13 +98,12 @@ const programSteps = [
     id: 4,
     title: "Psicología",
     content:
-      "Ofrecemos intervenciones precisas para mejorar tu salud mental, indispensable para el control de diversas enfermedades crónicas, brindado el tiempo necesario para resolver tus problemas",
+      "Psicólogos especializados crean para ti un espacio confiable para identificar y tratar desajustes psico-emocionales. A través de la terapia cognitivo-conductual, te proporcionamos herramientas personalizadas y efectivas para:",
     features: [
-      "Manejo del estrés, ansiedad y depresión",
-      "Mejorar la higiene y calidad del sueño",
-      "Control de adicciones",
-      "Detección y tratamiento de trastornos de conducta alimentaria",
-      "Terapia cognitivo-conductual",
+      "Manejar el estrés",
+      "Identificar y abordar focos de ansiedad y depresión",
+      "Mejorar la calidad del sueño",
+      "Tratar adicciones y trastornos de conducta alimentaria",
     ],
     image: "/img/psicologo.webp",
     icon: (
@@ -225,8 +224,8 @@ export default function Solutions() {
 
         <div className="flex justify-between gap-2">
           {/* Content */}
-          <div className="bg-white border border-slate-400 rounded-lg w-[80%] min-h-[300px] sm:min-h-[400px] lg:max-h-[406px] p-4 sm:p-6 lg:p-8">
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <div className="flex items-center bg-white border border-slate-400 rounded-lg w-[80%] min-h-[300px] sm:min-h-[400px] lg:max-h-[438px] p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-row gap-6 lg:gap-8 min-h-[352px]">
               {/* Text Content */}
               <div className="flex-1 space-y-4 order-2 lg:order-1">
                 <h4 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-black">
@@ -277,8 +276,8 @@ export default function Solutions() {
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
-                  <span className="text-gray-700">
-                    Evaluación personalizada
+                  <span className="text-gray-700 text-sm">
+                    60 minutos de consulta especializada
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -295,8 +294,26 @@ export default function Solutions() {
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
-                  <span className="text-gray-700">
-                    60 minutos de atención especializada
+                  <span className="text-gray-700 text-sm">
+                    Disponibilidad 16 horas al día, 7 días a la semana
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 text-[#009aff]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <span className="text-gray-700 text-sm">
+                    Comunicación empática y centrada en nuestros pacientes
                   </span>
                 </div>
               </div>
@@ -320,14 +337,14 @@ export default function Solutions() {
           </div>
         </div>
 
-        <p className="text-white mt-5">
+        {/* <p className="text-white mt-5">
           Estas soluciones pueden ser tanto individuales como en programas
           diseñados estrategicamente para lograr sus metas.{" "}
           <a href="/program" className="font-bold underline">
             Entra aquí
           </a>{" "}
           para ver conocer más sobre nuestras estrategias
-        </p>
+        </p> */}
       </div>
       <div
         id="program"
@@ -454,8 +471,8 @@ export default function Solutions() {
                               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                               <polyline points="22 4 12 14.01 9 11.01" />
                             </svg>
-                            <span className="text-gray-700">
-                              Evaluación personalizada
+                            <span className="text-gray-700 text-sm">
+                              60 minutos de consulta especializada
                             </span>
                           </div>
                           <div className="flex items-center gap-2">
@@ -472,8 +489,27 @@ export default function Solutions() {
                               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                               <polyline points="22 4 12 14.01 9 11.01" />
                             </svg>
-                            <span className="text-gray-700">
-                              60 minutos de atención especializada
+                            <span className="text-gray-700 text-sm">
+                              Disponibilidad 16 horas al día, 7 días a la semana
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-5 h-5 text-[#009aff]"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span className="text-gray-700 text-sm">
+                              Comunicación empática y centrada en nuestros
+                              pacientes
                             </span>
                           </div>
                         </div>
@@ -528,14 +564,14 @@ export default function Solutions() {
           </div>
         </div>
 
-        <p className="text-white mt-5">
+        {/* <p className="text-white mt-5">
           Estas soluciones pueden ser tanto individuales como en programas
           diseñados estrategicamente para lograr sus metas.{" "}
           <a href="/program" className="font-bold underline">
             Entra aquí
           </a>{" "}
           para ver conocer más sobre nuestras estrategias
-        </p>
+        </p> */}
       </div>
     </section>
   );
