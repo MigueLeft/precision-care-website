@@ -14,7 +14,7 @@ import Solutions from "../components/Solutions";
 import ServiceLines from "../components/ServiceLines";
 import MigrantsProgram from "../components/MigrantsProgram.astro";
 import PricingSection from "../components/PricingSection";
-import TeamMembers from "../components/TeamMembers.astro";
+import TeamMembers from "../components/TeamMembers";
 ---
 
 <Layout title="Precision Care">
@@ -29,7 +29,7 @@ import TeamMembers from "../components/TeamMembers.astro";
   <Solutions client:load />
   <PricingSection client:load/>
   <!-- <Team /> -->
-  <TeamMembers />
+  <TeamMembers client:load/>
   <!-- <MigrantsProgram /> -->
   <!-- <SuccessStories /> -->
   <ContactForm client:only />
