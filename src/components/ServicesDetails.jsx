@@ -1637,42 +1637,52 @@ export default function ServicesAccordion() {
       ),
     },
     {
-      id: "healthy",
-      title: "Personas Sanas",
-      icon: <Users className="w-6 h-6 md:w-7 md:h-7" />,
+      id: "nutrition",
+      title: "Nutrición Personalizada",
+      icon: <Utensils className="w-6 h-6 md:w-7 md:h-7" />,
+      content: (
+        <div className="space-y-4">
+          <div>
+            <p>
+              Servicio de nutrición personalizada adaptada a las necesidades
+              específicas de cada paciente, considerando sus objetivos de salud,
+              preferencias alimentarias y condiciones médicas.
+            </p>
+          </div>
+
+          <div className="pt-2">
+            <a
+              href="#contact"
+              className="bg-main inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            >
+              Agenda tu cita aquí
+            </a>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "athletes",
+      title: "Deportistas, Atletas y Personas Sanas",
+      icon: <Bike className="w-6 h-6 md:w-7 md:h-7" />,
       content: (
         <div className="space-y-4">
           <div>
             <h3 className="font-semibold text-lg mb-2">
-              ¿Por qué es importante chequear tu salud?
+            ¿Por qué es importante chequear tu salud?
             </h3>
             <p>
-              La mayoría de las enfermedades crónicas no avisan de su presencia.
-              Por tanto, una evaluación de salud anual es una estrategia muy
-              potente para detectar condiciones en etapas iniciales y tratarlas
-              a tiempo para que no se transformen en enfermedades. En el caso de
-              los atletas se asume que son personas sanas. Sin embargo, no
-              siempre es así y también es recomendable que chequeen su estado de
-              salud.
+            La mayoría de las enfermedades crónicas no avisan de su presencia. Por tanto, una evaluación de salud anual es una estrategia muy potente para detectar condiciones en etapas iniciales y tratarlas a tiempo para que no se transformen en enfermedades. En el caso de los atletas se asume que son personas sanas. Sin embargo, no siempre es así y también es recomendable que chequeen su estado de salud.
             </p>
-            <p className="mt-2">
-              Además, la medicina del deporte se enfoca en optimizar el
-              rendimiento físico a través de estrategias nutricionales,
-              entrenamiento adecuado y control médico. Es decir, no se trata
-              solo del entrenamiento deportivo sino de todos los factores que
-              garantizan lograr el máximo rendimiento.
-            </p>
+            <p>Además, la medicina del deporte se enfoca en optimizar el rendimiento físico a través de estrategias nutricionales, entrenamiento adecuado y control médico. Es decir, no se trata solo del entrenamiento deportivo sino de todos los factores que garantizan lograr el máximo rendimiento. </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-2">
-              ¿Cómo mantenerse sano?
+            ¿Cómo mantenerse sano?
             </h3>
             <p>
-              Las personas aparentemente sanas, incluyendo deportistas y
-              atletas, requieren crear o mantener buenos hábitos de vida para
-              prevenir enfermedades y mejorar su condición física y mental. Esto
-              los hará personas más productivas y exitosas.
+            Las personas aparentemente sanas, incluyendo deportistas y atletas, requieren crear o mantener buenos hábitos de vida para prevenir enfermedades y mejorar su condición física y mental. Esto los hará personas más productivas y  exitosas.
             </p>
           </div>
 
@@ -1682,38 +1692,15 @@ export default function ServicesAccordion() {
             <div className="mb-3">
               <h4 className="font-medium mb-1">¿Qué hacemos?</h4>
               <p>
-                En Precision Care tenemos un equipo de salud especializado en
-                medicina de estilo de vida. Esta es una rama de la medicina que
-                incluye todas las estrategias para el tratamiento de las
-                enfermedades excepto el uso de medicamentos y cirugía. Tener
-                buenos hábitos de alimentación, un nivel suficiente de actividad
-                física, cantidad y calidad de sueño, y una mente en el presente
-                que logre controlar el estrés son las bases de la salud en
-                cualquier momento de la vida. Lo ideal es implementarlo desde la
-                infancia. Promovemos la educación de niños y adolescentes.
+              En Precision Care tenemos un equipo de salud especializado en medicina de estilo de vida. Esta es una rama de la medicina que incluye todas las estrategias para el tratamiento de las enfermedades excepto el uso de medicamentos y cirugía. Tener buenos hábitos de alimentación, un nivel suficiente de actividad física, cantidad y calidad de sueño, y una mente en el presente que logre controlar el estrés son las bases de la salud en cualquier momento de la vida. Lo ideal es implementarlo desde la infancia. Promovemos la educación de niños y adolescentes 
               </p>
-              <p className="mt-2">
-                Nuestro equipo de fisiólogos del ejercicio, nutricionistas y
-                psicólogos pueden liderar intervenciones que mejoren tu
-                rendimiento deportivo. Además nuestro equipo de médicos
-                especialistas en estilo de vida y nutricionistas te darán las
-                herramientas para saber cual es la alimentación, composición
-                corporal ideal de acuerdo a tu disciplina.
-              </p>
+              <p>Nuestro equipo de fisiólogos del ejercicio, nutricionistas y psicólogos pueden liderar intervenciones que mejoren tu rendimiento deportivo. Además nuestro equipo de médicos especialistas en estilo de vida y nutricionistas te darán las herramientas para saber cual es la alimentación, composición corporal ideal de acuerdo a tu disciplina. </p>
             </div>
 
             <div>
               <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
               <p>
-                De la mano de nuestro equipo de Precision Care, lograrás
-                optimizar tu salud y rendimiento físico, permitiéndote alcanzar
-                tus metas deportivas y personales de manera eficiente y segura.
-                Al enfocarnos en crear y mantener hábitos de vida saludables,
-                mejorarás no solo en el ámbito deportivo, sino también tu
-                calidad de vida en general. Obtendrás un plan personalizado que
-                abordará aspectos clave como la nutrición, el entrenamiento
-                físico, la gestión del estrés y el sueño, asegurando que tu
-                cuerpo y mente funcionen en armonía.
+              De la mano de nuestro equipo de Precision Care, lograrás optimizar tu salud y rendimiento físico, permitiéndote alcanzar tus metas deportivas y personales de manera eficiente y segura. Al enfocarnos en crear y mantener hábitos de vida saludables, mejorarás no solo en el ámbito deportivo, sino también tu calidad de vida en general. Obtendrás un plan personalizado que abordará aspectos clave como la nutrición, el entrenamiento físico, la gestión del estrés y el sueño, asegurando que tu cuerpo y mente funcionen en armonía.
               </p>
             </div>
           </div>
@@ -1813,47 +1800,166 @@ export default function ServicesAccordion() {
       ),
     },
     {
-      id: "nutrition",
-      title: "Nutrición Personalizada",
-      icon: <Utensils className="w-6 h-6 md:w-7 md:h-7" />,
-      content: (
-        <div className="space-y-4">
-          <div>
-            <p>
-              Servicio de nutrición personalizada adaptada a las necesidades
-              específicas de cada paciente, considerando sus objetivos de salud,
-              preferencias alimentarias y condiciones médicas.
-            </p>
-          </div>
-
-          <div className="pt-2">
-            <a
-              href="#contact"
-              className="bg-main inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-            >
-              Agenda tu cita aquí
-            </a>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: "athletes",
-      title: "Deportistas y Atletas",
-      icon: <Bike className="w-6 h-6 md:w-7 md:h-7" />,
+      id: "obesitychild",
+      title: "Niños Y Adolescentes: Obesidad Y Riesgo Cardiometabólico",
+      icon: <Activity className="w-6 h-6 md:w-7 md:h-7" />,
       content: (
         <div className="space-y-4">
           <div>
             <h3 className="font-semibold text-lg mb-2">
-              Servicios especializados para deportistas
+              ¿Qué es la obesidad infantil?
             </h3>
             <p>
-              Ofrecemos servicios especializados para deportistas y atletas que
-              buscan optimizar su rendimiento, prevenir lesiones y mantener una
-              salud óptima. Nuestro enfoque integral incluye evaluación física,
-              planes nutricionales específicos para cada disciplina, y
-              estrategias de recuperación y manejo del estrés.
+              La obesidad infantil es una condición médica seria que ocurre
+              cuando un niño o adolescente tiene un exceso de grasa corporal que
+              puede afectar su salud o bienestar. Esta situación afecta su
+              desarrollo físico e incrementa el riesgo de enfermedades
+              cardiometabólicas como la diabetes tipo 2, la hipertensión y el
+              colesterol alto a una edad temprana. Además, la obesidad también
+              impacta la salud emocional con mayor frecuencia de ansiedad,
+              depresión, y estrés psicosocial.
             </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-2">
+            ¿Por qué es importante evaluarla?
+            </h3>
+            <p>
+            La cantidad de niños y adolescentes con obesidad ha aumentado dramáticamente en las últimas décadas debido a factores como una dieta poco saludable, la falta de actividad física, y el aumento del tiempo frente a pantallas de celulares. Esto puede llevar a complicaciones de salud a largo plazo y afectar su calidad de vida en el presente y el futuro. Los niños con obesidad tienen mayor riesgo de presentar resistencia a la insulina, prediabetes o diabetes tipo 2, hipertensión, dislipidemia, hígado graso, alteraciones de la menstruación y pubertad temprana en niñas, pubertad tardía y ginecomastia (crecimiento mamario en niños).
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-2">
+            ¿Qué deberías hacer?
+            </h3>
+            <p>
+            Si tu hijo o hija tiene sobrepeso dale la oportunidad de que investiguemos si hay complicaciones asociadas, no solo físicas o metabólicas, sino también emocionales. Muchos son tratados con estigma y discriminacion lo cual afecta la salud mental y desempeño del niño o adolescente.  Abordar la obesidad infantil requiere un enfoque multidisciplinario que no solo incluya cambios en la dieta y el ejercicio, sino también el apoyo emocional y educativo para el niño y la familia. Un tratamiento efectivo también debe enfocarse en la prevención de problemas cardiometabólicos a través de la detección temprana y la intervención adecuada.
+            </p>
+          </div>
+
+          <div className="bg-primary/10 p-4 rounded-lg">
+            <h3 className="font-semibold text-lg mb-2">La solución</h3>
+
+            <div className="mb-3">
+              <h4 className="font-medium mb-1">¿Qué hacemos?</h4>
+              <p>
+                En Precision Care usamos el modelo de enfermedad crónica por
+                adiposidad para ver el panorama más amplio incluyendo como
+                centro al paciente, sus problemas físicos y emocionales, su
+                entorno, su cultura, sus rutinas, sus creencias y tomamos en
+                cuenta todo aquello que nos permita tener una visión de 360
+                grados de nuestros pacientes y confeccionar un plan de acción
+                personalizado. Esto forma parte de la medicina de precisión, y
+                de ahí viene nuestro nombre. Cada plan es personalizado, porque
+                cada caso es diferente y cada persona es diferente.
+              </p>
+              <p className="mt-2">
+                En Precision Care, nuestra abordaje integral incluye:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>
+                  <strong>Evaluación Integral</strong>: Realizamos una evaluación exhaustiva que incluye el análisis de hábitos alimenticios, actividad física, antecedentes familiares, y mediciones corporales, composición corporal,  y otros indicadores cardiometabólicos.
+                </li>
+                <li>
+                  <strong>Intervención Personalizada</strong>: Diseñamos planes de acción que incluyen prescripción nutricional, rutinas de ejercicio, y estrategias para el manejo del estrés y las emociones. Nuestra meta es involucrar a toda la familia, creando un ambiente de apoyo que fomente la salud y el bienestar.
+                </li>
+                <li>
+                  <strong>Educación y Apoyo Continuo</strong>: Ofrecemos educación continua para empoderar a los niños y sus familias, ayudándoles a adquirir herramientas para hacer elecciones de estilo de vida saludable a largo plazo.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
+              <p>
+              Con nuestro programa, tu hijo(a) logrará una mejor salud física y emocional, reduciendo el riesgo de enfermedades cardiometabólicas tanto en el presente como en el futuro. Fomentamos la construcción de hábitos saludables que pueden durar toda la vida, mejorando su calidad de vida y autoestima. En Precision Care, estamos comprometidos a acompañar a tu familia en cada paso del camino hacia un futuro más saludable.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-2">¿Cómo lo hacemos?</h3>
+            <p>
+              En Precision Care diseñamos un programa para brindarte un enfoque
+              integral hacia tu bienestar. Utilizamos un conjunto avanzado de
+              herramientas de tamizaje que permiten detectar problemas antes de
+              que aparezca la enfermedad, herramientas de diagnóstico y
+              tecnológicas para evaluar tu estado de salud actual, generar un
+              diagnóstico preciso, explicártelo claramente, y diseñar junto a ti
+              un plan de intervención efectivo. Nuestras consultas y programa
+              incluyen 3 etapas:
+            </p>
+
+            <div className="mt-3">
+              <h4 className="font-medium mb-1">1a etapa. Evaluación</h4>
+              <p>
+                La primera etapa consiste en la evaluación inicial donde
+                recolectamos un conjunto de datos que llamamos Ingresables que
+                nos permiten:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Analizar tus hábitos de alimentación</li>
+                <li>Evaluar tu nivel de actividad y aptitud física</li>
+                <li>
+                  Identificar tu riesgo cardiometabólico y otras condiciones
+                  crónicas
+                </li>
+                <li>Estudiar tu composición corporal</li>
+                <li>Analizar en detalle tus exámenes de laboratorio</li>
+                <li>Evaluar tu salud emocional y calidad de sueño</li>
+              </ul>
+            </div>
+
+            <div className="mt-3">
+              <h4 className="font-medium mb-1">2da etapa. Intervención</h4>
+              <p>
+                En la segunda etapa, usamos la información obtenida para
+                elaborar diagnósticos precisos y un plan de tratamiento adaptado
+                a ti incluyendo cambios en tu estilo de vida y rutinas. Esto
+                incluye varios aspectos que llamamos Entregables:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Plan nutricional personalizado</li>
+                <li>
+                  Rutinas de ejercicio y actividad física adaptadas a tus
+                  necesidades
+                </li>
+                <li>Estrategias para mejorar la calidad de tu sueño</li>
+                <li>
+                  Técnicas para identificar y manejar tu estrés y otros
+                  problemas emocionales que afecten tu salud
+                </li>
+                <li>
+                  Prescripción de medicamentos preventivos únicamente cuando
+                  sean necesarios, evitando la sobremedicación
+                </li>
+                <li>
+                  Educación en nuevas tecnologías de monitoreo (Apps, técnicas
+                  de autoevaluación, etc) para hacer los cambios más fáciles,
+                  medibles, y efectivos
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-3">
+              <h4 className="font-medium mb-1">
+                3a etapa. Monitoreo de resultados y ajustes del tratamiento
+              </h4>
+              <p>
+                Finalmente, reconocemos que no todos los cambios se pueden
+                iniciar al mismo tiempo y no todas las metas se logran de
+                inmediato. Además, hay muchas condiciones ambientales y
+                personales pueden cambiar en el tiempo. Nuestro programa básico
+                tiene una duración entre 3 - 4 meses. A lo largo del programa
+                evaluamos un conjunto de más de 40 indicadores basados en
+                evidencia científica que abarcan mediciones biológicas,
+                sociales, conductuales, y ambientales. El monitoreo de estas
+                variables nos permite ir haciendo los ajustes necesarios para
+                llevarte de la mano a alcanzar las metas y lograr el éxito.
+              </p>
+            </div>
           </div>
 
           <div className="pt-2">

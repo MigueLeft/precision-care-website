@@ -97,11 +97,7 @@ const TeamSection = () => {
       credentials: [
         "Licenciada en Nutrición y Dietética. Universidad de Los Andes (Venezuela, 2022). Distinción Magna Cum Laude"
       ],
-      // affiliations: [
-      //   "Precision Care Corp, St Cloud, USA",
-      //   "Endocrine Associates of Florida, Research Department, Orlando, FL, USA",
-      //   "Ex-presidenta de la Sociedad Venezolana de Medicina Interna, Caracas, Venezuela"
-      // ]
+      affiliations: []
     },
     {
       name: "Astrid Nieto",
