@@ -1662,7 +1662,7 @@ export default function ServicesAccordion() {
       ),
     },
     {
-      id: "athletes",
+      id: "healthy",
       title: "Deportistas, Atletas y Personas Sanas",
       icon: <Bike className="w-6 h-6 md:w-7 md:h-7" />,
       content: (
@@ -1969,6 +1969,87 @@ export default function ServicesAccordion() {
             >
               Agenda tu cita aquí
             </a>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "mentalhealth",
+      title: "Salud Mental Y Bienestar Emocional",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-7 h-7"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+          <line x1="9" x2="9.01" y1="9" y2="9" />
+          <line x1="15" x2="15.01" y1="9" y2="9" />
+        </svg>
+      ), 
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-semibold text-lg mb-2">El problema</h3>
+            <p>
+              ¿Qué es el bienestar emocional? El bienestar emocional implica un equilibrio entre la salud mental positiva y la capacidad de enfrentar situaciones estresantes o desafiantes. En la actualidad, muchas personas luchan con estrés crónico, ansiedad y depresión, factores que pueden impactar significativamente su salud física y calidad de vida.
+            </p>
+          </div>
+  
+          <div>
+            <h3 className="font-semibold text-lg mb-2">¿Cuál es el impacto?</h3>
+            <p>
+              Alteraciones en el bienestar emocional afectan no solo la salud mental, sino también aumentan el riesgo de enfermedades cardiovasculares, obesidad y diabetes, creando un círculo vicioso que deteriora el bienestar general.
+            </p>
+          </div>
+  
+          <div>
+            <h3 className="font-semibold text-lg mb-2">¿Cómo debe ser abordado?</h3>
+            <p>
+              Abordar el bienestar emocional requiere una atención integral, que no se limite a reducir síntomas, sino que también promueva la resiliencia y el desarrollo personal. Un enfoque individualizado que combine terapias psicológicas, estrategias de manejo del estrés y educación sobre salud mental es esencial.
+            </p>
+          </div>
+  
+          <div className="bg-primary/10 p-4 rounded-lg">
+            <h3 className="font-semibold text-lg mb-2">La solución</h3>
+  
+            <div className="mb-3">
+              <h4 className="font-medium mb-1">¿Qué hacemos?</h4>
+              <p>
+                En Precision Care, colocamos al ser humano en el centro de nuestras estrategias, comprendiendo su contexto emocional y social. Trabajamos en conjunto con cada paciente para identificar estresores, promover habilidades de afrontamiento y fortalecer su bienestar a través de un plan personalizado. Las condiciones comúnmente identificadas y tratadas por nuestro equipo de psicólogos incluyen la ansiedad, depresión, estrés psicosocial, trastornos de conducta alimentaria (bulimia, anorexia nerviosa, síndrome del comedor nocturno, trastorno alimentario compulsivo), insomnio, adicciones (tabaco, alcohol) entre otros.
+              </p>
+            </div>
+  
+            <div>
+              <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
+              <p>
+                Con nuestro apoyo, te dotaremos de herramientas que te permitan gestionar tus emociones de manera eficaz, superar situaciones desafiantes, y fortalecer tu salud mental, logrando un equilibrio que se refleje en tu vida diaria.
+              </p>
+            </div>
+          </div>
+  
+          <div>
+            <h3 className="font-semibold text-lg mb-2">¿Cómo lo hacemos?</h3>
+            <p>
+              Nuestro enfoque consiste en:
+            </p>
+            <ol className="list-decimal pl-5 mt-2 space-y-1">
+              <li>
+                <strong>Evaluación Inicial:</strong> Identificación de factores de riesgo emocional mediante una evaluación exhaustiva de tus hábitos, antecedentes, y estado emocional actual.
+              </li>
+              <li>
+                <strong>Intervención Personalizada:</strong> Implementación de un plan que puede incluir terapias cognitivo-conductuales, técnicas de mindfulness, y programas de relajación.
+              </li>
+              <li>
+                <strong>Monitoreo y Ajustes:</strong> Revisión constante para ajustar y optimizar estrategias según tu progreso emocional y necesidades cambiantes.
+              </li>
+            </ol>
           </div>
         </div>
       ),

@@ -253,7 +253,7 @@ export default function Solutions() {
               </div>
             </div>
           </div>
-          <div className="bg-white border border-slate-400 rounded-lg w-[20%] lg:w-1/3 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
+          <div className="bg-white border border-slate-400 rounded-lg w-[20%] lg:w-1/3 p-4 sm:p-6 flex flex-col justify-between">
             <div>
               <div className="bg-[#009aff]/10 p-3 rounded-lg mb-4">
                 <h4 className="text-xl font-bold text-center text-[#009aff]">
@@ -261,7 +261,7 @@ export default function Solutions() {
                 </h4>
               </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-4">
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -318,12 +318,16 @@ export default function Solutions() {
                 </div>
               </div>
 
-              <div className="text-center mb-6">
+              <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-3xl font-bold text-black">$100</span>
-                  <span className="text-gray-500"></span>
+                  <span className="text-3xl font-bold text-black">
+                    70$ - 100$
+                  </span>
                 </div>
-                <p className="text-gray-500 text-sm">por consulta</p>
+                <span className="text-gray-500 text-xs">
+                  El precio de la consulta puede variar dentro del rango según
+                  su región.
+                </span>
               </div>
             </div>
 
@@ -517,11 +521,14 @@ export default function Solutions() {
                         <div className="text-center mb-6">
                           <div className="flex items-center justify-center gap-2">
                             <span className="text-3xl font-bold text-black">
-                              $100
+                              70$ - 100$
                             </span>
-                            <span className="text-gray-500"></span>
                           </div>
-                          <p className="text-gray-500 text-sm">por consulta</p>
+                          {/* <p className="text-gray-500 text-sm">por consulta</p> */}
+                          <span className="text-gray-500 text-xs">
+                            El precio de la consulta puede variar dentro del
+                            rango según su ubicación.
+                          </span>
                         </div>
                       </div>
 
