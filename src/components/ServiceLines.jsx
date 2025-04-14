@@ -284,10 +284,10 @@ const ServiceLines = () => {
       className="scroll-mt-[90px] lg:scroll-mt-[100px] pt-5 md:pt-10 pb-14 md:pb-28"
     >
       <div className="flex flex-col items-center font-semibold mb-8 lg:mb-12">
-        <h3 className="text-xl md:text-2xl text-[#0194c2]">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#0194c2]">
           Líneas de servicio
         </h3>
-        <p className="text-2xl md:text-3xl lg:text-4xl text-center text-main/90">
+        <p className="text-xl md:text-2xl text-center text-main/90">
           ¿A quienes atendemos?
         </p>
       </div>
@@ -361,7 +361,10 @@ const ServiceLines = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z" />
+                <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+                <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+                <path d="M16 17h4" />
+                <path d="M4 13h4" />
               </svg>
             ),
           },
@@ -444,8 +447,8 @@ const ServiceLines = () => {
             className="h-full w-full"
           >
             {services[activeTab].map((item) => (
-              <SwiperSlide key={item.title} className="h-[370px]">
-                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-6 relative h-[370px]">
+              <SwiperSlide key={item.title} className="md:h-[370px]">
+                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-6 relative md:h-[370px]">
                   <div className="flex flex-col items-center">
                     <div className="text-main/90">{item.icon}</div>
                     <p className="text-center text-lg text-main/90 font-medium pt-1 pb-3">

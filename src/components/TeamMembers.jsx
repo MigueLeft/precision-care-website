@@ -129,8 +129,8 @@ const TeamSection = () => {
       <div id="team" class="bg-main/90 py-16 px-4 scroll-mt-[70px]">
         <div className="max-w-6xl mx-auto">
           <div className="font-bold text-center mb-16">
-            <h3 className="text-2xl text-cyan-500">Nuestro Equipo</h3>
-            <p className="text-2xl md:text-3xl lg:text-4xl text-center text-white">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#40f7f7]">Nuestro Equipo</h3>
+            <p className="text-xl sm:text-2xl text-center text-white">
               Profesionales comprometidos con tu bienestar
             </p>
           </div>

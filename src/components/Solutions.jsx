@@ -162,10 +162,12 @@ export default function Solutions() {
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
-          <h3 className="text-xl sm:text-2xl text-[#0194c2]">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7]">
+            {" "}
+            {/* text-[#0194c2] */}
             Nuestras soluciones
           </h3>
-          <p className="text-2xl sm:text-3xl lg:text-4xl text-center px-4 text-white">
+          <p className="text-xl sm:text-2xl text-center px-4 text-white">
             Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
@@ -321,7 +323,7 @@ export default function Solutions() {
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-3xl font-bold text-black">
-                    70$ - 100$
+                    {activeTab !== 1 ? "40$ - 50$" : "70$ - 100$"}
                   </span>
                 </div>
                 <span className="text-gray-500 text-xs">
@@ -356,10 +358,10 @@ export default function Solutions() {
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
-          <h3 className="text-xl sm:text-2xl text-[#0194c2]">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7]">
             Nuestras soluciones
           </h3>
-          <p className="text-2xl sm:text-3xl lg:text-4xl text-center px-4 text-white">
+          <p className="text-xl sm:text-2xl text-center px-4 text-white">
             Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
@@ -521,7 +523,7 @@ export default function Solutions() {
                         <div className="text-center mb-6">
                           <div className="flex items-center justify-center gap-2">
                             <span className="text-3xl font-bold text-black">
-                              70$ - 100$
+                              {activeTab !== 1 ? "40$ - 50$" : "70$ - 100$"}
                             </span>
                           </div>
                           {/* <p className="text-gray-500 text-sm">por consulta</p> */}
