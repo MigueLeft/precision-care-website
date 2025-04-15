@@ -35,20 +35,25 @@ import InstagramIcon from "./assets/InstagramIcon.astro";
       </div>
 
       <p class="text-sm lg:text-base">
-        Te ofrece atención médica para ti y tu familia en todo momento
-        y desde cualquier lugar
+        Te ofrece atención médica para ti y tu familia en todo momento y desde
+        cualquier lugar
       </p>
       <div>
         <p class="font-bold">Horario:</p>
         <p>Lunes a Viernes: 9:00 - 18:00</p>
       </div>
       <div class="flex gap-2">
-        <InstagramIcon
+        <a
+          href="https://www.instagram.com/dr.ramfisnieto?igsh=YzR0cjRzc3psN3Rh"
+          target="_blank"
+        >
+          <InstagramIcon
+            classname="w-8 h-8 text-[#e9f9ff] cursor-pointer hover:opacity-75"
+          />
+        </a>
+        <!-- <FacebookIcon
           classname="w-8 h-8 text-[#e9f9ff] cursor-pointer hover:opacity-75"
-        />
-        <FacebookIcon
-          classname="w-8 h-8 text-[#e9f9ff] cursor-pointer hover:opacity-75"
-        />
+        /> -->
       </div>
     </div>
     <div class="space-y-2 order-3 md:order-none">
@@ -69,9 +74,7 @@ import InstagramIcon from "./assets/InstagramIcon.astro";
       </h4>
       <div>
         <p class="font-bold">Teléfonos:</p>
-        <p>
-          +1 (321) 333-2706
-        </p>
+        <p>+1 (321) 333-2706</p>
         <p>+58 (414) 518-6283</p>
       </div>
       <div>
