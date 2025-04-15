@@ -8,5 +8,6 @@ import vercelAdapter from '@astrojs/vercel';
 export default defineConfig({
   output: 'server',
   adapter: vercelAdapter(),
-  integrations: [tailwind(), react()],
+  site: 'https://precisioncareclinic.org',
+  integrations: [tailwind(), react(), sitemap()],
 });

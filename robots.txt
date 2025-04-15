@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /privado/
 Disallow: /admin/
-Sitemap: https://www.tusitio.com/sitemap.xml
+Sitemap: https://www.precisioncareclinic.org/sitemap.xml
