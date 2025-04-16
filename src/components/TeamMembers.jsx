@@ -7,7 +7,7 @@ const TeamSection = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Ramfis Nieto",
+      name: "Dr. Ramfis Nieto",
       role: "Médico especialista",
       description:
         "Especialista en Medicina Interna, experto en medicina cardiometabólica, nutrición, metabolismo y medicina del estilo de vida",
@@ -59,7 +59,7 @@ const TeamSection = () => {
     },
     {
       id: 4,
-      name: "María Inés",
+      name: "Dra. María Inés Marulanda",
       role: "Médico especialista",
       description:
         "Especialista en Medicina Interna, con larga experiencia en enfermedades crónicas, medicina cardiometabólica y preventiva",
@@ -74,7 +74,7 @@ const TeamSection = () => {
       ]
     },
     {
-      name: "Naty",
+      name: "Lic. Naty Gaschteff",
       role: "Especialista en Ejercicio y Actividad Física",
       description:
         "Especialista en Ejercicio y Actividad Física experta en prescripción del ejercicio físico para condiciones clínicas especiales",
@@ -89,7 +89,7 @@ const TeamSection = () => {
       ]
     },
     {
-      name: "Rebeca",
+      name: "Lic. Rebeca Figueroa",
       role: "Nutricionista",
       description:
         "Nutricionista clínico con experticia en terapia medica nutricional y educación individualizada",
@@ -100,7 +100,7 @@ const TeamSection = () => {
       affiliations: []
     },
     {
-      name: "Astrid Nieto",
+      name: "Lic. Astrid Nieto",
       role: "Coordinadora de Logística y administración",
       description:
         "Gerente logístico y administrativo con alta experticia comunicaciona",
