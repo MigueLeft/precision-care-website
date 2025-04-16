@@ -80,7 +80,7 @@ const PricingSection = () => {
   };
 
   return (
-    <section className="bg-[#e8f9ff] py-16 px-4">
+    <section id="programs" className="scroll-mt-[90px] lg:scroll-mt-[100px] bg-[#e8f9ff] py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0194c2]">
