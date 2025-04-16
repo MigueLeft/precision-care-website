@@ -23,7 +23,7 @@ const TeamSection = () => {
     },
     {
       id: 2,
-      name: "Lucia Druetta",
+      name: "Lic. Lucia Druetta",
       role: "Psicólogo",
       description:
         "Psicóloga clínica experta en terapia cognitivo-conductual, manejo de estrés, y trastornos de conducta alimentaria",
