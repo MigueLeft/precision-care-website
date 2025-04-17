@@ -103,7 +103,7 @@ const TeamSection = () => {
       name: "Lic. Astrid Nieto",
       role: "Coordinadora de Logística y administración",
       description:
-        "Gerente logístico y administrativo con alta experticia comunicaciona",
+        "Gerente logístico y administrativo con alta experiencia comunicacional",
       imageSrc: "/img/astrid.webp",
       credentials: [
         "Licenciada en Gerencia Agroindustrial",

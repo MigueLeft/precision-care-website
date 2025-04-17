@@ -136,15 +136,15 @@ const programSteps = [
   {
     id: 5,
     title: "Híbrida",
-    titleContent: "Médico-Nutrición",
+    titleContent: "Consulta Médica - Nutrición",
     content:
-      "Servicio de consulta híbrida combina la experiencia médica y nutricional en una sola visita integral:",
-    features: [
-      "Manejar el estrés",
-      "Identificar y abordar focos de ansiedad y depresión",
-      "Mejorar la calidad del sueño",
-      "Tratar adicciones y trastornos de conducta alimentaria",
-    ],
+      "Si deseas una consulta médica especializada y además llevarte un plan nutricional personalizado. En la primera, recibes un diagnóstico preciso y un plan de tratamiento médico personalizado. Luego, analizamos tus requerimientos nutricionales para diseñar un plan de alimentación que se ajuste a tu estilo de vida, te motive y te ayude a alcanzar tus metas. Todo el abordaje basado en evidencia científica y enfocado en generar cambios sostenibles.",
+    // features: [
+    //   "Manejar el estrés",
+    //   "Identificar y abordar focos de ansiedad y depresión",
+    //   "Mejorar la calidad del sueño",
+    //   "Tratar adicciones y trastornos de conducta alimentaria",
+    // ],
     image: "/img/psicologo.webp",
     icon: (
       <svg
@@ -318,7 +318,7 @@ export default function Solutions() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <span className="text-gray-700 text-sm">
-                    {activeTab === 5 ? "90 minutos" : "60 minutos"} de consulta especializada
+                    {activeTab === 5 ? "90 - 120 minutos" : "60 minutos"} de consulta especializada
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
