@@ -45,10 +45,11 @@ import { Select, SelectItem } from "@heroui/select";
 import useFormStore from "../store/useFormStore";
 
 export const solutions = [
-  { key: "medicina", label: "Medicina" },
-  { key: "nutricion", label: "Nutrición" },
-  { key: "ejercicio", label: "Ejercicio" },
-  { key: "psicologia", label: "Psicología" },
+  { key: "medicina", label: "Consulta Médica" },
+  { key: "nutricion", label: "Consulta de Nutrición" },
+  { key: "ejercicio", label: "Consulta de Ejercicio" },
+  { key: "psicologia", label: "Consulta Psicológica" },
+  { key: "hibrida", label: "Médico-Nutrición" },
   { key: "programa1", label: "Programa 1 (9 consultas)" },
   { key: "programa2", label: "Programa 2 (10 consultas)" },
   { key: "programa3", label: "Programa 3 (12 consultas)" },

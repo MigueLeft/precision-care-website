@@ -86,7 +86,7 @@ const PricingSection = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0194c2]">
             Nuestros Programas
           </h2>
-          <p className="font-bold text-xl sm:text-2xl text-center text-main/90">
+          <p className="font-semibold text-xl sm:text-2xl text-center text-main/90">
             Soluciones para mejorar tu bienestar físico y mental
           </p>
         </div>
@@ -97,7 +97,7 @@ const PricingSection = () => {
               key={programa.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
             >
-              <div className="min-h-[168px] p-6 bg-gradient-to-r from-main to-blue-900 text-white">
+              <div className="min-h-[184px] p-6 bg-gradient-to-r from-main to-blue-900 text-white">
                 <div className="flex justify-between items-start">
                   <h3 className="text-2xl font-bold">{programa.title}</h3>
                   {programa.descuento >= 18 && (

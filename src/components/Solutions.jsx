@@ -5,6 +5,7 @@ const programSteps = [
   {
     id: 1,
     title: "Medicina",
+    titleContent: "Consulta médica",
     content:
       "Médicos especialistas con amplia experiencia te ofrecen una evaluación completa y un manejo basado en evidencia científica. Dedicamos el tiempo necesario para:",
     features: [
@@ -37,6 +38,7 @@ const programSteps = [
   {
     id: 2,
     title: "Nutrición",
+    titleContent: "Consulta de nutrición",
     content:
       "Especialistas en terapia medica nutricional y nutricionistas te ofrecen una evaluación y prescripción especializada para transformar tu alimentación de forma sostenible y efectiva. Realizamos un diagnóstico completo de tus necesidades nutricionales para diseñar un plan de alimentación personalizado que te ayude a alcanzar tus metas, se ajuste a tu estilo de vida, tus rutinas y te motive a mantener hábitos saludables a largo plazo. ",
     // features: [
@@ -65,6 +67,7 @@ const programSteps = [
   {
     id: 3,
     title: "Ejercicio",
+    titleContent: "Consulta de ejercicio",
     content:
       "Especialistas en ejercicio y actividad física evaluamos tu aptitud física con herramientas diagnósticas precisas, para diseñar un plan de actividad física adaptado a tus metas, necesidades, preferencias, entorno y momento de vida. Ofrecemos asesoría especializada y supervisamos tu progreso para optimizar tu rendimiento, fomentar la constancia y ayudarte a alcanzar resultados de forma segura, efectiva y sostenible.",
     // features: [
@@ -97,6 +100,7 @@ const programSteps = [
   {
     id: 4,
     title: "Psicología",
+    titleContent: "Consulta Psicológica",
     content:
       "Psicólogos especializados crean para ti un espacio confiable para identificar y tratar desajustes psico-emocionales. A través de la terapia cognitivo-conductual, te proporcionamos herramientas personalizadas y efectivas para:",
     features: [
@@ -129,6 +133,37 @@ const programSteps = [
       </svg>
     ),
   },
+  {
+    id: 5,
+    title: "Híbrida",
+    titleContent: "Médico-Nutrición",
+    content:
+      "Servicio de consulta híbrida combina la experiencia médica y nutricional en una sola visita integral:",
+    features: [
+      "Manejar el estrés",
+      "Identificar y abordar focos de ansiedad y depresión",
+      "Mejorar la calidad del sueño",
+      "Tratar adicciones y trastornos de conducta alimentaria",
+    ],
+    image: "/img/psicologo.webp",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 sm:w-8 sm:h-8"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+        <path d="M9 14h6" />
+        <path d="M12 17v-6" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Solutions() {
@@ -152,6 +187,10 @@ export default function Solutions() {
       setValues(new Set(["psicologia"]));
       handleSelect(new Set(["psicologia"]));
     }
+    if (active === 5) {
+      setValues(new Set(["hibrida"]));
+      handleSelect(new Set(["hibrida"]));
+    }
   };
 
   return (
@@ -161,13 +200,13 @@ export default function Solutions() {
         className="hidden lg:block scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7]">
+        <div className="flex flex-col items-center gap-3 mb-8 lg:mb-12">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7] font-bold">
             {" "}
             {/* text-[#0194c2] */}
             Nuestras soluciones
           </h3>
-          <p className="text-xl sm:text-2xl text-center px-4 text-white">
+          <p className="text-xl sm:text-2xl text-center px-4 text-white font-semibold">
             Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
@@ -178,7 +217,7 @@ export default function Solutions() {
             <button
               key={step.id}
               onClick={() => setActiveTab(step.id)}
-              className={`group flex items-center z-10 h-14 gap-4 sm:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
+              className={`group flex items-center z-10 h-14 gap-4 sm:gap-1 rounded-lg w-full relative transition-all duration-300 ease-in-out
                 ${
                   activeTab === step.id
                     ? "bg-main text-white transform scale-[1.02] sm:scale-105"
@@ -210,13 +249,13 @@ export default function Solutions() {
                   className={`${
                     activeTab === step.id
                       ? "mx-3 sm:mx-5"
-                      : "ml-4 sm:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
+                      : "mx-3 sm:mx-5 group-hover:mx-3 group-hover:sm:mx-5"
                   }`}
                 >
                   {step.icon}
                 </div>
               </div>
-              <p className="font-bold text-sm sm:text-base">{step.title}</p>
+              <p className={`${activeTab === step.id ? "ml-3" : "group-hover:ml-3"} font-bold text-sm sm:text-base`}>{step.title}</p>
               {activeTab === step.id && (
                 <div className="absolute -bottom-2 left-1/2 w-5 h-5 sm:w-7 sm:h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
               )}
@@ -231,7 +270,7 @@ export default function Solutions() {
               {/* Text Content */}
               <div className="flex-1 space-y-4 order-2 lg:order-1">
                 <h4 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-black">
-                  {programSteps[activeTab - 1].title}
+                  {programSteps[activeTab - 1].titleContent}
                 </h4>
                 <p className="text-gray-700 text-sm sm:text-base text-justify">
                   {programSteps[activeTab - 1].content}
@@ -279,7 +318,7 @@ export default function Solutions() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <span className="text-gray-700 text-sm">
-                    60 minutos de consulta especializada
+                    {activeTab === 5 ? "90 minutos" : "60 minutos"} de consulta especializada
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -323,7 +362,11 @@ export default function Solutions() {
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-3xl font-bold text-black">
-                    {activeTab !== 1 ? "40$ - 50$" : "70$ - 100$"}
+                    {activeTab === 5
+                      ? "120$ - 140$"
+                      : activeTab !== 1
+                      ? "40$ - 50$"
+                      : "70$ - 100$"}
                   </span>
                 </div>
                 <span className="text-gray-500 text-xs">
@@ -357,11 +400,11 @@ export default function Solutions() {
         className="block lg:hidden scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 font-semibold mb-8 lg:mb-12">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7]">
+        <div className="flex flex-col items-center gap-3 mb-8 lg:mb-12">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7] font-bold">
             Nuestras soluciones
           </h3>
-          <p className="text-xl sm:text-2xl text-center px-4 text-white">
+          <p className="text-xl sm:text-2xl text-center px-4 text-white font-semibold">
             Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
@@ -403,7 +446,7 @@ export default function Solutions() {
                     </svg> */}
                     <div
                       className={`${
-                        activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9"
+                        activeTab === step.id ? "mx-3 sm:mx-5" : "mx-3 sm:mx-5"
                       }`}
                     >
                       {step.icon}
@@ -431,7 +474,7 @@ export default function Solutions() {
                         {/* Text Content */}
                         <div className="flex flex-col gap-2">
                           <h4 className="text-xl font-semibold text-black mb-2">
-                            {step.title}
+                            {step.titleContent}
                           </h4>
                           <p className="text-gray-700 text-base text-justify">
                             {step.content}
@@ -523,7 +566,11 @@ export default function Solutions() {
                         <div className="text-center mb-6">
                           <div className="flex items-center justify-center gap-2">
                             <span className="text-3xl font-bold text-black">
-                              {activeTab !== 1 ? "40$ - 50$" : "70$ - 100$"}
+                              {activeTab === 5
+                                ? "120$ - 140$"
+                                : activeTab !== 1
+                                ? "40$ - 50$"
+                                : "70$ - 100$"}
                             </span>
                           </div>
                           {/* <p className="text-gray-500 text-sm">por consulta</p> */}

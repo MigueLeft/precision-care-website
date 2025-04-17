@@ -283,11 +283,11 @@ const ServiceLines = () => {
       id="services"
       className="scroll-mt-[90px] lg:scroll-mt-[100px] pt-5 md:pt-10 pb-14 md:pb-28"
     >
-      <div className="flex flex-col items-center font-semibold mb-8 lg:mb-12">
-        <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#0194c2]">
+      <div className="flex flex-col items-center mb-8 lg:mb-12">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#0194c2] font-bold">
           Líneas de servicio
         </h3>
-        <p className="text-xl md:text-2xl text-center text-main/90">
+        <p className="text-xl md:text-2xl text-center text-main/90 font-semibold">
           ¿A quienes atendemos?
         </p>
       </div>
@@ -451,7 +451,7 @@ const ServiceLines = () => {
                 <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-6 relative md:h-[370px]">
                   <div className="flex flex-col items-center">
                     <div className="text-main/90">{item.icon}</div>
-                    <p className="text-center text-lg text-main/90 font-medium pt-1 pb-3">
+                    <p className="text-center text-lg text-main/90 font-semibold pt-1 pb-3">
                       {item.title}
                     </p>
                     <p className="text-justify">{item.content}</p>

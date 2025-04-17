@@ -42,7 +42,7 @@ const TeamSection = () => {
     },
     {
       id: 3,
-      name: "Joel Peña",
+      name: "Lic. Joel Peña",
       role: "Especialista en Ejercicio y Actividad Física",
       description:
         "Especialista en Ejercicio y Actividad Física experto en prescripción de ejercicio y planes de entrenamiento personalizados",
