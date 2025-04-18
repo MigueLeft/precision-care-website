@@ -18,8 +18,8 @@ export default function ContactForm() {
       <div className="max-w-[1300px] mx-auto flex flex-col justify-center items-center text-2xl py-12 lg:py-16 px-5 md:px-10 lg:px-14">
         <h4 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0194c2]">Contáctanos</h4>
         <p className="text-xl sm:text-2xl text-center text-main/90 font-semibold">
-          Estamos listos para acompañarte. Agenda tu consulta y comienza la
-          transformación hacia una vida más saludable.
+          Estamos listos para acompañarte. <span className="block">Agenda tu consulta y comienza la
+          transformación hacia una vida más saludable.</span>
         </p>
         {formSubmitted && (
           <div className="p-2 w-full rounded bg-green-300 text-center text-green-900 mt-4 max-w-3xl min-w-3xl">

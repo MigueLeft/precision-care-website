@@ -17,8 +17,27 @@ const TeamSection = () => {
         "Magister en Nutrición"
       ],
       affiliations: [
-        "Precision Care Corp, St Cloud, USA",
-        "Lown Scholar. Harvard TH Chan School of Public Health, Boston, MA, USA"
+        {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
+        {name: "Lown Scholar. Harvard TH Chan School of Public Health, Boston, MA, USA", link: "https://connects.catalyst.harvard.edu/Profiles/display/Person/158181", linkName: "Lown Scholar"},
+        {name: "Presidente Fundación para la Investigación Clínica, Epidemiológica y en Salud Pública de Venezuela", link: "https://fispeven.com/", linkName: "(FISPEVEN INC)"},
+        {name: "Vicepresidente The MEchanick Transculturalization Research and Innovation ConSortium", link: "https://metricscm.com/", linkName: "(METRICS)"}
+      ]
+    },
+    {
+      id: 4,
+      name: "Dra. María Inés Marulanda",
+      role: "Médico especialista",
+      description:
+        "Especialista en Medicina Interna, con larga experiencia en enfermedades crónicas, medicina cardiometabólica y preventiva",
+        imageSrc: "/img/maria.webp",
+      credentials: [
+        "Médico especialista Medicina Interna"
+      ],
+      affiliations: [
+        {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
+        {name: "West Orange Endocrinology, Orlando, FL, USA.", link: " https://www.woendo.com/", linkName: "WOENDO"},
+        {name: "Ex-presidenta de la Sociedad Venezolana de Medicina Interna, Caracas, Venezuela", link: "", linkName: "Sociedad Venezolana de Medicina Interna"},
+        {name: "Ex-presidenta Fundación para la Investigación Clínica, Epidemiológica y en Salud Pública de Venezuela", link: "https://fispeven.com/", linkName: "(FISPEVEN INC)"}
       ]
     },
     {
@@ -35,9 +54,35 @@ const TeamSection = () => {
         "Autora del libro 'La Alimentacion Emocional'"
       ],
       affiliations: [
-        "Precision Care Corp, St Cloud, USA",
-        "Miembro de la Sociedad Argentina de Diabetes",
-        "Profesora en la Universidad del Aconcagua, Facultad de Psicología y Facultad de Ciencias Económicas y Jurídicas, Argentina, Mendoza"
+        {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
+        {name: "Miembro de la Sociedad Argentina de Diabetes", link: "", linkName: "Sociedad Argentina de Diabetes"},
+        {name: "Profesora en la Universidad del Aconcagua, Facultad de Psicología y Facultad de Ciencias Económicas y Jurídicas, Argentina, Mendoza", link: "https://www.uda.edu.ar/", linkName: "UDA"}
+      ]
+    },
+    {
+      name: "Lic. Rebeca Figueroa",
+      role: "Nutricionista",
+      description:
+        "Nutricionista clínico con experticia en terapia medica nutricional y educación individualizada",
+      imageSrc: "/img/rebeca.webp",
+      credentials: [
+        "Licenciada en Nutrición y Dietética. Universidad de Los Andes (Venezuela, 2022). Distinción Magna Cum Laude"
+      ],
+      affiliations: [{name: "Miebro asociado de Fundación para la Investigación Clínica, Epidemiológica y en Salud Pública de Venezuela", link: "https://fispeven.com/", linkName: "(FISPEVEN INC)"}]
+    },
+    {
+      name: "Lic. Naty Gaschteff",
+      role: "Especialista en Ejercicio y Actividad Física",
+      description:
+        "Especialista en Ejercicio y Actividad Física experta en prescripción del ejercicio físico para condiciones clínicas especiales",
+      imageSrc: "/img/naty.webp",
+      credentials: [
+        "Licenciada en Educación Física. Universidad Federal do Amazonas (Brasil, 2010)",
+        "Postgrado en Rehabilitación y Prescripción del ejercicio físico para grupos especiales Instituto Valorize (Brasil, 2024)"
+      ],
+      affiliations: [
+        {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
+        {name: "CEO. La Casa. Centro de Bienestar. Barquisimeto, Venezuela", link: "", linkName: "La Casa. Centro de Bienestar"}
       ]
     },
     {
@@ -53,51 +98,9 @@ const TeamSection = () => {
         "Magister en Gestión para la Creación Intelectual. Universidad Nacional Experimental Simón Rodríguez. Barquisimeto, Venezuela"
       ],
       affiliations: [
-        "Precision Care Corp, St Cloud, Florida",
-        "Sociedad Internacional para el Avance de la Kinantropometría (ISAK)"
+        {name: "Precision Care Corp, St Cloud, Florida", link: "", linkName: "Precision Care Corp"},
+        {name: "Sociedad Internacional para el Avance de la Kinantropometría (ISAK)", link: "", linkName: "ISAK"}
       ]
-    },
-    {
-      id: 4,
-      name: "Dra. María Inés Marulanda",
-      role: "Médico especialista",
-      description:
-        "Especialista en Medicina Interna, con larga experiencia en enfermedades crónicas, medicina cardiometabólica y preventiva",
-        imageSrc: "/img/maria.webp",
-      credentials: [
-        "Médico especialista Medicina Interna"
-      ],
-      affiliations: [
-        "Precision Care Corp, St Cloud, USA",
-        "West Orange Endocrinology, Orlando, FL, USA.",
-        "Ex-presidenta de la Sociedad Venezolana de Medicina Interna, Caracas, Venezuela"
-      ]
-    },
-    {
-      name: "Lic. Naty Gaschteff",
-      role: "Especialista en Ejercicio y Actividad Física",
-      description:
-        "Especialista en Ejercicio y Actividad Física experta en prescripción del ejercicio físico para condiciones clínicas especiales",
-      imageSrc: "/img/naty.webp",
-      credentials: [
-        "Licenciada en Educación Física. Universidad Federal do Amazonas (Brasil, 2010)",
-        "Postgrado en Rehabilitación y Prescripción del ejercicio físico para grupos especiales Instituto Valorize (Brasil, 2024)"
-      ],
-      affiliations: [
-        "Precision Care Corp, St Cloud, USA",
-        "CEO. La Casa. Centro de Bienestar. Barquisimeto, Venezuela"
-      ]
-    },
-    {
-      name: "Lic. Rebeca Figueroa",
-      role: "Nutricionista",
-      description:
-        "Nutricionista clínico con experticia en terapia medica nutricional y educación individualizada",
-      imageSrc: "/img/rebeca.webp",
-      credentials: [
-        "Licenciada en Nutrición y Dietética. Universidad de Los Andes (Venezuela, 2022). Distinción Magna Cum Laude"
-      ],
-      affiliations: []
     },
     {
       name: "Lic. Astrid Nieto",
@@ -110,8 +113,8 @@ const TeamSection = () => {
         "Magister en Gerencia Empresarial"
       ],
       affiliations: [
-        "Precision Care Corp, St Cloud, USA",
-        "Universidad Centroccidental Lisandro Alvarado. Departamento de Procesos Agroindustriales"
+        {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
+        {name: "Universidad Centroccidental Lisandro Alvarado. Departamento de Procesos Agroindustriales", link: "", linkName: "Universidad Centroccidental Lisandro Alvarado"}
       ]
     },
   ];
@@ -223,21 +226,22 @@ const TeamSection = () => {
                       <h4 className="font-bold text-gray-900 border-b border-gray-200 pb-1 mb-2">Afiliaciones</h4>
                       <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
                         {selectedMember.affiliations.map((affiliation, index) => (
-                          affiliation === "West Orange Endocrinology, Orlando, FL, USA." ? (
-                            <li key={index}>
-                              {affiliation}{" "}
-                              <a 
-                                className="text-cyan-600"
-                                href="https://www.woendo.com/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                              >
-                                (WOENDO)
-                              </a>
-                            </li>
-                          ) : (
-                            <li key={index}>{affiliation}</li>
-                          )
+                          // affiliation === "West Orange Endocrinology, Orlando, FL, USA." ? (
+                          //   <li key={index}>
+                          //     {affiliation}{" "}
+                          //     <a 
+                          //       className="text-cyan-600"
+                          //       href="https://www.woendo.com/" 
+                          //       target="_blank" 
+                          //       rel="noopener noreferrer"
+                          //     >
+                          //       (WOENDO)
+                          //     </a>
+                          //   </li>
+                          // ) : (
+                          //   <li key={index}>{affiliation}</li>
+                          // )
+                          <><li key={index}>{affiliation.name}</li>{affiliation.link && <a  target="_blank" className="text-cyan-600" href={affiliation.link}>{affiliation.linkName}</a>}</>
                         ))}
                       </ul>
                     </div>
