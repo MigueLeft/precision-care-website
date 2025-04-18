@@ -69,7 +69,7 @@ const TeamSection = () => {
       ],
       affiliations: [
         "Precision Care Corp, St Cloud, USA",
-        "Endocrine Associates of Florida, Research Department, Orlando, FL, USA",
+        "West Orange Endocrinology, Orlando, FL, USA.",
         "Ex-presidenta de la Sociedad Venezolana de Medicina Interna, Caracas, Venezuela"
       ]
     },
@@ -184,8 +184,8 @@ const TeamSection = () => {
 
         {/* Modal con información detallada */}
         {selectedMember && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-md relative overflow-hidden">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4" onClick={(e) => e.target === e.currentTarget && closeModal()}>
+            <div className="bg-white rounded-lg shadow-xl w-full max-w-md relative overflow-hidden" onClick={(e) => e.stopPropagation()}>
               <button 
                 onClick={closeModal}
                 className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
@@ -223,7 +223,21 @@ const TeamSection = () => {
                       <h4 className="font-bold text-gray-900 border-b border-gray-200 pb-1 mb-2">Afiliaciones</h4>
                       <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
                         {selectedMember.affiliations.map((affiliation, index) => (
-                          <li key={index}>{affiliation}</li>
+                          affiliation === "West Orange Endocrinology, Orlando, FL, USA." ? (
+                            <li key={index}>
+                              {affiliation}{" "}
+                              <a 
+                                className="text-cyan-600"
+                                href="https://www.woendo.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                              >
+                                (WOENDO)
+                              </a>
+                            </li>
+                          ) : (
+                            <li key={index}>{affiliation}</li>
+                          )
                         ))}
                       </ul>
                     </div>
