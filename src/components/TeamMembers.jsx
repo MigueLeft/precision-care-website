@@ -18,7 +18,7 @@ const TeamSection = () => {
       ],
       affiliations: [
         {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
-        {name: "Lown Scholar. Harvard TH Chan School of Public Health, Boston, MA, USA", link: "https://connects.catalyst.harvard.edu/Profiles/display/Person/158181", linkName: "Lown Scholar"},
+        {name: "Lown Scholar. Harvard TH Chan School of Public Health, Boston, MA, USA", link: "https://connects.catalyst.harvard.edu/Profiles/display/Person/158181", linkName: "Harvard Catalyst"},
         {name: "Presidente Fundación para la Investigación Clínica, Epidemiológica y en Salud Pública de Venezuela", link: "https://fispeven.com/", linkName: "(FISPEVEN INC)"},
         {name: "Vicepresidente The MEchanick Transculturalization Research and Innovation ConSortium", link: "https://metricscm.com/", linkName: "(METRICS)"}
       ]
