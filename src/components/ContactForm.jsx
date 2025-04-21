@@ -116,7 +116,7 @@ export default function ContactForm() {
             ></textarea>
           </label>
 
-          <div className="col-span-2 flex items-center gap-2 my-2">
+          {/* <div className="col-span-2 flex items-center gap-2 my-2">
             <input
               type="checkbox"
               id="migrante"
@@ -128,7 +128,7 @@ export default function ContactForm() {
             <label htmlFor="migrante" className="text-base">
               Me interesa aplicar al programa de migrantes
             </label>
-          </div>
+          </div> */}
 
           <button type="submit" className="btn bg-main text-white col-span-2">
             Enviar
