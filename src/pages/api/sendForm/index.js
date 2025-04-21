@@ -61,7 +61,7 @@ export async function POST({ request }) {
     await transporter.sendMail({
       // from: '"Precision Care"',
       from: '"Precision Care" <contacto@precisioncareclinic.org>',
-      to: data.email,
+      to: '<contacto@precisioncareclinic.org>',
       subject: "Nueva Solicitud de Consulta",
       html: templateEmail,
     });
