@@ -1137,7 +1137,7 @@ export default function ServicesAccordion() {
     },
     {
       id: "second",
-      title: "Segunda Opinión",
+      title: "Segunda Opinión Medica",
       icon: <MessageSquareQuote className="w-6 h-6 md:w-7 md:h-7" />,
       content: (
         <div className="space-y-4">
