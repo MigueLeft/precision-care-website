@@ -1143,8 +1143,7 @@ export default function ServicesAccordion() {
         <div className="space-y-4">
           <div>
             <p>
-              Servicio de segunda opinión médica para pacientes que buscan
-              confirmar un diagnóstico o explorar alternativas de tratamiento.
+              Evaluación y análisis de tu caso por un médico especialista para aclarar diagnósticos, explicar el origen de tus síntomas y ofrecer alternativas de tratamiento eficaces, todo entregado en un informe médico detallado.
             </p>
           </div>
 
@@ -1636,31 +1635,31 @@ export default function ServicesAccordion() {
         </div>
       ),
     },
-    {
-      id: "nutrition",
-      title: "Nutrición Personalizada",
-      icon: <Utensils className="w-6 h-6 md:w-7 md:h-7" />,
-      content: (
-        <div className="space-y-4">
-          <div>
-            <p>
-              Servicio de nutrición personalizada adaptada a las necesidades
-              específicas de cada paciente, considerando sus objetivos de salud,
-              preferencias alimentarias y condiciones médicas.
-            </p>
-          </div>
+    // {
+    //   id: "nutrition",
+    //   title: "Nutrición Personalizada",
+    //   icon: <Utensils className="w-6 h-6 md:w-7 md:h-7" />,
+    //   content: (
+    //     <div className="space-y-4">
+    //       <div>
+    //         <p>
+    //           Servicio de nutrición personalizada adaptada a las necesidades
+    //           específicas de cada paciente, considerando sus objetivos de salud,
+    //           preferencias alimentarias y condiciones médicas.
+    //         </p>
+    //       </div>
 
-          <div className="pt-2">
-            <a
-              href="#contact"
-              className="bg-main inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-            >
-              Agenda tu cita aquí
-            </a>
-          </div>
-        </div>
-      ),
-    },
+    //       <div className="pt-2">
+    //         <a
+    //           href="#contact"
+    //           className="bg-main inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+    //         >
+    //           Agenda tu cita aquí
+    //         </a>
+    //       </div>
+    //     </div>
+    //   ),
+    // },
     {
       id: "healthy",
       title: "Deportistas, Atletas y Personas Sanas",
@@ -1669,20 +1668,20 @@ export default function ServicesAccordion() {
         <div className="space-y-4">
           <div>
             <h3 className="font-semibold text-lg mb-2">
-            ¿Por qué es importante chequear tu salud?
+              ¿Por qué es importante chequear tu salud?
             </h3>
             <p>
-            La mayoría de las enfermedades crónicas no avisan de su presencia. Por tanto, una evaluación de salud anual es una estrategia muy potente para detectar condiciones en etapas iniciales y tratarlas a tiempo para que no se transformen en enfermedades. En el caso de los atletas se asume que son personas sanas. Sin embargo, no siempre es así y también es recomendable que chequeen su estado de salud.
+              La mayoría de las enfermedades crónicas no avisan de su presencia. Por tanto, una evaluación de salud anual es una estrategia muy potente para detectar condiciones en etapas iniciales y tratarlas a tiempo para que no se transformen en enfermedades. En el caso de los atletas se asume que son personas sanas. Sin embargo, no siempre es así y también es recomendable que chequeen su estado de salud.
             </p>
             <p>Además, la medicina del deporte se enfoca en optimizar el rendimiento físico a través de estrategias nutricionales, entrenamiento adecuado y control médico. Es decir, no se trata solo del entrenamiento deportivo sino de todos los factores que garantizan lograr el máximo rendimiento. </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-2">
-            ¿Cómo mantenerse sano?
+              ¿Cómo mantenerse sano?
             </h3>
             <p>
-            Las personas aparentemente sanas, incluyendo deportistas y atletas, requieren crear o mantener buenos hábitos de vida para prevenir enfermedades y mejorar su condición física y mental. Esto los hará personas más productivas y  exitosas.
+              Las personas aparentemente sanas, incluyendo deportistas y atletas, requieren crear o mantener buenos hábitos de vida para prevenir enfermedades y mejorar su condición física y mental. Esto los hará personas más productivas y  exitosas.
             </p>
           </div>
 
@@ -1692,7 +1691,7 @@ export default function ServicesAccordion() {
             <div className="mb-3">
               <h4 className="font-medium mb-1">¿Qué hacemos?</h4>
               <p>
-              En Precision Care tenemos un equipo de salud especializado en medicina de estilo de vida. Esta es una rama de la medicina que incluye todas las estrategias para el tratamiento de las enfermedades excepto el uso de medicamentos y cirugía. Tener buenos hábitos de alimentación, un nivel suficiente de actividad física, cantidad y calidad de sueño, y una mente en el presente que logre controlar el estrés son las bases de la salud en cualquier momento de la vida. Lo ideal es implementarlo desde la infancia. Promovemos la educación de niños y adolescentes 
+                En Precision Care tenemos un equipo de salud especializado en medicina de estilo de vida. Esta es una rama de la medicina que incluye todas las estrategias para el tratamiento de las enfermedades excepto el uso de medicamentos y cirugía. Tener buenos hábitos de alimentación, un nivel suficiente de actividad física, cantidad y calidad de sueño, y una mente en el presente que logre controlar el estrés son las bases de la salud en cualquier momento de la vida. Lo ideal es implementarlo desde la infancia. Promovemos la educación de niños y adolescentes
               </p>
               <p>Nuestro equipo de fisiólogos del ejercicio, nutricionistas y psicólogos pueden liderar intervenciones que mejoren tu rendimiento deportivo. Además nuestro equipo de médicos especialistas en estilo de vida y nutricionistas te darán las herramientas para saber cual es la alimentación, composición corporal ideal de acuerdo a tu disciplina. </p>
             </div>
@@ -1700,7 +1699,7 @@ export default function ServicesAccordion() {
             <div>
               <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
               <p>
-              De la mano de nuestro equipo de Precision Care, lograrás optimizar tu salud y rendimiento físico, permitiéndote alcanzar tus metas deportivas y personales de manera eficiente y segura. Al enfocarnos en crear y mantener hábitos de vida saludables, mejorarás no solo en el ámbito deportivo, sino también tu calidad de vida en general. Obtendrás un plan personalizado que abordará aspectos clave como la nutrición, el entrenamiento físico, la gestión del estrés y el sueño, asegurando que tu cuerpo y mente funcionen en armonía.
+                De la mano de nuestro equipo de Precision Care, lograrás optimizar tu salud y rendimiento físico, permitiéndote alcanzar tus metas deportivas y personales de manera eficiente y segura. Al enfocarnos en crear y mantener hábitos de vida saludables, mejorarás no solo en el ámbito deportivo, sino también tu calidad de vida en general. Obtendrás un plan personalizado que abordará aspectos clave como la nutrición, el entrenamiento físico, la gestión del estrés y el sueño, asegurando que tu cuerpo y mente funcionen en armonía.
               </p>
             </div>
           </div>
@@ -1823,19 +1822,19 @@ export default function ServicesAccordion() {
 
           <div>
             <h3 className="font-semibold text-lg mb-2">
-            ¿Por qué es importante evaluarla?
+              ¿Por qué es importante evaluarla?
             </h3>
             <p>
-            La cantidad de niños y adolescentes con obesidad ha aumentado dramáticamente en las últimas décadas debido a factores como una dieta poco saludable, la falta de actividad física, y el aumento del tiempo frente a pantallas de celulares. Esto puede llevar a complicaciones de salud a largo plazo y afectar su calidad de vida en el presente y el futuro. Los niños con obesidad tienen mayor riesgo de presentar resistencia a la insulina, prediabetes o diabetes tipo 2, hipertensión, dislipidemia, hígado graso, alteraciones de la menstruación y pubertad temprana en niñas, pubertad tardía y ginecomastia (crecimiento mamario en niños).
+              La cantidad de niños y adolescentes con obesidad ha aumentado dramáticamente en las últimas décadas debido a factores como una dieta poco saludable, la falta de actividad física, y el aumento del tiempo frente a pantallas de celulares. Esto puede llevar a complicaciones de salud a largo plazo y afectar su calidad de vida en el presente y el futuro. Los niños con obesidad tienen mayor riesgo de presentar resistencia a la insulina, prediabetes o diabetes tipo 2, hipertensión, dislipidemia, hígado graso, alteraciones de la menstruación y pubertad temprana en niñas, pubertad tardía y ginecomastia (crecimiento mamario en niños).
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-2">
-            ¿Qué deberías hacer?
+              ¿Qué deberías hacer?
             </h3>
             <p>
-            Si tu hijo o hija tiene sobrepeso dale la oportunidad de que investiguemos si hay complicaciones asociadas, no solo físicas o metabólicas, sino también emocionales. Muchos son tratados con estigma y discriminacion lo cual afecta la salud mental y desempeño del niño o adolescente.  Abordar la obesidad infantil requiere un enfoque multidisciplinario que no solo incluya cambios en la dieta y el ejercicio, sino también el apoyo emocional y educativo para el niño y la familia. Un tratamiento efectivo también debe enfocarse en la prevención de problemas cardiometabólicos a través de la detección temprana y la intervención adecuada.
+              Si tu hijo o hija tiene sobrepeso dale la oportunidad de que investiguemos si hay complicaciones asociadas, no solo físicas o metabólicas, sino también emocionales. Muchos son tratados con estigma y discriminacion lo cual afecta la salud mental y desempeño del niño o adolescente.  Abordar la obesidad infantil requiere un enfoque multidisciplinario que no solo incluya cambios en la dieta y el ejercicio, sino también el apoyo emocional y educativo para el niño y la familia. Un tratamiento efectivo también debe enfocarse en la prevención de problemas cardiometabólicos a través de la detección temprana y la intervención adecuada.
             </p>
           </div>
 
@@ -1874,7 +1873,7 @@ export default function ServicesAccordion() {
             <div>
               <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
               <p>
-              Con nuestro programa, tu hijo(a) logrará una mejor salud física y emocional, reduciendo el riesgo de enfermedades cardiometabólicas tanto en el presente como en el futuro. Fomentamos la construcción de hábitos saludables que pueden durar toda la vida, mejorando su calidad de vida y autoestima. En Precision Care, estamos comprometidos a acompañar a tu familia en cada paso del camino hacia un futuro más saludable.
+                Con nuestro programa, tu hijo(a) logrará una mejor salud física y emocional, reduciendo el riesgo de enfermedades cardiometabólicas tanto en el presente como en el futuro. Fomentamos la construcción de hábitos saludables que pueden durar toda la vida, mejorando su calidad de vida y autoestima. En Precision Care, estamos comprometidos a acompañar a tu familia en cada paso del camino hacia un futuro más saludable.
               </p>
             </div>
           </div>
@@ -1992,7 +1991,7 @@ export default function ServicesAccordion() {
           <line x1="9" x2="9.01" y1="9" y2="9" />
           <line x1="15" x2="15.01" y1="9" y2="9" />
         </svg>
-      ), 
+      ),
       content: (
         <div className="space-y-4">
           <div>
@@ -2001,31 +2000,31 @@ export default function ServicesAccordion() {
               ¿Qué es el bienestar emocional? El bienestar emocional implica un equilibrio entre la salud mental positiva y la capacidad de enfrentar situaciones estresantes o desafiantes. En la actualidad, muchas personas luchan con estrés crónico, ansiedad y depresión, factores que pueden impactar significativamente su salud física y calidad de vida.
             </p>
           </div>
-  
+
           <div>
             <h3 className="font-semibold text-lg mb-2">¿Cuál es el impacto?</h3>
             <p>
               Alteraciones en el bienestar emocional afectan no solo la salud mental, sino también aumentan el riesgo de enfermedades cardiovasculares, obesidad y diabetes, creando un círculo vicioso que deteriora el bienestar general.
             </p>
           </div>
-  
+
           <div>
             <h3 className="font-semibold text-lg mb-2">¿Cómo debe ser abordado?</h3>
             <p>
               Abordar el bienestar emocional requiere una atención integral, que no se limite a reducir síntomas, sino que también promueva la resiliencia y el desarrollo personal. Un enfoque individualizado que combine terapias psicológicas, estrategias de manejo del estrés y educación sobre salud mental es esencial.
             </p>
           </div>
-  
+
           <div className="bg-primary/10 p-4 rounded-lg">
             <h3 className="font-semibold text-lg mb-2">La solución</h3>
-  
+
             <div className="mb-3">
               <h4 className="font-medium mb-1">¿Qué hacemos?</h4>
               <p>
                 En Precision Care, colocamos al ser humano en el centro de nuestras estrategias, comprendiendo su contexto emocional y social. Trabajamos en conjunto con cada paciente para identificar estresores, promover habilidades de afrontamiento y fortalecer su bienestar a través de un plan personalizado. Las condiciones comúnmente identificadas y tratadas por nuestro equipo de psicólogos incluyen la ansiedad, depresión, estrés psicosocial, trastornos de conducta alimentaria (bulimia, anorexia nerviosa, síndrome del comedor nocturno, trastorno alimentario compulsivo), insomnio, adicciones (tabaco, alcohol) entre otros.
               </p>
             </div>
-  
+
             <div>
               <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
               <p>
@@ -2033,7 +2032,7 @@ export default function ServicesAccordion() {
               </p>
             </div>
           </div>
-  
+
           <div>
             <h3 className="font-semibold text-lg mb-2">¿Cómo lo hacemos?</h3>
             <p>
@@ -2078,37 +2077,33 @@ export default function ServicesAccordion() {
             >
               <button
                 onClick={() => toggleAccordion(index)}
-                className={`flex items-center justify-between w-full p-4 text-left transition-colors ${
-                  activeIndex === index
+                className={`flex items-center justify-between w-full p-4 text-left transition-colors ${activeIndex === index
                     ? "bg-main text-primary-foreground"
                     : "hover:bg-muted/50"
-                }`}
+                  }`}
                 aria-expanded={activeIndex === index}
                 aria-controls={`content-${service.id}`}
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className={`flex items-center justify-center rounded-full p-1.5 ${
-                      activeIndex === index
+                    className={`flex items-center justify-center rounded-full p-1.5 ${activeIndex === index
                         ? "bg-primary-foreground/20"
                         : "bg-primary/10"
-                    }`}
+                      }`}
                   >
                     {service.icon}
                   </div>
                   <h3 className="text-lg font-semibold">{service.title}</h3>
                 </div>
                 <ChevronDown
-                  className={`h-5 w-5 transition-transform duration-200 ${
-                    activeIndex === index ? "rotate-180 transform" : ""
-                  }`}
+                  className={`h-5 w-5 transition-transform duration-200 ${activeIndex === index ? "rotate-180 transform" : ""
+                    }`}
                 />
               </button>
               <div
                 id={`content-${service.id}`}
-                className={`overflow-hidden transition-all duration-300 ${
-                  activeIndex === index ? "max-h-[5000px]" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? "max-h-[5000px]" : "max-h-0"
+                  }`}
               >
                 <div className="p-4 bg-card text-card-foreground">
                   {service.content}
