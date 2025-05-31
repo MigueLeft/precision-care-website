@@ -1158,9 +1158,50 @@ export default function ServicesAccordion() {
                 <li>Evita errores diagnósticos o tratamientos innecesarios.</li>
                 <li>Permite conocer opciones terapéuticas más avanzadas.</li>
                 <li>Ayuda a definir el mejor plan de acción según el caso.</li>
-                <li>O simplemente, te reduce el nivel de estrés que genera no poder tener acceso a un diagnostico de tus síntomas, condiciones o enfermedades</li>
+                <li>O simplemente, te reduce el nivel de estrés que genera no poder tener acceso a un diagnóstico de tus síntomas, condiciones o enfermedades.</li>
               </ul>
             </p>
+          </div>
+
+          <div className="bg-primary/10 p-4 rounded-lg">
+            <h3 className="font-semibold text-lg mb-2">La solución</h3>
+            <p>
+              En Precision Care brindamos segundas opiniones médicas con especialistas de alto nivel, sin importar tu ubicación. Analizamos tu historia clínica y estudios para darte un enfoque integral y preciso sobre tu condición. Sobre todo, estamos dispuestos a dedicar el tiempo necesario para oír tu problema y ofrecerte.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-medium mb-1">¿Qué vas a lograr?</h4>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+              <li>✔ Obtener un diagnóstico más claro y confiable. Eso te da más tranquilidad y conocimientos para resolver el problema.</li>
+              <li>✔ Explorar opciones de tratamiento basadas en evidencia.</li>
+              <li>✔ Recibir orientación personalizada para tomar decisiones informadas.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-2">¿Cómo lo hacemos?</h3>
+            <p>
+              Esta consulta de segunda opinión tiene 4 acciones:
+            </p>
+            <ol className="list-decimal pl-5 mt-2 space-y-1">
+              <li>Analizamos en detalle tu caso. Previo a la consulta, el especialista hará una revisión de tu historia clínica y estudios previos realizados.</li>
+              <li>Consulta online con especialistas. Accede a expertos sin salir de casa.</li>
+              <li>Informe detallado. Recibirás un informe médico en español o inglés con los diagnósticos planteados, recomendaciones personalizadas, y un plan de acción para que puedas navegar más fácilmente en tu sistema de salud y buscar las soluciones definitivas.</li>
+              <li>Asesoramiento en la toma de decisiones. Te ayudamos a definir el mejor camino a seguir.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-2">¿En qué áreas ofrecemos una segunda opinión?</h3>
+            <ul className="list-disc pl-5 mt-2 space-y-1">
+              <li><strong>Medicina Interna:</strong> Casos complejos o casos no complejos aún no diagnosticados, o casos que involucran múltiples sistemas.</li>
+              <li><strong>Oncología:</strong> Sospecha diagnóstica, confirmación de diagnóstico y opciones terapéuticas en cáncer.</li>
+              <li><strong>Cardiología:</strong> Evaluación de enfermedades cardíacas de difícil diagnóstico y su tratamiento.</li>
+              <li><strong>Fertilidad:</strong> Diagnóstico y alternativas en tratamientos de reproducción asistida.</li>
+              <li><strong>Neurocirugía:</strong> Trastornos del sistema nervioso central y periférico, enfermedades de la columna vertebral que afectan el sistema nervioso, opiniones sobre necesidad de cirugía o no.</li>
+              <li><strong>Reumatología:</strong> Enfermedades autoinmunes y manejo de síntomas.</li>
+            </ul>
           </div>
 
           <div className="pt-2">
