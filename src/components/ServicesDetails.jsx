@@ -1137,13 +1137,29 @@ export default function ServicesAccordion() {
     },
     {
       id: "second",
-      title: "Segunda Opinión Medica",
+      title: "Segunda Opinión Médica",
       icon: <MessageSquareQuote className="w-6 h-6 md:w-7 md:h-7" />,
       content: (
         <div className="space-y-4">
           <div>
+            <h3 className="font-semibold text-lg mb-2">El problema</h3>
             <p>
-              Evaluación y análisis de tu caso por un médico especialista para aclarar diagnósticos, explicar el origen de tus síntomas y ofrecer alternativas de tratamiento eficaces, todo entregado en un informe médico detallado.
+              Muchas enfermedades son difíciles de diagnosticar, los síntomas pueden ser inespecíficos y, en algunos casos, los pacientes no reciben un diagnóstico claro, diagnósticos contradictorios o tratamientos que no responden a sus necesidades. Además, en muchos sistemas de salud, las consultas son rápidas y no brindan el tiempo suficiente para una evaluación en profundidad.
+            </p>
+            <h3 className="font-semibold text-lg mb-2">¿Qué es una segunda opinión médica?</h3>
+            <p>
+              Es la evaluación de tu caso por un especialista altamente calificado que revisa tu historial médico, estudios y tratamientos previos para confirmar, aclarar o corregir un diagnóstico, así como ofrecerte opciones de manejo basadas en la mejor evidencia científica.
+            </p>
+            <h3 className="font-semibold text-lg mb-2">¿Cuál es la importancia de una segunda opinión médica?</h3>
+            <p>
+              Cuando hay dudas sobre un diagnóstico o un tratamiento, una segunda opinión:
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Aporta claridad y seguridad en la toma de decisiones.</li>
+                <li>Evita errores diagnósticos o tratamientos innecesarios.</li>
+                <li>Permite conocer opciones terapéuticas más avanzadas.</li>
+                <li>Ayuda a definir el mejor plan de acción según el caso.</li>
+                <li>O simplemente, te reduce el nivel de estrés que genera no poder tener acceso a un diagnostico de tus síntomas, condiciones o enfermedades</li>
+              </ul>
             </p>
           </div>
 
