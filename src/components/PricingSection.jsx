@@ -79,6 +79,8 @@ const PricingSection = () => {
     }
   };
 
+  console.log("Test")
+
   return (
     <section id="programs" className="scroll-mt-[90px] lg:scroll-mt-[100px] bg-[#e8f9ff] py-16 px-4">
       <div className="max-w-6xl mx-auto">
