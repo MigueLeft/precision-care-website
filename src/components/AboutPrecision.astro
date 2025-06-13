@@ -1,16 +1,17 @@
 <section
   id="precision"
   class="scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1300px] mx-auto px-5 md:px-10 lg:px-14 pb-8 mt-10"
+  aria-labelledby="precision-heading"
 >
   <div class="flex flex-col gap-4">
     <div>
-      <p class="text-2xl sm:text-3xl lg:text-4xl text-main/90 font-bold">Sobre Precision Care</p>
-      <h2 class="text-xl sm:text-2xl font-semibold text-[#0194c2]">
+      <h2 id="precision-heading" class="text-2xl sm:text-3xl lg:text-4xl text-main/90 font-bold">Sobre Precision Care</h2>
+      <p class="text-xl sm:text-2xl font-semibold text-[#0194c2]">
         Tu aliado en salud integral
-      </h2>
+      </p>
     </div>
     <p class="text-main/90 text-justify">
-      Somos una empresa de telemedicina centrada en la medicina del estilo de vida, especializada en la prevención y el tratamiento de enfermedades crónicas, con un enfoque particular en la salud cardiometabólica.
+      Somos una <strong>empresa de telemedicina</strong> centrada en la <strong>medicina del estilo de vida</strong>, especializada en la <strong>prevención y tratamiento de enfermedades crónicas</strong>, con un enfoque particular en la <strong>salud cardiometabólica</strong>.
     </p>
   </div>
   <article class="flex flex-col justify-center items-center mt-8 gap-8">
@@ -31,13 +32,11 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-route"
+                aria-hidden="true"
               >
-                <>
-                  <circle cx="6" cy="19" r="3" />
-                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
-                  <circle cx="18" cy="5" r="3" />
-                </>
+                <circle cx="6" cy="19" r="3" />
+                <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
+                <circle cx="18" cy="5" r="3" />
               </svg>
             ),
           },
@@ -55,13 +54,12 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                aria-hidden="true"
               >
-                <>
-                  <path d="m12 8 6-3-6-3v10" />
-                  <path d="m8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12" />
-                  <path d="m6.49 12.85 11.02 6.3" />
-                  <path d="M17.51 12.85 6.5 19.15" />
-                </>
+                <path d="m12 8 6-3-6-3v10" />
+                <path d="m8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12" />
+                <path d="m6.49 12.85 11.02 6.3" />
+                <path d="M17.51 12.85 6.5 19.15" />
               </svg>
             ),
           },
@@ -79,22 +77,23 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                aria-hidden="true"
               >
-                <>
-                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                  <path d="M15 18a3 3 0 1 0-6 0" />
-                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" />
-                  <circle cx="12" cy="13" r="2" />
-                </>
+                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                <path d="M15 18a3 3 0 1 0-6 0" />
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" />
+                <circle cx="12" cy="13" r="2" />
               </svg>
             ),
           },
         ].map((item) => (
-          <div class="bg-white flex flex-col items-center rounded-lg drop-shadow-lg borde-[#cef0ff] p-8 relative">
+          <div 
+            class="bg-white flex flex-col items-center rounded-lg drop-shadow-lg borde-[#cef0ff] p-8 relative"
+          >
             {item.icon}
-            <p class="text-lg font-medium pt-1 pb-3 text-main/90">
+            <h3 class="text-lg font-medium pt-1 pb-3 text-main/90">
               {item.title}
-            </p>
+            </h3>
             <p class="text-center text-main/80">{item.description}</p>
           </div>
         ))
@@ -103,6 +102,7 @@
     <a
       href="/about#precision"
       class="flex justify-center bg-main w-2/6 rounded-lg drop-shadow-lg"
+      aria-label="Conocer más sobre Precision Care"
     >
       <button class="font-bold text-white w-full lg:w-2/6 py-2">Saber más</button>
     </a>

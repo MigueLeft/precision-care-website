@@ -20,6 +20,7 @@ const ServiceLines = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 48 48"
+            aria-hidden="true" // Added for accessibility
           >
             <g fill="none">
               <path
@@ -58,6 +59,7 @@ const ServiceLines = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               fill="currentColor"
@@ -76,6 +78,7 @@ const ServiceLines = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               fill="currentColor"
@@ -94,6 +97,7 @@ const ServiceLines = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               fill="currentColor"
@@ -105,7 +109,7 @@ const ServiceLines = () => {
     ],
     servicios: [
       {
-        title: "Segunda opinión medica",
+        title: "Segunda opinión médica", // Updated: "medica" to "médica" for correct Spanish spelling
         id: "second",
         content:
           "Evaluación y análisis de tu caso por un médico especialista para aclarar diagnósticos, explicar el origen de tus síntomas y ofrecer alternativas de tratamiento eficaces, todo entregado en un informe médico detallado.",
@@ -119,6 +123,7 @@ const ServiceLines = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <circle cx="12" cy="12" r="10" />
             <path d="M17 12h.01" />
@@ -131,7 +136,7 @@ const ServiceLines = () => {
         title: "Soporte nutricional y dietas especiales",
         id: "support",
         content:
-          "Terapia medica nutricional. Soporte nutricional especial: nutrición enteral y parenteral. Dietas especiales personalizadas como tratamiento de condiciones o enfermedades específicas.",
+          "Terapia médica nutricional. Soporte nutricional especial: nutrición enteral y parenteral. Dietas especiales personalizadas como tratamiento de condiciones o enfermedades específicas.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -142,6 +147,7 @@ const ServiceLines = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <path d="M7 21h10" />
             <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
@@ -154,9 +160,24 @@ const ServiceLines = () => {
       {
         title: "Niños y Adolescentes: Obesidad y Riesgo Cardiometabólico",
         id: "childs",
-        content: "Atención integral de la obesidad en niños y adolescentes, enfocada en la prevención temprana del riesgo cardiometabólico con intervenciones nutricionales, actividad física y tratamientos aprobados",
+        content:
+          "Atención integral de la obesidad en niños y adolescentes, enfocada en la prevención temprana del riesgo cardiometabólico con intervenciones nutricionales, actividad física y tratamientos aprobados",
         icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-12 h-12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M18 21a8 8 0 0 0-16 0" />
+            <circle cx="10" cy="8" r="5" />
+            <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
+          </svg>
         ),
       },
       {
@@ -169,6 +190,7 @@ const ServiceLines = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12"
             viewBox="0 0 48 48"
+            aria-hidden="true"
           >
             <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
               <path d="M40 8H8v32h32zM8 6a2 2 0 0 0-2 2v32a2 2 0 0 0 2 2h32a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path>
@@ -195,6 +217,7 @@ const ServiceLines = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <path d="M11.246 16.657a1 1 0 0 0 1.508 0l3.57-4.101A2.75 2.75 0 1 0 12 9.168a2.75 2.75 0 1 0-4.324 3.388z" />
             <path d="M17 3h2a2 2 0 0 1 2 2v2" />
@@ -204,7 +227,6 @@ const ServiceLines = () => {
           </svg>
         ),
       },
-      
       {
         title: "Salud Mental y Bienestar Emocional",
         id: "mentalhealth",
@@ -220,6 +242,7 @@ const ServiceLines = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <circle cx="12" cy="12" r="10" />
             <path d="M8 14s1.5 2 4 2 4-2 4-2" />
@@ -228,36 +251,13 @@ const ServiceLines = () => {
           </svg>
         ),
       },
-      // {
-      //   title: "Deportistas y Atletas",
-      //   id: "athletes",
-      //   content:
-      //     "Estrategias médicas especializadas para maximizar tu potencial físico y prevenir lesiones.",
-      //   icon: (
-      //     <svg
-      //       xmlns="http://www.w3.org/2000/svg"
-      //       className="w-12 h-12"
-      //       viewBox="0 0 24 24"
-      //       fill="none"
-      //       stroke="currentColor"
-      //       strokeWidth="2"
-      //       strokeLinecap="round"
-      //       strokeLinejoin="round"
-      //     >
-      //       <circle cx="18.5" cy="17.5" r="3.5" />
-      //       <circle cx="5.5" cy="17.5" r="3.5" />
-      //       <circle cx="15" cy="5" r="1" />
-      //       <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
-      //     </svg>
-      //   ),
-      // },
     ],
     saludParaMigrantes: [
       {
         title: "Salud de Migrantes",
         id: "migrants",
         content:
-          "Evaluación integral para pacientes migrantes, centrada en el manejo de condiciones crónicas con medicina del estilo de vida  y farmacoterapia basada en evidencia. Ofrecemos un plan accesible, culturalmente respetuoso y adaptado a tu realidad.",
+          "Evaluación integral para pacientes migrantes, centrada en el manejo de condiciones crónicas con medicina del estilo de vida y farmacoterapia basada en evidencia. Ofrecemos un plan accesible, culturalmente respetuoso y adaptado a tu realidad.",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -268,6 +268,7 @@ const ServiceLines = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
             <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
@@ -278,29 +279,39 @@ const ServiceLines = () => {
       },
     ],
   };
+
   return (
     <section
       id="services"
       className="scroll-mt-[90px] lg:scroll-mt-[100px] pt-5 md:pt-10 pb-14 md:pb-28"
+      aria-labelledby="service-lines-heading"
     >
       <div className="flex flex-col items-center mb-8 lg:mb-12">
-        <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#0194c2] font-bold">
+        <h2
+          id="service-lines-heading"
+          className="text-2xl md:text-3xl lg:text-4xl text-[#0194c2] font-bold"
+        >
           Líneas de servicio
-        </h3>
+        </h2>
         <p className="text-xl md:text-2xl text-center text-main/90 font-semibold">
-          ¿A quienes atendemos?
+          ¿A quiénes atendemos?
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14">
+      <div
+        role="tablist" 
+        aria-label="Nuestras líneas de servicio"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14"
+      >
         {[
           {
             id: "especialidades",
-            text: "Especialidades medicas",
+            text: "Especialidades médicas",
             icon: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`w-6 h-6 sm:w-8 sm:h-8`}
                 viewBox="0 0 2048 2048"
+                aria-hidden="true"
               >
                 <path
                   fill="currentColor"
@@ -322,6 +333,7 @@ const ServiceLines = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
                 <path d="M9 12h6" />
@@ -342,6 +354,7 @@ const ServiceLines = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <path d="M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z" />
               </svg>
@@ -360,6 +373,7 @@ const ServiceLines = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
                 <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
@@ -372,6 +386,9 @@ const ServiceLines = () => {
           <button
             key={button.id}
             onClick={() => setActiveTab(button.id)}
+            role="tab"
+            aria-selected={activeTab === button.id}
+            aria-controls={`panel-${button.id}`}
             className={`group flex items-center h-14 gap-4 lg:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
               ${
                 activeTab === button.id
@@ -395,20 +412,6 @@ const ServiceLines = () => {
               >
                 {button.icon}
               </div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                  activeTab === button.id
-                    ? "mx-3 sm:mx-5"
-                    : "ml-4 sm:ml-6 lg:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
-                }`}
-                viewBox="0 0 2048 2048"
-              >
-                <path
-                  fill="currentColor"
-                  d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
-                />
-              </svg> */}
             </div>
             <p className="text-left font-bold text-sm sm:text-base">
               {button.text}
@@ -421,62 +424,76 @@ const ServiceLines = () => {
       </div>
       <div className="relative">
         <article className="flex justify-center items-center mt-6 lg:mt-12 max-w-[1250px] mx-auto px-5 md:px-10 lg:px-14">
-          <Swiper
-            navigation={{
-              nextEl: `.arrow-model-right`,
-              prevEl: `.arrow-model-left`,
-            }}
-            modules={[Navigation]}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 10,
-              },
-              1024: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 10,
-              },
-            }}
-            className="h-full w-full"
+          <div
+            role="tabpanel"
+            id={`panel-${activeTab}`}
+            aria-labelledby={activeTab}
+            aria-live="polite" 
+            className="w-full"
           >
-            {services[activeTab].map((item) => (
-              <SwiperSlide key={item.title} className="md:h-[370px]">
-                <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-6 relative md:h-[370px]">
-                  <div className="flex flex-col items-center">
-                    <div className="text-main/90">{item.icon}</div>
-                    <p className="text-center text-lg text-main/90 font-semibold pt-1 pb-3">
-                      {item.title}
-                    </p>
-                    <p className="text-justify">{item.content}</p>
+            <Swiper
+              navigation={{
+                nextEl: `.arrow-model-right`,
+                prevEl: `.arrow-model-left`,
+              }}
+              modules={[Navigation]}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  slidesPerGroup: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  slidesPerGroup: 2,
+                  spaceBetween: 10,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  slidesPerGroup: 3,
+                  spaceBetween: 10,
+                  loop: false, 
+                },
+              }}
+              className="h-full w-full"
+            >
+              {services[activeTab].map((item) => (
+                <SwiperSlide key={item.title} className="md:h-[370px]">
+                  <div className="flex flex-col items-center justify-between rounded-lg bg-white border-[#cef0ff] p-6 relative md:h-[370px]">
+                    <div className="flex flex-col items-center">
+                      <div className="text-main/90" title={item.title}>
+                        {item.icon}
+                      </div>
+                      <h3 className="text-center text-lg text-main/90 font-semibold pt-1 pb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-justify">{item.content}</p>
+                    </div>
+                    <a
+                      href={`/services#${item.id}`}
+                      className="text-center bg-main -bottom-5 text-white w-2/5 py-2 rounded-lg drop-shadow-lg"
+                      aria-label={`Ver más sobre ${item.title}`} 
+                    >
+                      <button>Ver más</button>
+                    </a>
                   </div>
-                  <a
-                    href={`/services#${item.id}`}
-                    className="text-center bg-main -bottom-5 text-white w-2/5 py-2 rounded-lg drop-shadow-lg"
-                  >
-                    <button>Ver más</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </article>
         <div className="max-w-[1350px] mx-auto px-5 md:px-10 lg:px-14 z-20 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-full">
           <div className="w-full flex flex-row justify-center lg:justify-between items-center gap-4 mt-2 lg:mt-0 text-main/90">
             <button
               className="arrow-model-left w-auto md:rounded-full md:min-w-10"
               color="primary"
+              aria-label="Anterior" 
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="rotate-180 w-12 h-12"
                 viewBox="0 0 12 24"
+                aria-hidden="true"
               >
                 <path
                   fill="currentColor"
@@ -488,11 +505,13 @@ const ServiceLines = () => {
             <button
               className="arrow-model-right w-auto md:rounded-full md:min-w-10"
               color="primary"
+              aria-label="Siguiente" 
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-12 h-12"
                 viewBox="0 0 12 24"
+                aria-hidden="true"
               >
                 <path
                   fill="currentColor"

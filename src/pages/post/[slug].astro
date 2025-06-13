@@ -1,0 +1,624 @@
+---
+// ./src/pages/post/[slug].astro
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "../../sanity/lib/load-query";
+import { urlForImage } from "../../sanity/lib/url-for-image";
+import PortableText from "../../components/PortableText.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const { data: posts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"]`,
+  });
+
+  return posts.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+
+const { params } = Astro;
+
+// Consulta mejorada para obtener más datos del post
+const { data: post } = await loadQuery<{
+  title: string;
+  body: any[];
+  mainImage: any;
+  _createdAt: string;
+  author: { name: string; image: any };
+  categories: { title: string }[];
+  excerpt: string;
+  estimatedReadingTime: number;
+}>({
+  query: `*[_type == "post" && slug.current == $slug][0]{
+    title,
+    body,
+    mainImage,
+    _createdAt,
+    "author": author->{name, image},
+    "categories": categories[]->{title},
+    "excerpt": pt::text(body[_type == "block"][0...2]),
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)
+  }`,
+  params,
+});
+
+// Obtener posts relacionados
+const { data: relatedPosts } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "post" && slug.current != $slug][0...3]{
+    title,
+    slug,
+    mainImage,
+    _createdAt
+  }`,
+  params,
+});
+
+// Función para formatear fecha
+function formatDate(dateString) {
+  if (!dateString) return 'Fecha no disponible';
+  return new Date(dateString).toLocaleDateString('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+}
+
+// Función para generar excerpt del body
+function generateExcerpt(text, length = 150) {
+  if (!text) return 'Sin contenido disponible...';
+  return text.length > length ? text.substring(0, length) + '...' : text;
+}
+
+// Metadatos para SEO
+const metaDescription = post.excerpt ? generateExcerpt(post.excerpt, 160) : `Artículo sobre ${post.title}`;
+const ogImage = post.mainImage ? urlForImage(post.mainImage).width(1200).height(630).url() : '/og-image-default.jpg';
+---
+
+<Layout title={post.title} description={metaDescription} ogImage={ogImage}>
+  <div class="bg-main/95 min-h-screen">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 w-full h-1 z-50">
+      <div id="progress-bar" class="h-full bg-[#009aff] w-0 transition-all duration-300"></div>
+    </div>
+
+    <div class="container mx-auto pt-[70px] md:pt-[115px] px-5 md:px-10 lg:px-0">
+      <!-- Breadcrumbs -->
+      <!-- <nav class="flex py-6 text-sm" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-gray-300 hover:text-white">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <a href="/blog" class="ml-1 text-gray-300 hover:text-white md:ml-2">Blog</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-1 text-gray-400 md:ml-2 line-clamp-1">{post.title}</span>
+            </div>
+          </li>
+        </ol>
+      </nav> -->
+
+      <!-- Article Header -->
+      <header class="max-w-4xl mx-auto mb-12">
+        {post.categories && post.categories.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {post.categories.map((category) => (
+              <span class="bg-[#009aff]/20 text-[#009aff] px-3 py-1 rounded-full text-sm font-medium">
+                {category.title}
+              </span>
+            ))}
+          </div>
+        )}
+        
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          {post.title}
+        </h1>
+        
+        <div class="flex items-center gap-6 text-gray-300 mb-8">
+          <div class="flex items-center gap-3">
+            {post.author?.image ? (
+              <img 
+                src={urlForImage(post.author.image).width(40).height(40).url() || "/placeholder.svg"} 
+                alt={post.author.name} 
+                class="w-10 h-10 rounded-full object-cover border-2 border-[#009aff]"
+              />
+            ) : (
+              <div class="w-10 h-10 rounded-full bg-[#009aff]/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#009aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+              </div>
+            )}
+            <div>
+              <span class="block text-white font-medium">{post.author?.name || 'Autor'}</span>
+              <span class="text-sm">{formatDate(post._createdAt)}</span>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#009aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{post.estimatedReadingTime || '5'} min lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      {post.mainImage && (
+        <div class="max-w-5xl mx-auto mb-12 relative">
+          <div class="rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10">
+            <img 
+              src={urlForImage(post.mainImage).width(1200).height(675).url() || "/placeholder.svg"} 
+              alt={post.title} 
+              class="w-full h-auto md:h-[500px] object-cover"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-main/80 to-transparent opacity-50 rounded-2xl"></div>
+        </div>
+      )}
+
+      <!-- Article Content -->
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-10 mb-12 prose prose-lg prose-invert max-w-none">
+          <PortableText portableText={post.body} />
+        </div>
+
+        <!-- Share and Actions -->
+        <!-- <div class="flex flex-col sm:flex-row justify-between items-center gap-6 mb-16 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl">
+          <div class="flex items-center gap-2">
+            <span class="text-white">Compartir:</span>
+            <div class="flex gap-3">
+              <button class="w-10 h-10 rounded-full bg-[#1877F2]/20 hover:bg-[#1877F2]/40 flex items-center justify-center text-white transition-colors" aria-label="Compartir en Facebook" id="share-facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                </svg>
+              </button>
+              <button class="w-10 h-10 rounded-full bg-[#1DA1F2]/20 hover:bg-[#1DA1F2]/40 flex items-center justify-center text-white transition-colors" aria-label="Compartir en Twitter" id="share-twitter">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                </svg>
+              </button>
+              <button class="w-10 h-10 rounded-full bg-[#0A66C2]/20 hover:bg-[#0A66C2]/40 flex items-center justify-center text-white transition-colors" aria-label="Compartir en LinkedIn" id="share-linkedin">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
+                </svg>
+              </button>
+              <button class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Copiar enlace" id="copy-link">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="like-button" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+              <span>Me gusta</span>
+            </button>
+            <button id="save-button" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+              </svg>
+              <span>Guardar</span>
+            </button>
+          </div>
+        </div> -->
+
+        <!-- Author Bio -->
+        {post.author && (
+          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 mb-16">
+            <div class="flex flex-col md:flex-row gap-6 items-center md:items-start">
+              <div class="flex-shrink-0">
+                {post.author.image ? (
+                  <img 
+                    src={urlForImage(post.author.image).width(100).height(100).url() || "/placeholder.svg"} 
+                    alt={post.author.name} 
+                    class="w-24 h-24 rounded-full object-cover border-4 border-[#009aff]/30"
+                  />
+                ) : (
+                  <div class="w-24 h-24 rounded-full bg-[#009aff]/30 flex items-center justify-center">
+                    <svg class="w-12 h-12 text-[#009aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <h3 class="text-xl font-bold text-white mb-2">Sobre {post.author.name || 'el autor'}</h3>
+                <p class="text-gray-300 mb-4">
+                  Especialista en salud y bienestar con más de 10 años de experiencia en el sector médico. 
+                  Comprometido con brindar información precisa y actualizada para mejorar la calidad de vida de los pacientes.
+                </p>
+                <div class="flex justify-center md:justify-start gap-3">
+                  <a href="#" class="text-[#009aff] hover:text-blue-400 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                    </svg>
+                  </a>
+                  <a href="#" class="text-[#009aff] hover:text-blue-400 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                    </svg>
+                  </a>
+                  <a href="#" class="text-[#009aff] hover:text-blue-400 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <!-- Related Posts -->
+        {relatedPosts && relatedPosts.length > 0 && (
+          <div class="mb-16">
+            <h3 class="text-2xl font-bold text-white mb-8">Artículos relacionados</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedPosts.map((relatedPost) => (
+                <a href={`/post/${relatedPost.slug.current}`} class="group">
+                  <article class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 h-full flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                      {relatedPost.mainImage ? (
+                        <img 
+                          src={urlForImage(relatedPost.mainImage).width(400).height(300).url() || "/placeholder.svg"} 
+                          alt={relatedPost.title} 
+                          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div class="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                          <svg class="w-12 h-12 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                          </svg>
+                        </div>
+                      )}
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                      <div class="text-sm text-blue-200 mb-2">{formatDate(relatedPost._createdAt)}</div>
+                      <h4 class="text-lg font-semibold text-white group-hover:text-[#009aff] transition-colors mb-3 line-clamp-2">
+                        {relatedPost.title}
+                      </h4>
+                      <div class="mt-auto pt-4 flex items-center justify-between border-t border-white/10">
+                        <span class="text-[#009aff] text-sm font-medium">Leer artículo</span>
+                        <svg class="w-4 h-4 text-[#009aff] transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Newsletter -->
+        <div class="bg-gradient-to-r from-[#009aff]/10 to-blue-600/10 backdrop-blur-sm border border-[#009aff]/20 rounded-2xl p-8 mb-16">
+          <div class="flex flex-col md:flex-row gap-8 items-center">
+            <div class="md:w-2/3">
+              <h4 class="text-2xl font-bold text-white mb-3">
+                ¿Te gustó este artículo?
+              </h4>
+              <p class="text-gray-300 mb-6">
+                Suscríbete a nuestro newsletter y recibe los últimos artículos directamente en tu correo
+              </p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <input 
+                  type="email" 
+                  placeholder="Tu correo electrónico" 
+                  class="flex-1 px-5 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#009aff] focus:border-transparent transition-all"
+                />
+                <button class="px-6 py-3 bg-[#009aff] hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
+                  Suscribirse
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+              <div class="w-32 h-32 rounded-full bg-[#009aff]/20 flex items-center justify-center">
+                <svg class="w-16 h-16 text-[#009aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <!-- <div class="flex flex-col sm:flex-row justify-between gap-4 mb-16">
+          <a href="/blog" class="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors group">
+            <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span>Volver al blog</span>
+          </a>
+          <a href="#top" class="flex items-center justify-center gap-2 px-6 py-3 bg-[#009aff] hover:bg-blue-600 rounded-lg text-white transition-colors group">
+            <span>Volver arriba</span>
+            <svg class="w-5 h-5 transform group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  /* Estilos para el contenido del artículo (PortableText) */
+  .prose {
+    color: #f8fafc; /* text-slate-50 */
+  }
+  
+  .prose h2 {
+    color: white;
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .prose h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+  }
+  
+  .prose a {
+    color: #009aff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .prose a:hover {
+    color: #66c7ff;
+    text-decoration: underline;
+  }
+  
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .prose ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose blockquote {
+    border-left: 4px solid #009aff;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #cbd5e1; /* text-slate-300 */
+    margin: 1.5rem 0;
+  }
+  
+  .prose img {
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .prose code {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.9em;
+  }
+  
+  .prose pre {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  
+  .prose th {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .prose td {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .prose tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Clases de utilidad */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  // Progress bar
+  const progressBar = document.getElementById('progress-bar');
+  
+  function updateProgressBar() {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+    
+    if (progressBar) {
+      progressBar.style.width = `${scrollPercentage}%`;
+    }
+  }
+  
+  window.addEventListener('scroll', updateProgressBar);
+  
+  // Social sharing
+  document.getElementById('share-facebook')?.addEventListener('click', () => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+  });
+  
+  document.getElementById('share-twitter')?.addEventListener('click', () => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+  });
+  
+  document.getElementById('share-linkedin')?.addEventListener('click', () => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+  });
+  
+  document.getElementById('copy-link')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      // Mostrar notificación
+      const button = document.getElementById('copy-link');
+      if (button) {
+        const originalHTML = button.innerHTML;
+        button.innerHTML = `
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        `;
+        
+        setTimeout(() => {
+          if (button) {
+            button.innerHTML = originalHTML;
+          }
+        }, 2000);
+      }
+    });
+  });
+  
+  // Like button
+  document.getElementById('like-button')?.addEventListener('click', (e) => {
+    const button = e.currentTarget as HTMLElement;
+    button.classList.toggle('bg-[#009aff]');
+    button.classList.toggle('bg-white/10');
+    
+    const svg = button.querySelector('svg');
+    if (svg) {
+      svg.classList.toggle('fill-current');
+    }
+  });
+  
+  // Save button
+  document.getElementById('save-button')?.addEventListener('click', (e) => {
+    const button = e.currentTarget as HTMLElement;
+    button.classList.toggle('bg-[#009aff]');
+    button.classList.toggle('bg-white/10');
+    
+    const svg = button.querySelector('svg');
+    if (svg) {
+      svg.classList.toggle('fill-current');
+    }
+  });
+  
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const href = this.getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+  
+  // Lazy loading images
+  document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const image = entry.target as HTMLImageElement;
+            image.src = image.dataset.src || image.src;
+            imageObserver.unobserve(image);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  });
+</script>

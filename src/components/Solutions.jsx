@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import useFormStore from "../store/useFormStore";
 
 const programSteps = [
@@ -10,9 +10,9 @@ const programSteps = [
       "Médicos especialistas con amplia experiencia te ofrecen una evaluación completa y un manejo basado en evidencia científica. Dedicamos el tiempo necesario para:",
     features: [
       "Análisis a fondo de tus necesidades",
-      "Identificación de riesgos y áreas de mejora",
+      "Identificación de riesgos y áreas de mejora en tu bienestar",
       "Diagnósticos precisos",
-      "Diseñar un plan de tratamiento personalizado.",
+      "Diseño de un plan de tratamiento personalizado.",
     ],
     image: "/img/medicina.png",
     icon: (
@@ -40,16 +40,11 @@ const programSteps = [
     title: "Nutrición",
     titleContent: "Consulta de nutrición",
     content:
-      "Especialistas en terapia medica nutricional y nutricionistas te ofrecen una evaluación y prescripción especializada para transformar tu alimentación de forma sostenible y efectiva. Realizamos un diagnóstico completo de tus necesidades nutricionales para diseñar un plan de alimentación personalizado que te ayude a alcanzar tus metas, se ajuste a tu estilo de vida, tus rutinas y te motive a mantener hábitos saludables a largo plazo. ",
-    // features: [
-    //   "Planes de nutrición personalizados, adaptados a tus necesidades específicas",
-    //   "Disponibilidad de atención 16 horas al día, 7 días a la semana",
-    //   "Consultas individuales de una hora para atención detallada y personalizada",
-    // ],
+      "Especialistas en terapia medica nutricional y nutricionistas te ofrecen una evaluación y prescripción especializada para transformar tu alimentación de forma sostenible y efectiva. Realizamos un diagnóstico completo de tus necesidades nutricionales para diseñar un plan de alimentación personalizado que te ayude a alcanzar tus metas, se ajuste a tu estilo de vida, tus rutinas y te motive a mantener hábitos saludables a largo plazo.",
     image: "/img/nutricion.jpg",
     icon: (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org="
         className="w-6 h-6 sm:w-8 sm:h-8"
         viewBox="0 0 24 24"
         fill="none"
@@ -70,13 +65,6 @@ const programSteps = [
     titleContent: "Consulta de ejercicio",
     content:
       "Especialistas en ejercicio y actividad física evaluamos tu aptitud física con herramientas diagnósticas precisas, para diseñar un plan de actividad física adaptado a tus metas, necesidades, preferencias, entorno y momento de vida. Ofrecemos asesoría especializada y supervisamos tu progreso para optimizar tu rendimiento, fomentar la constancia y ayudarte a alcanzar resultados de forma segura, efectiva y sostenible.",
-    // features: [
-    //   "Evaluamos tu nivel de aptitud física con diagnósticos precisos",
-    //   "Diseñamos programas de actividad física personalizados",
-    //   "Supervisamos tu progreso",
-    //   "Estamos disponibles para ti 16 horas al día, 7 días a la semana",
-    //   "Ofrecemos consultas individuales de una hora, asegurando atención detallada y personalizada",
-    // ],
     image: "/img/ejercicio.jpg",
     icon: (
       <svg
@@ -136,16 +124,10 @@ const programSteps = [
   {
     id: 5,
     title: "Híbrida",
-    titleContent: "Consulta Médica - Nutrición",
+    titleContent: "Consulta Médica y Nutricional",
     content:
       "Si deseas una consulta médica especializada y además llevarte un plan nutricional personalizado. En la primera, recibes un diagnóstico preciso y un plan de tratamiento médico personalizado. Luego, analizamos tus requerimientos nutricionales para diseñar un plan de alimentación que se ajuste a tu estilo de vida, te motive y te ayude a alcanzar tus metas. Todo el abordaje basado en evidencia científica y enfocado en generar cambios sostenibles.",
-    // features: [
-    //   "Manejar el estrés",
-    //   "Identificar y abordar focos de ansiedad y depresión",
-    //   "Mejorar la calidad del sueño",
-    //   "Tratar adicciones y trastornos de conducta alimentaria",
-    // ],
-    image: "/img/psicologo.webp",
+    image: "/img/psicologo.webp", // Consider changing to a more relevant image for 'Híbrida'
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -170,92 +152,79 @@ export default function Solutions() {
   const [activeTab, setActiveTab] = useState(1);
   const { setValues, handleSelect } = useFormStore();
 
-  const addProgram = (active) => {
-    if (active === 1) {
-      setValues(new Set(["medicina"]));
-      handleSelect(new Set(["medicina"]));
-    }
-    if (active === 2) {
-      setValues(new Set(["nutricion"]));
-      handleSelect(new Set(["nutricion"]));
-    }
-    if (active === 3) {
-      setValues(new Set(["ejercicio"]));
-      handleSelect(new Set(["ejercicio"]));
-    }
-    if (active === 4) {
-      setValues(new Set(["psicologia"]));
-      handleSelect(new Set(["psicologia"]));
-    }
-    if (active === 5) {
-      setValues(new Set(["hibrida"]));
-      handleSelect(new Set(["hibrida"]));
+  const addProgram = (tabId) => {
+    const programTitle = programSteps.find((step) => step.id === tabId)?.title.toLowerCase();
+    if (programTitle) {
+      setValues(new Set([programTitle]));
+      handleSelect(new Set([programTitle]));
     }
   };
 
+  const activeProgram = useMemo(
+    () => programSteps.find((step) => step.id === activeTab),
+    [activeTab]
+  );
+
+  if (!activeProgram) {
+    return null; // Or render a fallback UI
+  }
+
+  const getPriceRange = (tabId) => {
+    if (tabId === 5) return "120$ - 140$";
+    if (tabId === 1) return "70$ - 100$";
+    return "40$ - 50$";
+  };
+
+  const getConsultationDuration = (tabId) => {
+    return tabId === 5 ? "90 - 120 minutos" : "60 minutos";
+  };
+
   return (
-    <section className="bg-main/90">
+    <section className="bg-main/90" aria-labelledby="solutions-heading">
+      {/* Desktop View */}
       <div
         id="solutions"
         className="hidden lg:block scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 mb-8 lg:mb-12">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7] font-bold">
-            {" "}
-            {/* text-[#0194c2] */}
-            Nuestras soluciones
-          </h3>
+          <h2 id="solutions-heading" className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7] font-bold">
+          Nuestras soluciones
+          </h2>
           <p className="text-xl sm:text-2xl text-center px-4 text-white font-semibold">
             Soluciones especializadas en tu salud y bienestar
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 lg:gap-12 text-white text-lg mb-8 lg:mb-12">
+        <div role="tablist" aria-label="Nuestros Servicios" className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 lg:gap-12 text-white text-lg mb-8 lg:mb-12">
           {programSteps.map((step) => (
             <button
               key={step.id}
+              role="tab"
+              aria-selected={activeTab === step.id}
+              aria-controls={`panel-${step.id}`}
+              id={`tab-${step.id}`}
               onClick={() => setActiveTab(step.id)}
               className={`group flex items-center z-10 h-14 gap-4 sm:gap-1 rounded-lg w-full relative transition-all duration-300 ease-in-out
-                ${
-                  activeTab === step.id
-                    ? "bg-main text-white transform scale-[1.02] sm:scale-105"
-                    : "bg-white text-black hover:bg-main hover:text-white hover:scale-[1.01] sm:hover:scale-102"
+                ${activeTab === step.id
+                  ? "bg-main text-white transform scale-[1.02] sm:scale-105"
+                  : "bg-white text-black hover:bg-main hover:text-white hover:scale-[1.01] sm:hover:scale-102"
                 }`}
             >
               <div
-                className={`${
-                  activeTab === step.id
-                    ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
-                    : "text-[#009aff] group-hover:flex group-hover:items-center group-hover:rounded-l-lg group-hover:bg-[#009aff] group-hover:h-full group-hover:text-white"
+                className={`${activeTab === step.id
+                  ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
+                  : "text-[#009aff] group-hover:flex group-hover:items-center group-hover:rounded-l-lg group-hover:bg-[#009aff] group-hover:h-full group-hover:text-white"
                 }`}
               >
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                    activeTab === step.id
-                      ? "mx-3 sm:mx-5"
-                      : "ml-4 sm:ml-9 group-hover:mx-3 group-hover:sm:mx-5"
-                  }`}
-                  viewBox="0 0 2048 2048"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
-                  />
-                </svg> */}
-                <div
-                  className={`${
-                    activeTab === step.id
-                      ? "mx-3 sm:mx-5"
-                      : "mx-3 sm:mx-5 group-hover:mx-3 group-hover:sm:mx-5"
-                  }`}
-                >
+                <div className={`mx-3 sm:mx-5`}>
                   {step.icon}
                 </div>
               </div>
-              <p className={`${activeTab === step.id ? "ml-3" : "group-hover:ml-3"} font-bold text-sm sm:text-base`}>{step.title}</p>
+              <span className={`${activeTab === step.id ? "ml-3" : "group-hover:ml-3"} font-bold text-sm sm:text-base`}>
+                {step.title}
+              </span>
               {activeTab === step.id && (
                 <div className="absolute -bottom-2 left-1/2 w-5 h-5 sm:w-7 sm:h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
               )}
@@ -263,33 +232,39 @@ export default function Solutions() {
           ))}
         </div>
 
+        {/* Content */}
         <div className="flex justify-between gap-2">
-          {/* Content */}
-          <div className="flex items-center bg-white border border-slate-400 rounded-lg w-[80%] min-h-[300px] sm:min-h-[400px] lg:max-h-[438px] p-4 sm:p-6 lg:p-8">
+          <div
+            id={`panel-${activeProgram.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${activeProgram.id}`}
+            className="flex items-center bg-white border border-slate-400 rounded-lg w-[80%] min-h-[300px] sm:min-h-[400px] lg:max-h-[438px] p-4 sm:p-6 lg:p-8"
+          >
             <div className="flex flex-row gap-6 lg:gap-8 min-h-[352px]">
               {/* Text Content */}
               <div className="flex-1 space-y-4 order-2 lg:order-1">
-                <h4 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-black">
-                  {programSteps[activeTab - 1].titleContent}
-                </h4>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-black">
+                  {activeProgram.titleContent}
+                </h3>
                 <p className="text-gray-700 text-sm sm:text-base text-justify">
-                  {programSteps[activeTab - 1].content}
+                  {activeProgram.content}
                 </p>
-                <ul className="text-gray-700 text-base list-disc px-4">
-                  {programSteps[activeTab - 1]?.features?.map(
-                    (feature, index) => (
+                {activeProgram.features && activeProgram.features.length > 0 && (
+                  <ul className="text-gray-700 text-base list-disc px-4">
+                    {activeProgram.features.map((feature, index) => (
                       <li key={index}>{feature}</li>
-                    )
-                  )}
-                </ul>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               {/* Image */}
               <div className="w-full lg:w-1/2 h-[200px] sm:h-[300px] lg:h-auto order-1 lg:order-2 lg:justify-items-end">
                 <img
-                  src={programSteps[activeTab - 1].image}
-                  alt={`Imagen ${programSteps[activeTab - 1].title}`}
+                  src={activeProgram.image}
+                  alt={activeProgram.titleContent}
                   className="w-full lg:w-auto h-full lg:h-[340px] object-cover rounded-lg"
+                  loading="lazy" // Lazy loading for images
                 />
               </div>
             </div>
@@ -318,7 +293,7 @@ export default function Solutions() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <span className="text-gray-700 text-sm">
-                    {activeTab === 5 ? "90 - 120 minutos" : "60 minutos"} de consulta especializada
+                    {getConsultationDuration(activeTab)} de consulta especializada
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -362,16 +337,11 @@ export default function Solutions() {
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-3xl font-bold text-black">
-                    {activeTab === 5
-                      ? "120$ - 140$"
-                      : activeTab !== 1
-                      ? "40$ - 50$"
-                      : "70$ - 100$"}
+                    {getPriceRange(activeTab)}
                   </span>
                 </div>
                 <span className="text-gray-500 text-xs">
-                  El precio de la consulta puede variar dentro del rango según
-                  su región.
+                  El precio de la consulta puede variar dentro del rango según su región.
                 </span>
               </div>
             </div>
@@ -385,249 +355,179 @@ export default function Solutions() {
             </a>
           </div>
         </div>
-
-        {/* <p className="text-white mt-5">
-          Estas soluciones pueden ser tanto individuales como en programas
-          diseñados estrategicamente para lograr sus metas.{" "}
-          <a href="/program" className="font-bold underline">
-            Entra aquí
-          </a>{" "}
-          para ver conocer más sobre nuestras estrategias
-        </p> */}
       </div>
+
+      {/* Mobile View */}
       <div
         id="program"
         className="block lg:hidden scroll-mt-[90px] lg:scroll-mt-[100px] max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-14 py-8 lg:py-16"
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-3 mb-8 lg:mb-12">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7] font-bold">
-            Nuestras soluciones
-          </h3>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#40f7f7] font-bold">
+            Nuestras Soluciones de Salud y Bienestar
+          </h2>
           <p className="text-xl sm:text-2xl text-center px-4 text-white font-semibold">
-            Soluciones especializadas en tu salud y bienestar
+            Descubre soluciones especializadas para tu salud integral y bienestar duradero.
           </p>
         </div>
 
-        {/* Mobile Accordion / Desktop Tabs */}
-        <div className="flex flex-col lg:flex-row justify-center gap-4 lg:gap-12 text-lg">
-          {/* Tabs Container */}
-          <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-12">
-            {programSteps.map((step) => (
-              <div key={step.id} className="flex flex-col">
-                {/* Tab Button */}
-                <button
-                  onClick={() => setActiveTab(step.id)}
-                  className={`flex items-center h-14 gap-4 sm:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
-                    ${
-                      activeTab === step.id
-                        ? "bg-main text-white transform scale-[1.02] lg:scale-105"
-                        : "bg-white text-black hover:bg-gray-100 hover:scale-[1.01] lg:hover:scale-102"
-                    }`}
-                >
-                  <div
-                    className={`${
-                      activeTab === step.id
-                        ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
-                        : "text-[#009aff]"
-                    }`}
-                  >
-                    {/* <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`w-6 h-6 sm:w-8 sm:h-8 ${
-                        activeTab === step.id ? "mx-3 sm:mx-5" : "ml-4 sm:ml-9"
-                      }`}
-                      viewBox="0 0 2048 2048"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M1728 640q66 0 124 25t101 69t69 102t26 124q0 57-19 109t-53 93t-81 71t-103 41v102q0 89-22 173t-62 160t-98 137t-129 107t-155 70t-174 25q-91 0-174-25t-154-70t-129-107t-98-137t-63-159t-22-174v-229q-123-11-218-59T133 962T34 781T0 558V0h320q26 0 45 19t19 45t-19 45t-45 19H128v430q0 106 29 192t87 147t140 94t192 33q101 0 184-31t141-89t91-140t32-185V128H832q-26 0-45-19t-19-45t19-45t45-19h320v558q0 120-34 223t-99 181t-160 126t-219 59v229q0 107 38 205t107 174t162 120t205 45q111 0 204-45t162-120t107-173t39-206v-102q-56-12-103-41t-81-70t-53-94t-19-109q0-66 25-124t68-101t102-69t125-26m0 512q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75t15 75t41 61t61 41t75 15"
-                      />
-                    </svg> */}
-                    <div
-                      className={`${
-                        activeTab === step.id ? "mx-3 sm:mx-5" : "mx-3 sm:mx-5"
-                      }`}
-                    >
-                      {step.icon}
-                    </div>
-                  </div>
-                  <p className="font-bold text-sm sm:text-base">{step.title}</p>
-                  {/* Indicator for desktop */}
-                  {activeTab === step.id && (
-                    <div className="hidden lg:block absolute -bottom-2 left-1/2 w-7 h-7 rotate-45 bg-main -z-10 -translate-x-1/2" />
-                  )}
-                </button>
-
-                {/* Mobile Accordion Content */}
+        {/* Mobile Accordion */}
+        <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-12">
+          {programSteps.map((step) => (
+            <div key={step.id} className="flex flex-col">
+              {/* Tab Button */}
+              <button
+                onClick={() => setActiveTab(step.id)}
+                className={`flex items-center h-14 gap-4 sm:gap-8 rounded-lg w-full relative transition-all duration-300 ease-in-out
+                  ${activeTab === step.id
+                    ? "bg-main text-white transform scale-[1.02] lg:scale-105"
+                    : "bg-white text-black hover:bg-gray-100 hover:scale-[1.01] lg:hover:scale-102"
+                  }`}
+              >
                 <div
-                  className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out
-                  ${
-                    activeTab === step.id
-                      ? "opacity-100 mt-4"
-                      : "max-h-0 opacity-0"
+                  className={`${activeTab === step.id
+                    ? "flex items-center rounded-l-lg bg-[#009aff] h-full"
+                    : "text-[#009aff]"
                   }`}
                 >
-                  <div className="flex flex-col gap-2">
-                    <div className="bg-white border border-slate-400 rounded-lg w-full p-4">
-                      <div className="flex flex-col gap-4">
-                        {/* Text Content */}
-                        <div className="flex flex-col gap-2">
-                          <h4 className="text-xl font-semibold text-black mb-2">
-                            {step.titleContent}
-                          </h4>
-                          <p className="text-gray-700 text-base text-justify">
-                            {step.content}
-                          </p>
+                  <div className={`mx-3 sm:mx-5`}>
+                    {step.icon}
+                  </div>
+                </div>
+                <span className="font-bold text-sm sm:text-base">{step.title}</span>
+              </button>
+
+              {/* Mobile Accordion Content */}
+              <div
+                className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out
+                  ${activeTab === step.id
+                    ? "opacity-100 mt-4"
+                    : "max-h-0 opacity-0"
+                  }`}
+              >
+                <div className="flex flex-col gap-2">
+                  <div className="bg-white border border-slate-400 rounded-lg w-full p-4">
+                    <div className="flex flex-col gap-4">
+                      {/* Text Content */}
+                      <div className="flex flex-col gap-2">
+                        <h3 className="text-xl font-semibold text-black mb-2">
+                          {step.titleContent}
+                        </h3>
+                        <p className="text-gray-700 text-base text-justify">
+                          {step.content}
+                        </p>
+                        {step.features && step.features.length > 0 && (
                           <ul className="text-gray-700 text-base list-disc px-6">
-                            {step?.features?.map((feature, index) => (
+                            {step.features.map((feature, index) => (
                               <li key={index}>{feature}</li>
                             ))}
                           </ul>
-                        </div>
+                        )}
+                      </div>
 
-                        {/* Image */}
-                        <div className="w-full h-[300px] lg:h-[500px]">
-                          <img
-                            src={step.image}
-                            alt={`Imagen ${step.title}`}
-                            className="w-full h-full object-cover rounded-lg"
-                          />
-                        </div>
+                      {/* Image */}
+                      <div className="w-full h-[300px] lg:h-[500px]">
+                        <img
+                          src={step.image}
+                          alt={step.titleContent}
+                          className="w-full h-full object-cover rounded-lg"
+                          loading="lazy" // Lazy loading for images
+                        />
                       </div>
                     </div>
+                  </div>
 
-                    <div className="bg-white border border-slate-400 rounded-lg w-full lg:w-1/3 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
-                      <div>
-                        <div className="bg-[#009aff]/10 p-3 rounded-lg mb-4">
-                          <h4 className="text-xl font-bold text-center text-[#009aff]">
-                            Solicita tu consulta
-                          </h4>
+                  <div className="bg-white border border-slate-400 rounded-lg w-full p-4 sm:p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="bg-[#009aff]/10 p-3 rounded-lg mb-4">
+                        <h4 className="text-xl font-bold text-center text-[#009aff]">
+                          Solicita tu consulta
+                        </h4>
+                      </div>
+
+                      <div className="space-y-4 mb-6">
+                        <div className="flex items-center gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-[#009aff]"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                          </svg>
+                          <span className="text-gray-700 text-sm">
+                            {getConsultationDuration(step.id)} de consulta especializada
+                          </span>
                         </div>
-
-                        <div className="space-y-4 mb-6">
-                          <div className="flex items-center gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-5 h-5 text-[#009aff]"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                              <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span className="text-gray-700 text-sm">
-                              60 minutos de consulta especializada
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-5 h-5 text-[#009aff]"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                              <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span className="text-gray-700 text-sm">
-                              Disponibilidad 16 horas al día, 7 días a la semana
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-5 h-5 text-[#009aff]"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                              <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span className="text-gray-700 text-sm">
-                              Comunicación empática y centrada en nuestros
-                              pacientes
-                            </span>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-[#009aff]"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                          </svg>
+                          <span className="text-gray-700 text-sm">
+                            Disponibilidad 16 horas al día, 7 días a la semana
+                          </span>
                         </div>
-
-                        <div className="text-center mb-6">
-                          <div className="flex items-center justify-center gap-2">
-                            <span className="text-3xl font-bold text-black">
-                              {activeTab === 5
-                                ? "120$ - 140$"
-                                : activeTab !== 1
-                                ? "40$ - 50$"
-                                : "70$ - 100$"}
-                            </span>
-                          </div>
-                          {/* <p className="text-gray-500 text-sm">por consulta</p> */}
-                          <span className="text-gray-500 text-xs">
-                            El precio de la consulta puede variar dentro del
-                            rango según su ubicación.
+                        <div className="flex items-center gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-[#009aff]"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                          </svg>
+                          <span className="text-gray-700 text-sm">
+                            Comunicación empática y centrada en nuestros pacientes
                           </span>
                         </div>
                       </div>
 
-                      <a
-                        href="#contact"
-                        onClick={() => addProgram(activeTab)}
-                        className="text-center w-full bg-main hover:bg-main/80 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300"
-                      >
-                        Agendar ahora
-                      </a>
+                      <div className="text-center mb-6">
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-3xl font-bold text-black">
+                            {getPriceRange(step.id)}
+                          </span>
+                        </div>
+                        <span className="text-gray-500 text-xs">
+                          El precio de la consulta puede variar dentro del rango según su ubicación.
+                        </span>
+                      </div>
                     </div>
+
+                    <a
+                      href="#contact"
+                      onClick={() => addProgram(step.id)}
+                      className="text-center w-full bg-main hover:bg-main/80 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300"
+                    >
+                      Agendar ahora
+                    </a>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Desktop Content */}
-          <div className="hidden lg:block bg-white border border-slate-400 rounded-lg w-full min-h-[400px] p-8">
-            <div className="flex gap-8">
-              {/* Text Content */}
-              <div className="flex-1">
-                <h4 className="text-2xl font-bold mb-4">
-                  {programSteps[activeTab - 1].title}
-                </h4>
-                <p className="text-gray-700 text-justify">
-                  {programSteps[activeTab - 1].content}
-                </p>
-              </div>
-
-              {/* Image */}
-              <div className="w-1/2">
-                <img
-                  src={programSteps[activeTab - 1].image}
-                  alt={`Imagen ${programSteps[activeTab - 1].title}`}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
             </div>
-          </div>
+          ))}
         </div>
-
-        {/* <p className="text-white mt-5">
-          Estas soluciones pueden ser tanto individuales como en programas
-          diseñados estrategicamente para lograr sus metas.{" "}
-          <a href="/program" className="font-bold underline">
-            Entra aquí
-          </a>{" "}
-          para ver conocer más sobre nuestras estrategias
-        </p> */}
       </div>
     </section>
   );

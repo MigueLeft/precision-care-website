@@ -3,32 +3,41 @@ import FacebookIcon from "./assets/FacebookIcon.astro";
 import InstagramIcon from "./assets/InstagramIcon.astro";
 ---
 
-<footer class="bg-main text-[#e9f9ff]">
+<footer
+  class="bg-main text-[#e9f9ff]"
+  role="contentinfo"
+  aria-label="Información de contacto y navegación del sitio"
+>
   <div
     class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-10 mx-auto max-w-[1300px] px-5 md:px-14 py-16"
   >
     <div class="space-y-4">
-      <!-- <h4 class="text-2xl font-bold border-b border-[#e9f9ff] pb-2 w-1/2">
-        Logo
-      </h4> -->
       <div class="flex items-center gap-3">
-        <svg
-          class="h-[45px] w-auto"
-          viewBox="0 0 229 261"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <a
+          href="/"
+          aria-label="Ir a la página de inicio de Precision Care desde el pie de página"
         >
-          <path
-            d="M157.35 98.2C187.77 74.9 231.9 99.06 227.78 137.15C227.72 137.67 227.66 138.18 227.59 138.7C227.53 139.15 227.46 139.6 227.39 140.05C221.2 177.94 172.22 189.58 149.02 158.99L130.7 134.83C126.4 129.16 127.49 121.08 133.14 116.75L157.35 98.2Z"
-            fill="#FFFFFF"
-            class="iso"></path>
-          <path
-            d="M224.72 220.95C200.93 241.02 169.94 260.65 132.96 260.33C80.65 259.89 38.2 235.38 15.35 192.14L15.09 191.31C14.38 189.38 15.15 186.21 17.38 184.62L68.57 151.27C73.12 148.25 75.94 146.48 81.02 146.89C89.39 147.56 92.9 152.56 96.01 160.37C99.97 170.32 111.65 196.82 140.77 210.97C145.83 213.43 152.64 216.54 158.18 217.52C170.26 219.67 185 222.17 218.84 210.53C218.98 210.48 219.13 210.43 219.28 210.39L219.45 210.34C221.96 209.66 224.73 210.49 226.23 212.62C226.34 212.77 226.43 212.92 226.53 213.08C226.69 213.36 226.8 213.67 226.86 213.98C227.13 215.27 227.48 218.62 224.72 220.95Z"
-            fill="#00CCCC"></path>
-          <path
-            d="M225.04 40.6C228.35 44 229.2 49.12 225.09 51.5C223.89 52.19 222.46 52.51 220.9 52.26C220.33 52.17 219.77 52.01 219.24 51.77C188.46 37.62 151.68 38.69 122.21 59.88L7.60997 142.39C4.73997 144.46 0.529969 142.74 0.219969 139.21C0.209969 139.05 0.199969 138.89 0.199969 138.73C0.209969 138.87 0.199969 138.59 0.199969 138.73C-2.88003 63.52 56.89 0.169986 132.15 0.169986C132.15 0.169986 183.94 -1.56002 225.04 40.6Z"
-            fill="#00CCCC"></path>
-        </svg>
+          <svg
+            class="h-[45px] w-auto"
+            viewBox="0 0 229 261"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="footer-logo-title"
+          >
+            <title id="footer-logo-title">Logo de Precision Care</title>
+            <path
+              d="M157.35 98.2C187.77 74.9 231.9 99.06 227.78 137.15C227.72 137.67 227.66 138.18 227.59 138.7C227.53 139.15 227.46 139.6 227.39 140.05C221.2 177.94 172.22 189.58 149.02 158.99L130.7 134.83C126.4 129.16 127.49 121.08 133.14 116.75L157.35 98.2Z"
+              fill="#FFFFFF"
+              class="iso"></path>
+            <path
+              d="M224.72 220.95C200.93 241.02 169.94 260.65 132.96 260.33C80.65 259.89 38.2 235.38 15.35 192.14L15.09 191.31C14.38 189.38 15.15 186.21 17.38 184.62L68.57 151.27C73.12 148.25 75.94 146.48 81.02 146.89C89.39 147.56 92.9 152.56 96.01 160.37C99.97 170.32 111.65 196.82 140.77 210.97C145.83 213.43 152.64 216.54 158.18 217.52C170.26 219.67 185 222.17 218.84 210.53C218.98 210.48 219.13 210.43 219.28 210.39L219.45 210.34C221.96 209.66 224.73 210.49 226.23 212.62C226.34 212.77 226.43 212.92 226.53 213.08C226.69 213.36 226.8 213.67 226.86 213.98C227.13 215.27 227.48 218.62 224.72 220.95Z"
+              fill="#00CCCC"></path>
+            <path
+              d="M225.04 40.6C228.35 44 229.2 49.12 225.09 51.5C223.89 52.19 222.46 52.51 220.9 52.26C220.33 52.17 219.77 52.01 219.24 51.77C188.46 37.62 151.68 38.69 122.21 59.88L7.60997 142.39C4.73997 144.46 0.529969 142.74 0.219969 139.21C0.209969 139.05 0.199969 138.89 0.199969 138.73C0.209969 138.87 0.199969 138.59 0.199969 138.73C-2.88003 63.52 56.89 0.169986 132.15 0.169986C132.15 0.169986 183.94 -1.56002 225.04 40.6Z"
+              fill="#00CCCC"></path>
+          </svg>
+        </a>
         <p class="text-2xl/6 font-bold">
           Precision <span class="block">Care</span>
         </p>
@@ -37,55 +46,79 @@ import InstagramIcon from "./assets/InstagramIcon.astro";
       <p class="text-sm lg:text-base">
         Soluciones de salud de calidad justo a tiempo
       </p>
-      <div>
+      <div vocab="http://schema.org/" typeof="LocalBusiness">
         <p class="font-bold">Horario:</p>
-        <p>Lunes a Sábado: 8:00 am - 6:00 pm</p>
+        <p property="openingHours">
+          Lunes a Sábado: 8:00 am - 6:00 pm
+        </p>
       </div>
       <div class="flex gap-2">
         <a
           href="https://www.instagram.com/dr.ramfisnieto?igsh=YzR0cjRzc3psN3Rh"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visitar el perfil de Instagram del Dr. Ramfis Nieto"
         >
           <InstagramIcon
             classname="w-8 h-8 text-[#e9f9ff] cursor-pointer hover:opacity-75"
+            aria-hidden="true"
+            focusable="false"
           />
         </a>
-        <!-- <FacebookIcon
-          classname="w-8 h-8 text-[#e9f9ff] cursor-pointer hover:opacity-75"
-        /> -->
       </div>
     </div>
     <div class="space-y-2 order-3 md:order-none">
-      <h4 class="text-2xl font-bold border-b border-[#e9f9ff] pb-2 w-1/2">
+      <h3 class="text-2xl font-bold border-b border-[#e9f9ff] pb-2 w-1/2">
         Servicios
-      </h4>
-      <p><a href="#why">Nosotros</a></p>
-      <p><a href="#services">Líneas de servicio</a></p>
-      <p><a href="#solutions">Soluciones</a></p>
-      <p><a href="#team">Nuestro equipo</a></p>
-      <!-- <p><a href="#health">Salud para migrantes</a></p> -->
-      <p><a href="#programs">Programas</a></p>
-      <p><a href="#faq">Preguntas frecuentes</a></p>
-      <p><a href="/privacy">Aviso de privacidad</a></p>
+      </h3>
+      <nav aria-label="Enlaces de servicios principales">
+        <ul>
+          <li class="py-2 md:py-0"><a href="#why">Nosotros</a></li>
+          <li class="py-2 md:py-0"><a href="#services">Líneas de servicio</a></li>
+          <li class="py-2 md:py-0"><a href="#solutions">Soluciones</a></li>
+          <li class="py-2 md:py-0"><a href="#team">Nuestro equipo</a></li>
+          <li class="py-2 md:py-0"><a href="#programs">Programas</a></li>
+          <li class="py-2 md:py-0"><a href="#faq">Preguntas frecuentes</a></li>
+          <li class="pt-2 md:py-0">
+            <a href="/privacy" rel="privacy-policy">Aviso de privacidad</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="space-y-2 order-2 md:order-none">
-      <h4 class="text-2xl font-bold border-b border-[#e9f9ff] pb-2 w-1/2">
+    <div
+      class="space-y-2 order-2 md:order-none"
+      vocab="http://schema.org/"
+      typeof="MedicalClinic"
+    >
+      <h3 class="text-2xl font-bold border-b border-[#e9f9ff] pb-2 w-1/2">
         Contacto
-      </h4>
+      </h3>
       <div>
         <p class="font-bold">Teléfonos:</p>
-        <p>+1 (321) 333-2706</p>
-        <p>+58 (414) 518-6283</p>
+        <p>
+          <a href="tel:+13213332706" property="telephone">+1 (321) 333-2706</a>
+        </p>
+        <p>
+          <a href="tel:+584145186283" property="telephone"
+            >+58 (414) 518-6283</a>
+        </p>
       </div>
       <div>
         <p class="font-bold">Correo:</p>
-        <p>contacto@precisioncareclinic.org</p>
-      </div>
-      <div>
-        <p class="font-bold">Dirección:</p>
         <p>
-          Centro Empresarial Barquisimeto Av. Los Leones, Barquisimeto,
-          Venezuela
+          <a href="mailto:contacto@precisioncareclinic.org" property="email"
+            >contacto@precisioncareclinic.org</a>
+        </p>
+      </div>
+      <div property="address" typeof="PostalAddress">
+        <p class="font-bold">Dirección:</p>
+        <p property="streetAddress">
+          Centro Empresarial Barquisimeto Av. Los Leones
+        </p>
+        <p>
+          <span property="addressLocality">Barquisimeto</span>,
+          <span property="addressRegion">Lara</span>,
+          <span property="addressCountry">Venezuela</span>
         </p>
       </div>
     </div>
@@ -93,6 +126,8 @@ import InstagramIcon from "./assets/InstagramIcon.astro";
   <div
     class="flex justify-center items-center mx-auto max-w-[1300px] px-5 md:px-14 pb-5"
   >
-    <p class="text-[#e9f9ff]">Copyright © 2024 Precision Care Clinic Corp</p>
+    <p class="text-[#e9f9ff]">
+      Copyright &copy; <time datetime="2024">2024</time> Precision Care Clinic Corp
+    </p>
   </div>
 </footer>

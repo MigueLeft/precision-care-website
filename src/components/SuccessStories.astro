@@ -1,73 +1,487 @@
-<section id="stories" class="bg-main/95">
-  <div
-    class="max-w-[1300px] mx-auto flex flex-col justify-center items-center text-2xl py-12 lg:py-16 px-5 md:px-10 lg:px-14"
-  >
-    <h4 class="text-xl md:text-2xl font-bold text-[#009aff]">
-      Historias de nuestros pacientes
-    </h4>
-    <p class="text-xl md:text-3xl lg:text-4xl text-center text-white">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-    </p>
-    <article class="flex flex-col md:flex-row gap-6 lg:gap-12 pt-12 text-white">
-      <div class="flex flex-col w-full md:w-[58%] lg:w-1/2 gap-4">
-        <span class="text-base">12 Jun, 2024</span>
-        <p class="text-2xl font-semibold">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-        <p class="text-base lg:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-          nostrum, deserunt voluptates sapiente omnis tempore explicabo, porro,
-          similique rem sequi deleniti veritatis. Optio alias facilis ad dolorem
-          voluptatum quasi tempora?
-        </p>
+---
+import { loadQuery } from "../sanity/lib/load-query";
+import { urlForImage as urlFor } from "../sanity/lib/url-for-image";
+
+// Obtener todos los posts publicados ordenados por fecha
+const { data: posts } = await loadQuery({
+  query: `*[_type == "post"] | order(_createdAt desc)`,
+});
+
+// Separar el post principal (más reciente) y los otros posts
+const [featuredPost, ...otherPosts] = posts || [];
+
+// Función para formatear fecha
+function formatDate(dateString) {
+  if (!dateString) return 'Fecha no disponible';
+  return new Date(dateString).toLocaleDateString('es-ES', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
+}
+
+// Función para generar excerpt del body
+function generateExcerpt(body, length = 150) {
+  if (!body || !Array.isArray(body)) return 'Sin contenido disponible...';
+  
+  const textBlocks = body.filter(block => block._type === 'block' && block.children);
+  if (textBlocks.length === 0) return 'Sin contenido disponible...';
+  
+  const firstBlock = textBlocks[0];
+  const text = firstBlock.children
+    .filter((child) => child._type === 'span' && child.text)
+    .map((child) => child.text)
+    .join('');
+  
+  return text.length > length ? text.substring(0, length) + '...' : text;
+}
+
+// Función para obtener tiempo de lectura estimado
+function getReadingTime(body) {
+  if (!body || !Array.isArray(body)) return '1 min';
+  
+  const textBlocks = body.filter(block => block._type === 'block' && block.children);
+  const wordCount = textBlocks.reduce((count, block) => {
+    const text = block.children
+      .filter((child) => child._type === 'span' && child.text)
+      .map((child) => child.text)
+      .join('');
+    return count + text.split(' ').length;
+  }, 0);
+  
+  const readingTime = Math.ceil(wordCount / 200); // 200 palabras por minuto
+  return `${readingTime} min`;
+}
+---
+
+<section id="blog" class="bg-main/95 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+  
+  <div class="max-w-[1400px] mx-auto relative z-10 py-12 lg:py-20 px-5 md:px-10 lg:px-14">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-[#009aff]/10 backdrop-blur-sm border border-[#009aff]/20 rounded-full px-4 py-2 mb-6">
+        <svg class="w-5 h-5 text-[#009aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+        </svg>
+        <span class="text-[#009aff] font-medium">Blog de Precision Care</span>
       </div>
-      <img
-        class="flex justify-center items-center w-full md:w-[42%] lg:w-1/2 lg:h-[320px] bg-slate-400 text-white rounded-lg"
-        src="./img/background.jpeg"
-        alt="success-stories"
-      />
-    </article>
-    <p class="text-xl md:text-3xl lg:text-4xl text-center mt-12 mb-6">
-      Otras historias
-    </p>
-    <div class="grid place-content-between grid-cols-1 md:grid-cols-2 lg:flex justify-between gap-6 w-full bg-main/5 p-6 rounded-lg text-white">
-      <div class="flex flex-col gap-1 w-full">
-        <img
-          class="flex justify-center items-center w-full rounded-lg"
-          src="./img/background.jpeg"
-          alt="success-stories"
-        />
-        <p class="text-lg font-semibold">Lorem ipsum dolor sit amet.</p>
-        <p class="text-sm">12 Jun, 2024</p>
-      </div>
-      <div class="flex flex-col gap-1 w-full">
-        <img
-          class="flex justify-center items-center w-full rounded-lg"
-          src="./img/background.jpeg"
-          alt="success-stories"
-        />
-        <p class="text-lg font-semibold">Lorem ipsum dolor sit amet.</p>
-        <p class="text-sm">12 Jun, 2024</p>
-      </div>
-      <div class="flex flex-col gap-1 w-full">
-        <img
-          class="flex justify-center items-center w-full rounded-lg"
-          src="./img/background.jpeg"
-          alt="success-stories"
-        />
-        <p class="text-lg font-semibold">Lorem ipsum dolor sit amet.</p>
-        <p class="text-sm">12 Jun, 2024</p>
-      </div>
-      <div class="flex flex-col gap-1 w-full">
-        <img
-          class="flex justify-center items-center w-full rounded-lg"
-          src="./img/background.jpeg"
-          alt="success-stories"
-        />
-        <p class="text-lg font-semibold">Lorem ipsum dolor sit amet.</p>
-        <p class="text-sm">12 Jun, 2024</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+        Últimas noticias y <span class="text-[#009aff]">consejos de salud</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Descubre historias de éxito, consejos médicos y las últimas innovaciones en cuidado de la salud
+      </p>
+    </div>
+
+    <!-- Search and Filter Bar -->
+    <div class="mb-12">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div class="relative flex-1 max-w-md">
+            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input 
+              type="text" 
+              placeholder="Buscar artículos..." 
+              class="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#009aff] focus:border-transparent transition-all"
+              id="searchInput"
+            />
+          </div>
+          <div class="flex gap-3">
+            <select class="px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#009aff] transition-all" id="sortSelect">
+              <option value="newest">Más recientes</option>
+              <option value="oldest">Más antiguos</option>
+              <option value="title">Por título</option>
+            </select>
+            <button class="px-6 py-3 bg-[#009aff] hover:bg-blue-600 text-white rounded-xl font-medium transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+              </svg>
+              Filtros
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Featured Post -->
+    {featuredPost && (
+      <article class="mb-20">
+        <div class="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500">
+          <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div class="flex flex-col lg:w-1/2 gap-6">
+              <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-2 bg-[#009aff]/20 text-[#009aff] px-3 py-1 rounded-full text-sm font-medium">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"></path>
+                  </svg>
+                  Destacado
+                </span>
+                <span class="text-blue-200 text-sm">{formatDate(featuredPost._createdAt)}</span>
+                <span class="text-blue-200 text-sm">• {getReadingTime(featuredPost.body)} lectura</span>
+              </div>
+              <h3 class="text-3xl lg:text-4xl font-bold text-white leading-tight hover:text-[#009aff] transition-colors">
+                {featuredPost.title?.trim()}
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                {generateExcerpt(featuredPost.body, 200)}
+              </p>
+              <a 
+                href={`/post/${featuredPost.slug?.current}`}
+                class="inline-flex items-center gap-3 bg-[#009aff] hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 w-fit group"
+              >
+                Leer artículo completo
+                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="lg:w-1/2">
+              {featuredPost.mainImage ? (
+                <div class="relative group overflow-hidden rounded-2xl">
+                  <img
+                    class="w-full h-80 lg:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    src={urlFor(featuredPost.mainImage).width(800).height(600).url() || "/placeholder.svg"}
+                    alt={featuredPost.mainImage.alt || featuredPost.title}
+                    loading="eager"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              ) : (
+                <div class="w-full h-80 lg:h-96 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                  <svg class="w-20 h-20 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                  </svg>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </article>
+    )}
+
+    <!-- All Posts Grid -->
+    {otherPosts && otherPosts.length > 0 && (
+      <div class="space-y-12">
+        <div class="text-center">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Todos los artículos
+          </h3>
+          <p class="text-gray-300">
+            Explora nuestra colección completa de {otherPosts.length} artículos
+          </p>
+        </div>
+
+        <div id="postsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {otherPosts.map((post, index) => (
+            <article 
+              class="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105 hover:bg-white/10 post-card"
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <a href={`/post/${post.slug?.current}`} class="block">
+                <div class="relative overflow-hidden">
+                  {post.mainImage ? (
+                    <img
+                      class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      src={urlFor(post.mainImage).width(500).height(350).url() || "/placeholder.svg"}
+                      alt={post.mainImage.alt || post.title}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="w-full h-56 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center group-hover:from-blue-600 group-hover:to-blue-800 transition-colors">
+                      <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                      </svg>
+                    </div>
+                  )}
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center gap-3 text-sm text-blue-200">
+                    <span>{formatDate(post._createdAt)}</span>
+                    <span>•</span>
+                    <span>{getReadingTime(post.body)} lectura</span>
+                  </div>
+                  
+                  <h4 class="text-xl font-bold text-white group-hover:text-[#009aff] transition-colors leading-tight line-clamp-2">
+                    {post.title?.trim()}
+                  </h4>
+                  
+                  <p class="text-gray-300 text-sm leading-relaxed line-clamp-3">
+                    {generateExcerpt(post.body, 120)}
+                  </p>
+                  
+                  <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-[#009aff] font-medium group-hover:text-blue-300 transition-colors">
+                      Leer más
+                    </span>
+                    <svg class="w-5 h-5 text-[#009aff] transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12" id="loadMoreContainer">
+          <button 
+            id="loadMoreBtn"
+            class="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-[#009aff] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg backdrop-blur-sm group"
+          >
+            <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+            Cargar más artículos
+          </button>
+        </div>
+      </div>
+    )}
+
+    <!-- Call to Action -->
+    <div class="mt-20 text-center">
+      <div class="bg-gradient-to-r from-[#009aff]/10 to-blue-600/10 backdrop-blur-sm border border-[#009aff]/20 rounded-3xl p-8 lg:p-12">
+        <h4 class="text-2xl lg:text-3xl font-bold text-white mb-4">
+          ¿Quieres estar al día?
+        </h4>
+        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+          Suscríbete a nuestro newsletter y recibe los últimos artículos directamente en tu correo
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="Tu correo electrónico" 
+            class="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#009aff] focus:border-transparent transition-all"
+          />
+          <button class="px-8 py-4 bg-[#009aff] hover:bg-blue-600 text-white font-semibold rounded-xl transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
+            Suscribirse
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- No posts message -->
+    {(!posts || posts.length === 0) && (
+      <div class="text-center py-20">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12 max-w-md mx-auto">
+          <svg class="w-20 h-20 text-white/30 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+          </svg>
+          <h3 class="text-2xl font-bold text-white mb-4">Próximamente</h3>
+          <p class="text-gray-300 mb-6">Estamos preparando contenido increíble para ti</p>
+          <div class="flex justify-center">
+            <div class="animate-pulse flex space-x-2">
+              <div class="w-3 h-3 bg-[#009aff] rounded-full"></div>
+              <div class="w-3 h-3 bg-[#009aff] rounded-full animation-delay-200"></div>
+              <div class="w-3 h-3 bg-[#009aff] rounded-full animation-delay-400"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
   </div>
 </section>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .post-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #009aff;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0080cc;
+  }
+</style>
+
+<script>
+  // Search functionality
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  const sortSelect = document.getElementById('sortSelect') as HTMLSelectElement;
+  const postsContainer = document.getElementById('postsContainer');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const loadMoreContainer = document.getElementById('loadMoreContainer');
+  
+  let currentPage = 1;
+  const postsPerPage = 9;
+  let allPosts: NodeListOf<Element>;
+  let filteredPosts: Element[] = [];
+  
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    allPosts = document.querySelectorAll('.post-card');
+    filteredPosts = Array.from(allPosts);
+    showPosts();
+    
+    // Search functionality
+    searchInput?.addEventListener('input', handleSearch);
+    sortSelect?.addEventListener('change', handleSort);
+    loadMoreBtn?.addEventListener('click', loadMorePosts);
+  });
+  
+  function handleSearch() {
+    const searchTerm = searchInput.value.toLowerCase();
+    filteredPosts = Array.from(allPosts).filter(post => {
+      const title = post.querySelector('h4')?.textContent?.toLowerCase() || '';
+      const excerpt = post.querySelector('p')?.textContent?.toLowerCase() || '';
+      return title.includes(searchTerm) || excerpt.includes(searchTerm);
+    });
+    
+    currentPage = 1;
+    showPosts();
+  }
+  
+  function handleSort() {
+    const sortValue = sortSelect.value;
+    
+    filteredPosts.sort((a, b) => {
+      if (sortValue === 'newest') {
+        const dateA = new Date(a.querySelector('.text-blue-200')?.textContent?.split('•')[0].trim() || '');
+        const dateB = new Date(b.querySelector('.text-blue-200')?.textContent?.split('•')[0].trim() || '');
+        return dateB.getTime() - dateA.getTime();
+      } else if (sortValue === 'oldest') {
+        const dateA = new Date(a.querySelector('.text-blue-200')?.textContent?.split('•')[0].trim() || '');
+        const dateB = new Date(b.querySelector('.text-blue-200')?.textContent?.split('•')[0].trim() || '');
+        return dateA.getTime() - dateB.getTime();
+      } else if (sortValue === 'title') {
+        const titleA = a.querySelector('h4')?.textContent || '';
+        const titleB = b.querySelector('h4')?.textContent || '';
+        return titleA.localeCompare(titleB);
+      }
+      return 0;
+    });
+    
+    currentPage = 1;
+    showPosts();
+  }
+  
+  function showPosts() {
+    // Hide all posts first
+    allPosts.forEach(post => {
+      (post as HTMLElement).style.display = 'none';
+    });
+    
+    // Show filtered posts for current page
+    const startIndex = 0;
+    const endIndex = currentPage * postsPerPage;
+    const postsToShow = filteredPosts.slice(startIndex, endIndex);
+    
+    postsToShow.forEach((post, index) => {
+      (post as HTMLElement).style.display = 'block';
+      (post as HTMLElement).style.animationDelay = `${index * 50}ms`;
+    });
+    
+    // Show/hide load more button
+    if (loadMoreContainer) {
+      if (endIndex >= filteredPosts.length) {
+        loadMoreContainer.style.display = 'none';
+      } else {
+        loadMoreContainer.style.display = 'block';
+      }
+    }
+    
+    // Update posts container
+    if (postsContainer) {
+      if (filteredPosts.length === 0) {
+        postsContainer.innerHTML = `
+          <div class="col-span-full text-center py-12">
+            <svg class="w-16 h-16 text-white/30 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.291-1.007-5.824-2.562M15 6.306a7.962 7.962 0 00-6 0m6 0V4a2 2 0 00-2-2h-2a2 2 0 00-2 2v2.306z"></path>
+            </svg>
+            <p class="text-xl text-white/70">No se encontraron artículos</p>
+            <p class="text-white/50 mt-2">Intenta con otros términos de búsqueda</p>
+          </div>
+        `;
+      }
+    }
+  }
+  
+  function loadMorePosts() {
+    currentPage++;
+    showPosts();
+    
+    // Smooth scroll to new content
+    setTimeout(() => {
+      const newPosts = document.querySelectorAll('.post-card:nth-child(n+' + ((currentPage - 1) * postsPerPage + 1) + ')');
+      if (newPosts.length > 0) {
+        newPosts[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
+  
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all post cards
+  document.querySelectorAll('.post-card').forEach(card => {
+    observer.observe(card);
+  });
+</script>

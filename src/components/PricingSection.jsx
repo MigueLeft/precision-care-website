@@ -79,13 +79,11 @@ const PricingSection = () => {
     }
   };
 
-  console.log("Test")
-
   return (
-    <section id="programs" className="scroll-mt-[90px] lg:scroll-mt-[100px] bg-[#e8f9ff] py-16 px-4">
+    <section id="programs" className="scroll-mt-[90px] lg:scroll-mt-[100px] bg-[#e8f9ff] py-16 px-4" aria-labelledby="programs-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0194c2]">
+          <h2 id="programs-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0194c2]">
             Nuestros Programas
           </h2>
           <p className="font-semibold text-xl sm:text-2xl text-center text-main/90">
@@ -99,9 +97,11 @@ const PricingSection = () => {
               key={programa.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
             >
+              {/* Heading for each program card for better semantic structure */}
+              <h3 className="sr-only">{programa.title} - Detalles del Programa</h3>
               <div className="min-h-[184px] p-6 bg-gradient-to-r from-main to-blue-900 text-white">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-bold">{programa.title}</h3>
+                  <span className="text-2xl font-bold" role="heading" aria-level="4">{programa.title}</span>
                   {programa.descuento >= 18 && (
                     <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                       {programa.descuento}% OFF
@@ -144,17 +144,17 @@ const PricingSection = () => {
                 </div>
 
                 <div className="flex-grow">
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3 mb-8" aria-label={`Detalles de consultas para ${programa.title}`}>
                     {programa.consultas.map((consulta) => (
                       <li key={consulta.tipo} className="flex items-center">
-                        <div className="mr-3 text-green-500">✓</div>
+                        <div className="mr-3 text-green-500" aria-hidden="true">✓</div> 
                         <span className="text-gray-700">
                           {consulta.cantidad} {consulta.tipo}
                         </span>
                       </li>
                     ))}
                     <li className="flex items-center">
-                      <div className="mr-3 text-green-500">✓</div>
+                      <div className="mr-3 text-green-500" aria-hidden="true">✓</div> 
                       <span className="text-gray-700">
                         Promedio por hora: ${programa.promedioPorHora}
                       </span>
@@ -174,6 +174,7 @@ const PricingSection = () => {
                     href="#contact"
                     onClick={() => addProgram(programa.id)}
                     className="cursor-pointer text-center block w-full py-3 px-4 bg-main hover:bg-main/70 text-white font-medium rounded-lg transition-colors duration-200 seleccionar-plan-btn"
+                    aria-label={`Seleccionar el plan ${programa.title}`}
                   >
                     Seleccionar Plan
                   </a>
