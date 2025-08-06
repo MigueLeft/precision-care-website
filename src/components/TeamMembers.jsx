@@ -82,7 +82,7 @@ const TeamSection = () => {
       ],
       affiliations: [
         {name: "Precision Care Corp, St Cloud, USA", link: "", linkName: "Precision Care Corp"},
-        {name: "CEO. La Casa. Centro de Bienestar. Barquisimeto, Venezuela", link: "", linkName: "La Casa. Centro de Bienestar"}
+        {name: "CEO. La Casa. Centro de Bienestar. Barquisimeto, Venezuela", link: "https://www.instagram.com/lacasa.cdb?igsh=MWNpcWN5aW91YXN2dQ==", linkName: "(La Casa. Centro de Bienestar)"}
       ]
     },
     {
