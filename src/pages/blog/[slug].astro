@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import blogData from '../../data/blog.json';
+
+// For SSR, get slug from params
+const { slug } = Astro.params;
+
+// Find the post
+const post = blogData.news.find(item => item.slug === slug);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+// Get related posts (exclude current post)
+const relatedPosts = blogData.news
+  .filter(item => item.slug !== slug)
+  .slice(0, 3);
+
+const formattedDate = new Date(post.publishedDate).toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Layout title={`${post.title} | Precision Care`}>
+  <main class="bg-[#e9f9ff] min-h-screen">
+    <div class="max-w-[1300px] mx-auto px-5 md:px-10 lg:px-14 py-12 lg:py-16 pt-[120px]">
+
+      <!-- Breadcrumb -->
+      <nav class="text-sm mb-6">
+        <a href="/" class="text-main hover:underline font-medium">Inicio</a>
+        <span class="mx-2 text-gray-400">/</span>
+        <a href="/#news" class="text-main hover:underline font-medium">Noticias</a>
+        <span class="mx-2 text-gray-400">/</span>
+        <span class="text-gray-600">{post.title}</span>
+      </nav>
+
+      <!-- Article -->
+      <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="p-6 md:p-10">
+          <!-- Header -->
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="px-4 py-2 bg-[#0194c2] text-white text-sm font-semibold rounded-full flex items-center gap-2">
+              {post.type === 'video' ? (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                  <span>Video</span>
+                </>
+              ) : (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Artículo</span>
+                </>
+              )}
+            </span>
+            <time class="text-gray-600 font-medium">{formattedDate}</time>
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-main mb-8 leading-tight">
+            {post.title}
+          </h1>
+
+          <!-- Video Embed or External Link -->
+          {post.type === 'video' && post.videoId ? (
+            <div class="aspect-video mb-8 rounded-lg overflow-hidden shadow-xl">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${post.videoId}`}
+                title={post.title}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                class="w-full h-full"
+              ></iframe>
+            </div>
+          ) : post.type === 'article' && post.externalUrl ? (
+            <div class="mb-8">
+              <a
+                href={post.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-main text-white rounded-lg hover:bg-[#0194c2] transition-colors duration-200 font-semibold shadow-lg hover:shadow-xl"
+              >
+                <span>Leer artículo completo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          ) : null}
+
+          <!-- Description -->
+          <div class="prose prose-lg max-w-none mb-8">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {post.description}
+            </p>
+          </div>
+
+          <!-- Tags -->
+          {post.tags && post.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 pt-6 border-t border-gray-200">
+              <span class="text-sm font-semibold text-gray-600 mr-2">Temas:</span>
+              {post.tags.map(tag => (
+                <span class="px-3 py-1 bg-main/10 text-main text-sm font-medium rounded-full">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </article>
+
+      <!-- Related Posts -->
+      {relatedPosts.length > 0 && (
+        <div class="mt-16">
+          <h2 class="text-2xl md:text-3xl font-bold text-main mb-8">
+            Noticias Relacionadas
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {relatedPosts.map(relatedPost => (
+              <BlogCard post={relatedPost} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Back to News Button -->
+      <div class="mt-12 text-center">
+        <a
+          href="/#news"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-main border-2 border-main rounded-lg hover:bg-main hover:text-white transition-colors duration-200 font-semibold shadow-md hover:shadow-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Ver todas las noticias</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

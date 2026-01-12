@@ -1,0 +1,24 @@
+---
+import blogData from '../data/blog.json';
+import BlogCard from './BlogCard.astro';
+
+// Sort by publishedDate (newest first)
+const sortedNews = blogData.news.sort((a, b) =>
+  new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+);
+---
+
+<section id="news" class="scroll-mt-[90px] lg:scroll-mt-[100px] bg-white">
+  <div class="max-w-[1300px] mx-auto px-5 md:px-10 lg:px-14 py-12 lg:py-16">
+    <h4 class="text-2xl md:text-3xl font-bold text-center mb-10 text-[#0194c2]">
+      Noticias y Actualizaciones
+    </h4>
+
+    <!-- News Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+      {sortedNews.map(post => (
+        <BlogCard post={post} />
+      ))}
+    </div>
+  </div>
+</section>

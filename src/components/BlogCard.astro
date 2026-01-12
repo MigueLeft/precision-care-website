@@ -1,0 +1,63 @@
+---
+const { post } = Astro.props;
+
+// Format date to Spanish locale
+const formattedDate = new Date(post.publishedDate).toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<a
+  href={`/blog/${post.slug}`}
+  class="flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-200 group"
+>
+  <div class="relative rounded-lg overflow-hidden aspect-video bg-gray-200 shadow-lg">
+    <img
+      src={post.thumbnail || '/img/news/default-thumbnail.jpg'}
+      alt={post.title}
+      class="w-full h-full object-cover"
+    />
+    <!-- Type badge overlay -->
+    <div class="absolute top-3 right-3 px-3 py-1 bg-[#0194c2] text-white text-xs font-semibold rounded-full flex items-center gap-1">
+      {post.type === 'video' ? (
+        <>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+          </svg>
+          <span>Video</span>
+        </>
+      ) : (
+        <>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span>Artículo</span>
+        </>
+      )}
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <p class="text-sm text-gray-600">{formattedDate}</p>
+    <h3 class="text-lg font-semibold text-main group-hover:text-[#0194c2] transition-colors duration-200">
+      {post.title}
+    </h3>
+    <p class="text-sm text-gray-700 line-clamp-3">
+      {post.description}
+    </p>
+    <!-- Tags -->
+    {post.tags && post.tags.length > 0 && (
+      <div class="flex flex-wrap gap-1 mt-1">
+        {post.tags.slice(0, 3).map(tag => (
+          <span class="px-2 py-0.5 bg-main/10 text-main text-xs rounded-full">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</a>

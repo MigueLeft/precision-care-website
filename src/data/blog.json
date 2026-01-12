@@ -1,0 +1,27 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "slug": "entrevista-promar-tv-obesidad",
+      "title": "Entrevista en Promar TV sobre Factores en Obesidad",
+      "description": "En esta entrevista de la TV Promar en Venezuela, hablamos de los factores que influyen en la ingesta de comida y el gasto de energía, conceptos nuevos en obesidad, y recomendaciones útiles para chequear tu estado de salud e implementar cambios de estilo de vida y tratamientos correctos",
+      "type": "video",
+      "publishedDate": "2026-01-12",
+      "videoUrl": "https://youtu.be/_x1K1LQCISI",
+      "videoId": "_x1K1LQCISI",
+      "thumbnail": "/img/news/promar-tv-thumbnail.jpg",
+      "tags": ["obesidad", "nutrición", "estilo de vida"]
+    },
+    {
+      "id": "2",
+      "slug": "estudio-lancet-glp1-medicamentos",
+      "title": "Estudio en Lancet: 27% de Adultos Podrían Beneficiarse de Medicamentos GLP-1",
+      "description": "En un estudio colaborativo en el cual participamos publicado el 8 de junio en Lancet se encontró que, en una muestra de 810.635 personas de 99 países, el 27,0% eran elegibles para recibir un receptor de GLP-1 agonista como el semaglutide o el tirzepatide. Esto corresponde a casi 800 millones de individuos. Es imposible dar acceso a todos los pacientes que necesitan estos medicamentos para controlar la obesidad",
+      "type": "article",
+      "publishedDate": "2026-01-12",
+      "externalUrl": "https://www.massgeneralbrigham.org/en/about/newsroom/press-releases/27-percent-adults-worldwide-could-benefit-from-glp-1-medications",
+      "thumbnail": "/img/news/glp1-study-thumbnail.jpg",
+      "tags": ["investigación", "GLP-1", "obesidad", "Lancet"]
+    }
+  ]
+}
